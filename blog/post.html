@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Azeez Adewale Hamzat</title>
+    <meta name="description" content="Blog post by Azeez Hamzat">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.0/marked.min.js"></script>
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
+
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header id="header" class="scrolled">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Azeez Hamzat</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../research.html">Research</a></li>
+                <li><a href="../publications.html">Publications</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../docs/CV_Azeez_Hamzat.pdf" target="_blank" class="cv-link">CV</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" style="padding-top: 100px;">
+        
+        <!-- Blog Post Header -->
+        <section class="blog-post-header container">
+            <h1 id="post-title" class="blog-post-title">Loading...</h1>
+            <div class="blog-post-meta">
+                <span><i class="fas fa-calendar"></i> <span id="post-date"></span></span>
+                <span><i class="fas fa-clock"></i> <span id="post-reading-time"></span></span>
+                <span><i class="fas fa-folder"></i> <span id="post-category"></span></span>
+            </div>
+        </section>
+
+        <!-- Featured Image -->
+        <section class="blog-post-featured-image container">
+            <img id="post-featured-image" src="" alt="" loading="eager">
+        </section>
+
+        <!-- Post Content -->
+        <article class="blog-post-content container">
+            <div id="post-content">
+                <!-- Content will be loaded here -->
+            </div>
+        </article>
+
+        <!-- Tags -->
+        <section class="blog-post-tags container">
+            <h4>Tags</h4>
+            <div id="post-tags">
+                <!-- Tags will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Share Buttons -->
+        <section class="blog-share container">
+            <h4>Share this post</h4>
+            <div class="share-buttons">
+                <button id="share-twitter" class="share-btn twitter">
+                    <i class="fab fa-twitter"></i> Share on Twitter
+                </button>
+                <button id="share-linkedin" class="share-btn linkedin">
+                    <i class="fab fa-linkedin"></i> Share on LinkedIn
+                </button>
+                <button id="share-copy" class="share-btn">
+                    <i class="fas fa-link"></i> Copy Link
+                </button>
+            </div>
+        </section>
+
+        <!-- Related Posts -->
+        <section id="related-posts-section" class="related-posts container">
+            <h3>Related Posts</h3>
+            <div id="related-posts-grid" class="related-posts-grid">
+                <!-- Related posts will be loaded here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <p class="copyright">&copy; 2025 Azeez Adewale Hamzat. All rights reserved.</p>
+            </div>
+            <div class="footer-section footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../research.html">Research</a>
+                <a href="../publications.html">Publications</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <p class="footer-note">Built with HTML, CSS, JavaScript</p>
+                <p class="last-updated">Last updated: October 2025</p>
+            </div>
+        </div>
+        <button id="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/blog.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

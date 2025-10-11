@@ -1,0 +1,14 @@
+# robots.txt for azeezhamzat.com
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of any error pages
+Disallow: /404.html
+
+# Sitemap location
+Sitemap: https://azeezhamzat.com/sitemap.xml
+
+# Additional sitemaps (if you create more)
+# Sitemap: https://azeezhamzat.com/sitemap-blog.xml

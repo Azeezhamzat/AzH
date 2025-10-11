@@ -1,0 +1,283 @@
+# Quick Start: Get Your Site Live in 2 Hours
+
+Follow these steps to get your website live on azeezhamzat.com
+
+## ⚡ Before You Start
+
+Download/have ready:
+- [ ] Your professional headshot photo
+- [ ] Your updated CV as PDF
+- [ ] Institution logos (TU Dublin, UM6P, LAUTECH)
+- [ ] 4 research images (can use stock photos initially)
+- [ ] 3 blog images (can use stock photos initially)
+
+---
+
+## 🚀 Step 1: Add Your Content (30 mins)
+
+### Replace Images
+
+1. **Profile Photo** (`images/profile.jpg`)
+   - Resize to 800 x 800 pixels
+   - Compress to < 200KB
+   - Save as `profile.jpg`
+
+2. **Institution Logos** (`images/logos/`)
+   - Download from institution websites
+   - Resize to ~200px width
+   - Save as: `tudublin.png`, `um6p.png`, `lautech.png`
+
+3. **Research Images** (`images/research/`)
+   - Use your own images or stock photos
+   - Resize to 1200 x 600 pixels
+   - Name descriptively
+
+4. **Blog Images** (`images/blog/`)
+   - Use your own images or stock photos
+   - Resize to 1200 x 600 pixels
+   - Name descriptively
+
+**Image Tools:**
+- Resize: Photoshop, GIMP, or online tools
+- Compress: tinypng.com or squoosh.app
+- Stock photos (if needed): unsplash.com, pexels.com
+
+### Add Your CV
+
+1. Export CV as PDF
+2. Name it: `CV_Azeez_Hamzat.pdf`
+3. Place in `docs/` folder
+4. Done!
+
+---
+
+## 🔧 Step 2: Configure Contact Form (5 mins)
+
+1. Go to https://formspree.io
+2. Sign up (free account)
+3. Click "New Form"
+4. Copy your form ID (looks like: `xpznabcd`)
+5. Open `contact.html`
+6. Find line ~123: `<form action="https://formspree.io/f/YOUR_FORM_ID"`
+7. Replace `YOUR_FORM_ID` with your actual ID
+8. Save file
+
+---
+
+## ✅ Step 3: Test Locally (15 mins)
+
+1. Open `index.html` in your browser
+2. Check every page:
+   - [ ] Home
+   - [ ] Research
+   - [ ] Publications
+   - [ ] Blog
+   - [ ] Contact
+3. Test mobile view:
+   - Press F12
+   - Click device toolbar icon
+   - Select iPhone or Android
+4. Verify:
+   - [ ] All images load
+   - [ ] All links work
+   - [ ] Mobile menu works
+   - [ ] CV downloads
+
+**Fix any issues before deploying!**
+
+---
+
+## 🌐 Step 4: Deploy to Netlify (15 mins)
+
+### Option A: Drag & Drop (Easiest)
+
+1. Go to https://netlify.com
+2. Sign up (free)
+3. **Drag entire website folder** onto Netlify
+4. Site is live immediately!
+5. You'll get a URL like: `random-name.netlify.app`
+
+### Option B: GitHub + Netlify (Better for updates)
+
+1. Create GitHub account (github.com)
+2. Create new repository
+3. Upload all website files
+4. In Netlify, click "New site from Git"
+5. Connect to your GitHub repo
+6. Click "Deploy"
+
+---
+
+## 🔗 Step 5: Connect Your Domain (30 mins + wait time)
+
+### In Netlify:
+
+1. Go to Site Settings → Domain Management
+2. Click "Add custom domain"
+3. Enter: `azeezhamzat.com`
+4. Netlify will give you DNS records
+
+### In Your Domain Registrar:
+
+(Where you bought azeezhamzat.com - e.g., Namecheap, GoDaddy, etc.)
+
+1. Log into your domain registrar
+2. Find DNS settings
+3. Add the records Netlify provided
+4. Save changes
+
+### Wait for DNS Propagation
+- Usually 1-24 hours
+- Check status: https://dnschecker.org
+- Enter: azeezhamzat.com
+
+### Enable HTTPS (After DNS works)
+
+1. In Netlify, go back to Domain Settings
+2. Click "Enable HTTPS"
+3. Certificate will be issued automatically
+4. Your site is now: https://azeezhamzat.com 🎉
+
+---
+
+## ✅ Final Checks (10 mins)
+
+Test your live site:
+
+- [ ] Homepage loads at https://azeezhamzat.com
+- [ ] All navigation links work
+- [ ] Images display correctly
+- [ ] Blog posts load
+- [ ] Contact form works (send test email)
+- [ ] Mobile view looks good
+- [ ] HTTPS padlock shows in browser
+- [ ] CV downloads
+
+---
+
+## 🎯 Troubleshooting
+
+### Images don't load
+- Check filenames match exactly (case-sensitive!)
+- Verify files are in correct folders
+
+### Domain not working yet
+- DNS can take up to 48 hours
+- Check https://dnschecker.org
+- Try incognito mode (clears cache)
+
+### Contact form not working
+- Verify Formspree ID is correct
+- Check email isn't in spam folder
+- Test again in 5 minutes
+
+### Site looks broken
+- Press F12 to open browser console
+- Look for red error messages
+- Check if CSS/JS files are loading
+
+---
+
+## 📝 Optional: Write Your First Blog Post (30 mins)
+
+See BLOG_GUIDE.md for detailed instructions.
+
+**Quick version:**
+
+1. Create `blog/posts/my-first-post.md`
+2. Write in Markdown:
+```markdown
+# My First Blog Post
+
+This is my first post on my new website!
+
+## Section Title
+
+Content goes here...
+```
+
+3. Add to `blog/posts.json`:
+```json
+{
+  "id": "my-first-post",
+  "title": "My First Blog Post",
+  "date": "2025-10-15",
+  "author": "Azeez Adewale Hamzat",
+  "category": "Academic Reflections",
+  "tags": ["Website", "Beginning"],
+  "excerpt": "Launching my new academic website!",
+  "image": "images/blog/first-post.jpg",
+  "readingTime": "3 min read",
+  "content": "blog/posts/my-first-post.md"
+}
+```
+
+4. Add image to `images/blog/first-post.jpg`
+5. Push to GitHub or re-drag to Netlify
+6. Post is live!
+
+---
+
+## 🎉 You're Done!
+
+Your professional academic website is now live at **https://azeezhamzat.com**
+
+### What to do next:
+
+1. **Share it!**
+   - Update LinkedIn with your new website
+   - Add to email signature
+   - Share on Twitter
+   - Add to conference presentations
+
+2. **Maintain it:**
+   - Write 1-2 blog posts per month
+   - Update publications as published
+   - Add new research projects
+   - Keep CV current
+
+3. **Optimize:**
+   - Test speed: https://pagespeed.web.dev
+   - Setup analytics (optional): Plausible or Google Analytics
+   - Submit to Google Search Console
+
+---
+
+## 📞 Need Help?
+
+1. Check browser console (F12) for errors
+2. Review documentation files
+3. Search error messages online
+4. Check Netlify deployment logs
+
+---
+
+## 🔄 Making Updates
+
+After your site is live:
+
+### To update content:
+1. Edit HTML files locally
+2. If using GitHub: Push changes
+3. If using drag-drop: Re-drag folder to Netlify
+4. Changes go live in 30-60 seconds
+
+### To add blog posts:
+1. Write markdown file
+2. Add entry to posts.json
+3. Add featured image
+4. Deploy (git push or re-drag)
+
+---
+
+**Congratulations! You now have a professional academic website! 🚀**
+
+Time investment:
+- Setup: ~2 hours
+- Monthly maintenance: ~30 minutes
+
+Well worth it for your professional presence online!
+
+---
+
+*Having issues? Check WEBSITE_COMPLETE_SUMMARY.md for troubleshooting*

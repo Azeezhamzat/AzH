@@ -1,0 +1,398 @@
+# Blog Guide: How to Add New Blog Posts
+
+This guide explains how to add new blog posts to your website. The blog system is designed to be simple and requires no HTML knowledge—just write in Markdown and update a JSON file!
+
+## Quick Start: Adding a New Post
+
+### Step 1: Write Your Post in Markdown
+
+1. Create a new file in the `blog/posts/` folder
+2. Name it descriptively, for example: `my-new-post-2025.md`
+3. Write your content using Markdown formatting (see guide below)
+
+**Example:**
+```markdown
+# My Amazing Blog Post Title
+
+This is the first paragraph of my blog post. I can write naturally and the system will format it nicely.
+
+## A Subheading
+
+Here's more content with a [link](https://example.com) and some **bold text**.
+
+- Bullet point 1
+- Bullet point 2
+- Bullet point 3
+
+That's it!
+```
+
+### Step 2: Add an Entry to posts.json
+
+Open `blog/posts.json` and add a new entry for your post:
+
+```json
+{
+  "id": "my-new-post-2025",
+  "title": "My Amazing Blog Post Title",
+  "date": "2025-10-15",
+  "author": "Azeez Adewale Hamzat",
+  "category": "Academic Reflections",
+  "tags": ["Research", "PhD", "Insights"],
+  "excerpt": "A brief 1-2 sentence description of what this post is about. This will appear on the blog index page.",
+  "image": "images/blog/my-post-image.jpg",
+  "readingTime": "5 min read",
+  "content": "blog/posts/my-new-post-2025.md"
+}
+```
+
+**Important:** Add a comma after the previous post's closing `}` bracket!
+
+### Step 3: Add a Featured Image
+
+1. Choose or create an image for your post
+2. Resize it to approximately 1200x600 pixels
+3. Optimize it (compress to < 200KB if possible)
+4. Save it in `images/blog/`
+5. Reference it in the posts.json entry
+
+### Step 4: Test
+
+1. Open `blog.html` in your browser
+2. Your new post should appear at the top (most recent first)
+3. Click it to make sure it loads correctly
+
+---
+
+## Markdown Formatting Guide
+
+Markdown is a simple way to format text. Here's everything you need:
+
+### Headings
+```markdown
+# Heading 1 (Main Title - use once per post)
+## Heading 2 (Major sections)
+### Heading 3 (Subsections)
+```
+
+### Text Formatting
+```markdown
+**Bold text**
+*Italic text*
+***Bold and italic***
+```
+
+### Links
+```markdown
+[Link text](https://example.com)
+[Email link](mailto:your@email.com)
+```
+
+### Lists
+
+**Bullet points:**
+```markdown
+- First item
+- Second item
+- Third item
+```
+
+**Numbered lists:**
+```markdown
+1. First item
+2. Second item
+3. Third item
+```
+
+### Quotes
+```markdown
+> This is a quote or callout
+> It can span multiple lines
+```
+
+### Images
+```markdown
+![Alt text describing the image](../images/blog/image-name.jpg)
+```
+*Note: Use `../` because the markdown file is in a subfolder*
+
+### Code
+
+**Inline code:**
+```markdown
+Use `code` for inline code snippets
+```
+
+**Code blocks:**
+````markdown
+```python
+def hello():
+    print("Hello, world!")
+```
+````
+
+### Horizontal Lines
+```markdown
+---
+```
+
+### Line Breaks
+Add two spaces at the end of a line, or leave a blank line between paragraphs.
+
+---
+
+## Blog Post Metadata Explained
+
+When adding an entry to `posts.json`, here's what each field means:
+
+- **id**: Unique identifier (no spaces, use hyphens)
+- **title**: Post title (shows in heading and cards)
+- **date**: Publication date (YYYY-MM-DD format)
+- **author**: Your name
+- **category**: Choose from:
+  - "Research Updates"
+  - "Academic Reflections"
+  - "Tutorials"
+  - "Insights"
+  - "Conference Notes"
+- **tags**: Array of keywords (3-5 recommended)
+- **excerpt**: Brief description (2-3 sentences, ~150 characters)
+- **image**: Path to featured image
+- **readingTime**: Estimate (about 200-250 words per minute)
+- **content**: Path to your markdown file
+
+---
+
+## Image Guidelines
+
+### Sizing
+- **Featured images**: 1200 x 600 pixels (2:1 ratio)
+- **In-post images**: Max width 1000 pixels
+
+### Optimization
+- Compress images to under 200KB when possible
+- Use JPG for photos, PNG for graphics with transparency
+- Tools: TinyPNG.com, Squoosh.app, or ImageOptim
+
+### Naming
+- Use descriptive names: `collective-intelligence-diagram.jpg`
+- Avoid spaces: use hyphens instead
+- Keep lowercase
+
+---
+
+## Categories Explained
+
+Choose the category that best fits your post:
+
+- **Research Updates**: Progress on research projects, new findings
+- **Academic Reflections**: Personal thoughts on academic journey, PhD experience
+- **Tutorials**: How-to guides, explainers
+- **Insights**: Analysis, commentary on research topics
+- **Conference Notes**: Summaries from conferences or talks
+
+---
+
+## Tips for Great Blog Posts
+
+### Writing
+1. **Start strong**: Hook readers in the first paragraph
+2. **Use headings**: Break up long posts with descriptive headings
+3. **Be conversational**: Write like you're talking to a colleague
+4. **Show, don't just tell**: Use examples and stories
+5. **End with a call-to-action**: Invite discussion or questions
+
+### Formatting
+1. **Keep paragraphs short**: 3-4 sentences max
+2. **Use lists**: They're easy to scan
+3. **Add images**: Break up text visually
+4. **Bold key points**: Help readers scan
+5. **Link to sources**: Give credit and provide references
+
+### SEO-Friendly
+1. **Use keywords naturally**: In title, headings, and first paragraph
+2. **Write descriptive excerpts**: These appear in search results
+3. **Add alt text to images**: Helps with accessibility and SEO
+4. **Link to related posts**: Keeps readers engaged
+
+---
+
+## Common Issues & Troubleshooting
+
+### Post doesn't appear
+- Check `posts.json` for syntax errors (missing commas, brackets)
+- Verify the markdown file path is correct
+- Make sure the date format is correct (YYYY-MM-DD)
+
+### Images don't load
+- Check the image path is correct
+- Verify the image file exists in the specified folder
+- Make sure image filename matches exactly (case-sensitive!)
+- Use forward slashes `/` not backslashes `\`
+
+### Formatting looks wrong
+- Check your Markdown syntax
+- Leave blank lines between paragraphs
+- Make sure code blocks use triple backticks
+
+### JSON syntax errors
+- Every opening `{` needs a closing `}`
+- Every opening `[` needs a closing `]`
+- Use commas between entries (but not after the last one)
+- All text values need quotes `"like this"`
+- Use a JSON validator: jsonlint.com
+
+---
+
+## Complete Example: Adding a New Post
+
+Here's a complete example from start to finish:
+
+### 1. Create the Markdown file: `blog/posts/phd-first-year-reflections.md`
+
+```markdown
+# Reflections on My First Year as a PhD Student
+
+A year ago, I started my PhD journey at TU Dublin. Here's what I've learned so far.
+
+## The Good
+
+The intellectual freedom has been incredible. I can explore ideas deeply and follow interesting tangents.
+
+## The Challenging
+
+Time management is harder than expected. There's always more to read, write, and explore.
+
+## Key Lessons
+
+1. **Set boundaries**: It's easy to work all the time
+2. **Build community**: Connect with other PhD students
+3. **Celebrate small wins**: Progress isn't always obvious
+
+What's your experience been like?
+```
+
+### 2. Add image to `images/blog/phd-reflections.jpg`
+
+### 3. Update `blog/posts.json`:
+
+```json
+{
+  "posts": [
+    {
+      "id": "phd-first-year-reflections",
+      "title": "Reflections on My First Year as a PhD Student",
+      "date": "2025-11-01",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Academic Reflections",
+      "tags": ["PhD", "Academia", "Reflections"],
+      "excerpt": "Looking back on my first year as a PhD student—the good, the challenging, and key lessons learned.",
+      "image": "images/blog/phd-reflections.jpg",
+      "readingTime": "4 min read",
+      "content": "blog/posts/phd-first-year-reflections.md"
+    },
+    ... existing posts ...
+  ]
+}
+```
+
+### 4. Done!
+
+Your post is now live on the blog page.
+
+---
+
+## Advanced Tips
+
+### Internal Links
+Link to other pages on your site:
+```markdown
+Check out my [research page](../research.html) for more details.
+```
+
+### Footnotes (if needed)
+```markdown
+Some text with a footnote[^1]
+
+[^1]: This is the footnote content
+```
+
+### Tables (if needed)
+```markdown
+| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+```
+
+### Video Embeds
+Paste the video URL on its own line, or use HTML:
+```html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+```
+
+---
+
+## Updating Existing Posts
+
+To update an existing post:
+
+1. Edit the markdown file directly
+2. No need to update `posts.json` (unless changing title, date, etc.)
+3. Save and refresh—changes appear immediately
+
+---
+
+## Best Practices
+
+### Regular Posting
+- Aim for 1-2 posts per month
+- Consistency matters more than frequency
+- Quality over quantity
+
+### Content Ideas
+- Research updates and progress
+- Conference reflections
+- Paper summaries
+- Methodology tutorials
+- Career advice
+- Personal reflections
+
+### Engagement
+- End with questions to encourage discussion
+- Link to your social media
+- Respond to comments/messages about posts
+- Share on LinkedIn and Twitter
+
+---
+
+## Need Help?
+
+If you run into issues:
+
+1. **Check syntax**: Use a Markdown preview tool (dillinger.io)
+2. **Validate JSON**: Use jsonlint.com for posts.json
+3. **Check browser console**: Right-click > Inspect > Console for errors
+4. **Test locally**: Open blog.html in your browser before deploying
+
+---
+
+## Quick Reference Card
+
+**To add a new post:**
+1. ✍️ Write markdown file in `blog/posts/`
+2. 🖼️ Add featured image to `images/blog/`
+3. 📝 Add entry to `blog/posts.json`
+4. ✅ Test in browser
+
+**Date format:** `YYYY-MM-DD` (e.g., `2025-10-15`)
+
+**Image size:** 1200 x 600 pixels, < 200KB
+
+**Common categories:** Research Updates, Academic Reflections, Tutorials, Insights
+
+**Reading time:** ~200-250 words per minute
+
+---
+
+That's it! You're ready to start blogging. Happy writing! 🎉

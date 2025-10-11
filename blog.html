@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Azeez Adewale Hamzat</title>
+    <meta name="description" content="Academic blog by Azeez Hamzat covering collective intelligence research, PhD journey, and reflections on AI and society.">
+    <link rel="canonical" href="https://azeezhamzat.com/blog.html">
+    <link rel="alternate" type="application/rss+xml" title="Azeez Hamzat Blog RSS Feed" href="https://azeezhamzat.com/feed.xml">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header id="header" class="scrolled">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">Azeez Hamzat</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="docs/CV_Azeez_Hamzat.pdf" target="_blank" class="cv-link">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" style="padding-top: 100px;">
+        
+        <section class="container">
+            <h1 class="section-title">Blog</h1>
+            <p class="blog-intro">
+                Reflections on my academic journey, research insights, and thoughts on collective intelligence, AI, and the sociology of technology.
+            </p>
+
+            <!-- Search and Filter -->
+            <div class="blog-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="blog-search" placeholder="Search posts...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="Research Updates">Research</button>
+                    <button class="filter-btn" data-category="Academic Reflections">Reflections</button>
+                    <button class="filter-btn" data-category="Tutorials">Tutorials</button>
+                    <button class="filter-btn" data-category="Insights">Insights</button>
+                </div>
+            </div>
+
+            <!-- Blog Grid (will be populated by JavaScript) -->
+            <div id="blog-grid" class="blog-grid">
+                <!-- Blog cards will be dynamically inserted here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results" class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <p>No blog posts found. Try adjusting your search or filter.</p>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading posts...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <p class="copyright">&copy; 2025 Azeez Adewale Hamzat. All rights reserved.</p>
+            </div>
+            <div class="footer-section footer-links">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <p class="footer-note">Built with HTML, CSS, JavaScript</p>
+                <p class="last-updated">Last updated: October 2025</p>
+            </div>
+        </div>
+        <button id="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

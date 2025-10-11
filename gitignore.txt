@@ -1,0 +1,75 @@
+# .gitignore for personal academic website
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor/IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Backup Files
+*.bak
+*.backup
+*-backup/
+website-backup-*/
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Node modules (if you ever add build tools)
+node_modules/
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# Log Files
+*.log
+logs/
+
+# Compressed Files (keep originals)
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Personal Notes (if you keep them in the repo)
+notes.txt
+todo.txt
+private/
+
+# Large Media Files (optional - only if too large for git)
+# *.mp4
+# *.mov
+# *.psd
+
+# Generated/Build Files (if you add build processes later)
+dist/
+build/
+.next/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Netlify
+.netlify/
+
+# Comments for you:
+# This file tells Git which files NOT to track
+# Add any personal files or large files you don't want in version control

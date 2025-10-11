@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Azeez Adewale Hamzat</title>
+    <meta name="description" content="Get in touch with Azeez Hamzat for research collaborations, speaking engagements, and academic discussions.">
+    <link rel="canonical" href="https://azeezhamzat.com/contact.html">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .contact-page {
+            padding-top: 100px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .contact-form-section,
+        .contact-info-section {
+            background: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-dark-blue);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid var(--color-light-gray);
+            border-radius: var(--border-radius-small);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .input-error {
+            border-color: #e74c3c !important;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: var(--font-size-small);
+            margin-top: var(--spacing-xs);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: var(--color-light-gray);
+            border-radius: var(--border-radius-small);
+        }
+        
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            min-width: 30px;
+        }
+        
+        .contact-info-item div h4 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.125rem;
+        }
+        
+        .contact-info-item div p {
+            margin: 0;
+            color: var(--color-medium-gray);
+        }
+        
+        .contact-info-item div a {
+            color: var(--color-primary);
+            word-break: break-all;
+        }
+        
+        .social-links-contact {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        
+        .social-links-contact a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--color-light-gray);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            transition: all var(--transition-base);
+        }
+        
+        .social-links-contact a:hover {
+            background: var(--gradient-primary);
+            color: var(--color-white);
+            transform: translateY(-4px);
+        }
+        
+        .collaboration-section {
+            background: var(--gradient-hero);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .collaboration-section h3 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .collaboration-card {
+            background: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-small);
+            text-align: center;
+        }
+        
+        .collaboration-card i {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .collaboration-card h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .collaboration-card p {
+            font-size: var(--font-size-small);
+            color: var(--color-medium-gray);
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form-section,
+            .contact-info-section {
+                padding: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header id="header" class="scrolled">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">Azeez Hamzat</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="docs/CV_Azeez_Hamzat.pdf" target="_blank" class="cv-link">CV</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="contact-page">
+        
+        <section class="container">
+            <h1 class="section-title">Get in Touch</h1>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-xl); font-size: 1.125rem; color: var(--color-medium-gray);">
+                I welcome opportunities for research collaboration, academic discussions, speaking engagements, and mentoring. Feel free to reach out!
+            </p>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Send a Message</h2>
+                    <p style="color: var(--color-medium-gray); margin-bottom: var(--spacing-lg);">
+                        Fill out the form below and I'll get back to you as soon as possible.
+                    </p>
+                    
+                    <!-- IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree form ID -->
+                    <form id="contact-form" action="https://formspree.io/f/xwprrjjj" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name <span style="color: #e74c3c;">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span style="color: #e74c3c;">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="">Select a topic...</option>
+                                <option value="research-collaboration">Research Collaboration</option>
+                                <option value="speaking-engagement">Speaking Engagement</option>
+                                <option value="academic-discussion">Academic Discussion</option>
+                                <option value="mentoring">Mentoring</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization/Institution (Optional)</label>
+                            <input type="text" id="organization" name="organization">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span style="color: #e74c3c;">*</span></label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="_gotcha" style="display:none">
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:azeezhamzat@yahoo.com">azeezhamzat@yahoo.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Dublin, Ireland</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h4>Institution</h4>
+                            <p>TCD-TUD Centre for Sociology of Humans and Machines (SOHAM)</p>
+                            <p>Technological University Dublin</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-id-card"></i>
+                        <div>
+                            <h4>ORCID</h4>
+                            <p><a href="https://orcid.org/0009-0007-8804-0283" target="_blank" rel="noopener noreferrer">0009-0007-8804-0283</a></p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Connect on Social Media</h3>
+                    <div class="social-links-contact">
+                        <a href="https://linkedin.com/in/azeezhamzat" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/Azeez_A_Hamzat" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://orcid.org/0009-0007-8804-0283" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=6CErkzgAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Azeez-Hamzat" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate">
+                            <i class="fab fa-researchgate"></i>
+                        </a>
+                        <a href="https://github.com/azeezhamzat" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collaboration Opportunities -->
+            <div class="collaboration-section">
+                <h3>Collaboration Opportunities</h3>
+                <div class="collaboration-grid">
+                    <div class="collaboration-card">
+                        <i class="fas fa-microscope"></i>
+                        <h4>Research Collaborations</h4>
+                        <p>Joint projects on collective intelligence and AI</p>
+                    </div>
+                    <div class="collaboration-card">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h4>Speaking Engagements</h4>
+                        <p>Conferences and workshops</p>
+                    </div>
+                    <div class="collaboration-card">
+                        <i class="fas fa-comments"></i>
+                        <h4>Academic Discussions</h4>
+                        <p>Knowledge exchange and conversations</p>
+                    </div>
+                    <div class="collaboration-card">
+                        <i class="fas fa-user-graduate"></i>
+                        <h4>Mentoring</h4>
+                        <p>Supporting aspiring researchers</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <p class="copyright">&copy; 2025 Azeez Adewale Hamzat. All rights reserved.</p>
+            </div>
+            <div class="footer-section footer-links">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <p class="footer-note">Built with HTML, CSS, JavaScript</p>
+                <p class="last-updated">Last updated: October 2025</p>
+            </div>
+        </div>
+        <button id="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

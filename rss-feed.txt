@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azeez Adewale Hamzat - Blog</title>
+    <link>https://azeezhamzat.com/blog.html</link>
+    <description>Academic blog by Azeez Hamzat covering collective intelligence research, PhD journey, and reflections on AI and society</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Oct 2025 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://azeezhamzat.com/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <!-- Blog Post 1 -->
+    <item>
+      <title>Starting a PhD: First Impressions and Expectations</title>
+      <link>https://azeezhamzat.com/blog/post.html?id=starting-phd-2025</link>
+      <guid>https://azeezhamzat.com/blog/post.html?id=starting-phd-2025</guid>
+      <pubDate>Tue, 01 Oct 2025 00:00:00 GMT</pubDate>
+      <description>Reflections on beginning my doctoral journey at TU Dublin and what the first few months have been like. From application to acceptance, and the excitement of starting this new chapter.</description>
+      <author>azeezhamzat@yahoo.com (Azeez Adewale Hamzat)</author>
+      <category>Academic Reflections</category>
+    </item>
+    
+    <!-- Blog Post 2 -->
+    <item>
+      <title>From Nigeria to Morocco to Ireland: My Academic Journey</title>
+      <link>https://azeezhamzat.com/blog/post.html?id=academic-journey</link>
+      <guid>https://azeezhamzat.com/blog/post.html?id=academic-journey</guid>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 GMT</pubDate>
+      <description>A personal reflection on my academic journey across three countries and diverse intellectual traditions, from agricultural science in Nigeria to collective intelligence in Morocco, and now sociology of AI in Ireland.</description>
+      <author>azeezhamzat@yahoo.com (Azeez Adewale Hamzat)</author>
+      <category>Academic Reflections</category>
+    </item>
+    
+    <!-- Blog Post 3 -->
+    <item>
+      <title>Why Collective Intelligence Matters: A Primer</title>
+      <link>https://azeezhamzat.com/blog/post.html?id=collective-intelligence-primer</link>
+      <guid>https://azeezhamzat.com/blog/post.html?id=collective-intelligence-primer</guid>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate>
+      <description>An introduction to collective intelligence concepts and their importance in addressing complex challenges. Understanding how groups can be smarter than individuals.</description>
+      <author>azeezhamzat@yahoo.com (Azeez Adewale Hamzat)</author>
+      <category>Insights</category>
+    </item>
+    
+  </channel>
+</rss>
+
+<!-- 
+  UPDATE THIS FILE when you add new blog posts
+  
+  TO ADD A NEW POST:
+  1. Copy an <item> block
+  2. Update the title, link, guid, pubDate, description, and category
+  3. Keep posts in reverse chronological order (newest first)
+  
+  DATE FORMAT: 
+  Day, DD Mon YYYY HH:MM:SS GMT
+  Example: Tue, 01 Oct 2025 00:00:00 GMT
+-->

@@ -1,0 +1,435 @@
+# Website Update Guide
+
+This guide explains how to update different types of content on your website.
+
+## 📝 Quick Reference
+
+| What to Update | File to Edit | Difficulty |
+|----------------|--------------|------------|
+| Blog posts | `blog/posts.json` + markdown | ⭐ Easy |
+| CV | Replace `docs/CV_Azeez_Hamzat.pdf` | ⭐ Easy |
+| Contact info | Edit HTML files | ⭐⭐ Medium |
+| Research projects | `research.html` | ⭐⭐ Medium |
+| Publications | `publications.html` | ⭐⭐ Medium |
+| About text | `index.html` | ⭐⭐ Medium |
+| Images | Replace in `images/` folder | ⭐ Easy |
+| Styles/colors | `css/variables.css` | ⭐⭐⭐ Advanced |
+
+---
+
+## 📄 Updating Your CV
+
+**Super easy!** Just replace the file:
+
+1. Export your updated CV as PDF
+2. Name it exactly: `CV_Azeez_Hamzat.pdf`
+3. Replace the file in the `docs/` folder
+4. Done! The download button automatically uses the new file
+
+**Tips:**
+- Keep filename the same for automatic linking
+- Optimize PDF size (compress if > 5MB)
+- Ensure PDF is not password-protected
+
+---
+
+## ✍️ Adding/Updating Blog Posts
+
+See the detailed [BLOG_GUIDE.md](BLOG_GUIDE.md) for complete instructions.
+
+**Quick summary:**
+1. Write post in Markdown (`blog/posts/your-post.md`)
+2. Add entry to `blog/posts.json`
+3. Add featured image to `images/blog/`
+
+---
+
+## 🔬 Updating Research Content
+
+### Adding a New Research Project
+
+1. Open `research.html`
+2. Find the section: `<!-- Work in Progress -->` or `<!-- Completed Projects -->`
+3. Copy an existing `<article class="project-item">` block
+4. Update the content:
+
+```html
+<article class="project-item">
+    <div class="project-header">
+        <h4>Your Project Title</h4>
+        <span class="project-status in-progress">In Progress</span>
+    </div>
+    <p class="project-meta">
+        <i class="fas fa-calendar"></i> 2025 | 
+        <i class="fas fa-flask"></i> Your Method
+    </p>
+    <p class="project-description">
+        Description of your project...
+    </p>
+    <div class="project-tags">
+        <span class="tag">Tag 1</span>
+        <span class="tag">Tag 2</span>
+    </div>
+</article>
+```
+
+### Updating Research Interests
+
+1. Open `research.html`
+2. Find: `<section class="research-interests">`
+3. Edit the text within `<article class="interest-card">` blocks
+
+---
+
+## 📚 Updating Publications
+
+### Adding a New Publication
+
+1. Open `publications.html`
+2. Find the appropriate section (Preprints, Works in Progress, etc.)
+3. Copy an existing `<article class="publication-item">` block
+4. Update with your publication details:
+
+```html
+<article class="publication-item">
+    <h3>Your Publication Title</h3>
+    <p class="publication-meta">
+        <span class="author">Hamzat, A.A.</span> (2025). 
+        <em>Journal Name</em>. 
+        DOI: <a href="https://doi.org/..." target="_blank">10.xxxx/xxxxx</a>
+    </p>
+    <p>Brief description or abstract...</p>
+    <div class="card-tags">
+        <span class="tag">Keyword 1</span>
+        <span class="tag">Keyword 2</span>
+    </div>
+</article>
+```
+
+### Updating Publication Status
+
+When a work-in-progress is published:
+1. Move it from "Works in Progress" section to "Preprints" or appropriate section
+2. Update the DOI link
+3. Change any status badges
+
+---
+
+## 🏠 Updating Homepage Content
+
+### About Section
+
+1. Open `index.html`
+2. Find: `<section id="about" class="about-section">`
+3. Edit the paragraph text within `<p>` tags
+4. Keep it to 2-3 paragraphs for best appearance
+
+### Research Highlights Cards
+
+1. Find: `<section id="research-highlights">`
+2. Each card is in an `<article class="research-card">` block
+3. Update:
+   - Image: `<img src="images/research/your-image.jpg">`
+   - Title: `<h3>Your Title</h3>`
+   - Description: Within the `<p>` tag
+   - Tags: Within `<span class="tag">` elements
+
+---
+
+## 📧 Updating Contact Information
+
+### Email Address
+
+Search all HTML files for `azeezhamzat@yahoo.com` and replace with new email.
+
+Files to update:
+- `index.html`
+- `contact.html`
+- `blog/post.html`
+- All blog post markdown files (bottom section)
+
+### Social Media Links
+
+Search for these and update URLs:
+- LinkedIn: `linkedin.com/in/azeezhamzat`
+- Twitter: `twitter.com/Azeez_A_Hamzat`
+- GitHub: `github.com/azeezhamzat`
+- Google Scholar: Update the profile URL
+- ORCID: `orcid.org/0009-0007-8804-0283`
+
+### Contact Form
+
+If you get a new Formspree form ID:
+1. Open `contact.html`
+2. Find: `<form action="https://formspree.io/f/YOUR_FORM_ID"`
+3. Replace `YOUR_FORM_ID` with your actual form ID
+
+---
+
+## 🖼️ Updating Images
+
+### Profile Photo
+
+1. Prepare image: 800 x 800 pixels, < 200KB
+2. Name it: `profile.jpg`
+3. Replace in `images/` folder
+
+### Research/Blog Images
+
+1. Optimize image (< 200KB recommended)
+2. Save with descriptive name (e.g., `collective-intelligence.jpg`)
+3. Place in appropriate folder:
+   - Research: `images/research/`
+   - Blog: `images/blog/`
+4. Update HTML references if filename changed
+
+### Institution Logos
+
+1. Get official logo from institution website
+2. Save as PNG (with transparency) or JPG
+3. Resize to ~200px width
+4. Save in `images/logos/`
+5. Update references in HTML
+
+---
+
+## 🎨 Changing Colors and Styles
+
+### Changing Color Scheme
+
+1. Open `css/variables.css`
+2. Update these main colors:
+
+```css
+:root {
+  --color-primary: #667eea;      /* Your main brand color */
+  --color-accent: #764ba2;       /* Secondary brand color */
+  --color-dark-blue: #2c3e50;    /* Dark text color */
+}
+```
+
+3. Save and refresh browser
+
+### Changing Fonts
+
+1. Go to [Google Fonts](https://fonts.google.com)
+2. Select your fonts
+3. Copy the `<link>` code
+4. Replace font links in all HTML `<head>` sections
+5. Update font families in `css/variables.css`:
+
+```css
+--font-heading: 'YourFont', sans-serif;
+--font-body: 'YourFont', sans-serif;
+```
+
+---
+
+## 🔍 SEO Updates
+
+### Meta Descriptions
+
+Each page has meta descriptions. Update them if page content changes significantly:
+
+```html
+<meta name="description" content="Your updated description here">
+```
+
+Keep descriptions:
+- 150-160 characters
+- Include relevant keywords
+- Accurately describe page content
+
+### Updating Sitemap
+
+When you add new pages or blog posts:
+
+1. Open `sitemap.xml`
+2. Add new `<url>` entry:
+
+```xml
+<url>
+  <loc>https://azeezhamzat.com/your-new-page.html</loc>
+  <lastmod>2025-10-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+```
+
+3. Update `<lastmod>` dates for changed pages
+
+### Updating RSS Feed
+
+When you add blog posts:
+
+1. Open `feed.xml`
+2. Add new `<item>` at the top:
+
+```xml
+<item>
+  <title>Your Post Title</title>
+  <link>https://azeezhamzat.com/blog/post.html?id=your-post-id</link>
+  <guid>https://azeezhamzat.com/blog/post.html?id=your-post-id</guid>
+  <pubDate>Mon, 15 Oct 2025 00:00:00 GMT</pubDate>
+  <description>Your post description...</description>
+  <author>azeezhamzat@yahoo.com (Azeez Adewale Hamzat)</author>
+  <category>Your Category</category>
+</item>
+```
+
+---
+
+## 📱 Testing Updates
+
+After making changes, test on:
+
+### Browsers
+- Chrome
+- Firefox
+- Safari (if on Mac)
+- Edge
+
+### Devices
+- Desktop
+- Tablet
+- Mobile phone
+
+### What to Check
+- [ ] All links work
+- [ ] Images load correctly
+- [ ] Text is readable
+- [ ] No broken layouts
+- [ ] Contact form works
+- [ ] Navigation menu works on mobile
+
+### Testing Tools
+- Responsively App (free tool for testing multiple devices)
+- Browser DevTools (F12) - Device Toolbar
+- Real devices when possible
+
+---
+
+## 🚨 Common Mistakes to Avoid
+
+### 1. Breaking HTML
+- Always close tags: `<div>...</div>`
+- Match opening and closing tags
+- Don't nest tags incorrectly
+
+### 2. Case-Sensitive Filenames
+- `Image.jpg` ≠ `image.jpg`
+- Use lowercase for consistency
+- Match filenames exactly in HTML
+
+### 3. Forgetting to Update Multiple Places
+Some info appears in multiple files:
+- Email address
+- Social media links
+- Institution name
+
+Search all files and update everywhere!
+
+### 4. Large Image Files
+- Compress images before uploading
+- Target < 200KB per image
+- Use tools: TinyPNG, Squoosh, ImageOptim
+
+### 5. Not Testing After Changes
+Always test your changes before deploying:
+- Open pages in browser
+- Check console for errors (F12)
+- Test on mobile view
+
+---
+
+## 💾 Backup Strategy
+
+Before making major changes:
+
+1. **Copy the entire website folder**
+2. **Name it with date:** `website-backup-2025-10-15`
+3. **Make your changes**
+4. **Test thoroughly**
+5. **Deploy if everything works**
+
+---
+
+## 🔄 Deployment After Updates
+
+After updating content:
+
+### GitHub Pages
+```bash
+git add .
+git commit -m "Updated research projects"
+git push
+```
+
+### Netlify (with GitHub)
+Changes deploy automatically after git push!
+
+### Netlify (manual)
+Drag updated folder to Netlify dashboard
+
+### Vercel
+Similar to Netlify - auto-deploys from GitHub
+
+---
+
+## 📋 Monthly Maintenance Checklist
+
+Do these tasks monthly:
+
+- [ ] Check all links (use a link checker tool)
+- [ ] Update CV if needed
+- [ ] Add any new publications
+- [ ] Write a blog post (aim for 1-2 per month)
+- [ ] Check contact form is working
+- [ ] Review analytics (if setup)
+- [ ] Update "Last updated" date in footer
+
+---
+
+## 🆘 Getting Help
+
+### Browser Console
+Most errors show in browser console:
+1. Press F12
+2. Click "Console" tab
+3. Look for red error messages
+
+### HTML Validator
+Check if your HTML is valid:
+- https://validator.w3.org
+- Paste your HTML or enter URL
+
+### JSON Validator
+For `posts.json`:
+- https://jsonlint.com
+- Paste your JSON to find errors
+
+---
+
+## 📞 Still Stuck?
+
+If you need help:
+1. Check error messages in browser console
+2. Review the documentation files
+3. Search for the error message online
+4. Check if files are in the right folders
+5. Verify all filenames match exactly (case-sensitive!)
+
+---
+
+## 🎯 Pro Tips
+
+1. **Keep backups** - Copy the website folder before major changes
+2. **Test locally first** - Open files in browser before deploying
+3. **Use descriptive names** - Name files clearly: `research-2025.jpg` not `img1.jpg`
+4. **Compress images** - Smaller files = faster website
+5. **Update regularly** - Small updates are easier than big overhauls
+6. **Document changes** - Keep notes on what you changed and when
+
+---
+
+Happy updating! 🚀

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://azeezhamzat.com/</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Research Page -->
+  <url>
+    <loc>https://azeezhamzat.com/research.html</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Publications Page -->
+  <url>
+    <loc>https://azeezhamzat.com/publications.html</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog Index -->
+  <url>
+    <loc>https://azeezhamzat.com/blog.html</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://azeezhamzat.com/contact.html</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://azeezhamzat.com/blog/post.html?id=starting-phd-2025</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://azeezhamzat.com/blog/post.html?id=academic-journey</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://azeezhamzat.com/blog/post.html?id=collective-intelligence-primer</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>
+
+<!-- 
+  UPDATE THIS FILE WHEN:
+  - You add new pages
+  - You add new blog posts
+  - You make major updates to existing pages
+  
+  INSTRUCTIONS:
+  1. Copy an existing <url> block
+  2. Update the <loc> with the new page URL
+  3. Update <lastmod> with current date (YYYY-MM-DD)
+  4. Set appropriate <changefreq> and <priority>
+  
+  CHANGE FREQUENCY GUIDELINES:
+  - always: Changes with every access
+  - hourly: Changes hourly
+  - daily: Changes daily
+  - weekly: Changes weekly (good for blog index)
+  - monthly: Changes monthly (good for main pages)
+  - yearly: Changes yearly (good for blog posts)
+  - never: Archived content
+  
+  PRIORITY GUIDELINES:
+  - 1.0: Homepage
+  - 0.8-0.9: Main pages (Research, Publications, Blog)
+  - 0.6-0.7: Secondary pages (Contact, individual blog posts)
+  - 0.4-0.5: Archived or less important content
+-->

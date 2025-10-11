@@ -1,0 +1,100 @@
+{
+  "posts": [
+    {
+      "id": "why-smart-teams-make-bad-decisions",
+      "title": "Why Smart Teams Make Bad Decisions: Understanding Social Dominance in Groups",
+      "date": "2025-10-08",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Research Updates",
+      "tags": ["Collective Intelligence", "Group Decision-Making", "Bias", "Organizational Behavior"],
+      "excerpt": "Drawing on research and experience facilitating international partnerships, I explore how social dynamics systematically favor certain voices while silencing others—and what we can do about it.",
+      "image": "images/blog/group-dynamics.jpg",
+      "readingTime": "8 min read",
+      "content": "blog/posts/why-smart-teams-make-bad-decisions.md"
+    },
+    {
+      "id": "letters-across-time",
+      "title": "Letters Across Time: Correspondence with Past and Future Selves",
+      "date": "2025-03-23",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Personal Development",
+      "tags": ["Personal Growth", "Reflection"],
+      "excerpt": "There's something profoundly intimate about writing a letter to yourself. The concept of having an honest conversation with yourself across time opens doorways to reflection that other forms of introspection rarely achieve.",
+      "image": "images/blog/dear-me.jpeg",
+      "readingTime": "5 min read",
+      "content": "blog/posts/letters-across-time.md"
+    },
+    {
+      "id": "bridging-human-machine-intelligence",
+      "title": "Bridging Human and Machine Intelligence: The Evolving Partnership",
+      "date": "2025-05-01",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Insights",
+      "tags": ["AI Ethics", "Human-AI Collaboration", "Technology", "Research"],
+      "excerpt": "Exploring how humans and AI can work together effectively, combining complementary strengths to address challenges beyond the reach of either alone.",
+      "image": "images/blog/human-ai.jpg",
+      "readingTime": "5 min read",
+      "content": "blog/posts/bridging-human-machine-intelligence.md"
+    },
+    {
+      "id": "decision-making-under-uncertainty",
+      "title": "Decision-Making Under Deep Uncertainty: Beyond Prediction",
+      "date": "2025-04-28",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Insights",
+      "tags": ["Decision Science", "Uncertainty", "Risk Management", "Philosophy"],
+      "excerpt": "Exploring how to make wise decisions when prediction fails—embracing uncertainty rather than trying to eliminate it through better forecasting.",
+      "image": "images/blog/decision-uncertainty.jpeg",
+      "readingTime": "6 min read",
+      "content": "blog/posts/decision-making-under-uncertainty.md"
+    },
+    {
+      "id": "rethinking-africa-health-systems",
+      "title": "Rethinking Africa's Health Systems for Sustainable Resilience",
+      "date": "2025-04-15",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Insights",
+      "tags": ["Health Systems", "Africa", "Healthcare", "Resilience"],
+      "excerpt": "Building stronger, more responsive healthcare infrastructure across the continent — addressing systemic gaps, workforce challenges, and local production needs.",
+      "image": "images/blog/rethinking-africa-health-systems.png",
+      "readingTime": "12 min read",
+      "content": "blog/posts/rethinking-africa-health-systems.md"
+    },
+    {
+      "id": "when-the-map-fails-academic-purpose",
+      "title": "When the Map Fails: Navigating Academic Purpose",
+      "date": "2025-04-23",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Reflections",
+      "tags": ["Academic Life", "Purpose", "Reflection", "PhD Journey", "Meaning"],
+      "excerpt": "A reflective exploration of academic disorientation, existential uncertainty in scholarly life, and finding deeper meaning beyond external metrics and achievements.",
+      "image": "images/blog/compass.webp",
+      "readingTime": "12 min read",
+      "content": "blog/posts/when-the-map-fails.md"
+    },
+    {
+      "id": "collective-intelligence-primer",
+      "title": "Why Collective Intelligence Matters: A Primer",
+      "date": "2025-09-01",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Insights",
+      "tags": ["Collective Intelligence", "Theory", "Group Decision-Making"],
+      "excerpt": "An introduction to collective intelligence concepts and their importance in addressing complex challenges. Understanding how groups can be smarter than individuals.",
+      "image": "images/blog/collective-intelligence.webp",
+      "readingTime": "6 min read",
+      "content": "blog/posts/collective-intelligence-primer.md"
+    },
+    {
+      "id": "migrant-or-traveller",
+      "title": "Are you a Migrant or a Traveller?: Navigating Life's Uncertainties",
+      "date": "2024-11-09",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Systems Thinking",
+      "tags": ["Systems Thinking", "Personal Growth", "Futures Literacy", "Mindset"],
+      "excerpt": "In life's inevitable transitions, two approaches emerge: moving reactively as a migrant, or moving intentionally as a traveller. Which mindset guides your journey?",
+      "image": "images/blog/traveller-migrant.jpg",
+      "readingTime": "7 min read",
+      "content": "blog/posts/migrant-or-traveller.md"
+    }
+  ]
+}

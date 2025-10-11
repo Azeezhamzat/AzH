@@ -1,0 +1,348 @@
+# Deployment Guide
+
+This guide covers how to deploy your website to various hosting platforms. All options are free and work with your custom domain (azeezhamzat.com).
+
+## Prerequisites
+
+Before deploying:
+- [ ] Test the site locally (open index.html in browser)
+- [ ] Add your actual content and images
+- [ ] Configure Formspree for the contact form
+- [ ] Optimize and compress all images
+- [ ] Review all links and ensure they work
+
+---
+
+## Option 1: GitHub Pages (Recommended for Beginners)
+
+### Step 1: Create GitHub Account
+1. Go to https://github.com
+2. Sign up for a free account
+
+### Step 2: Create Repository
+1. Click the "+" icon in top right > "New repository"
+2. Name it: `azeezhamzat-website` (or any name)
+3. Set to Public
+4. Don't initialize with README (you have one)
+5. Click "Create repository"
+
+### Step 3: Upload Files
+**Option A: GitHub Web Interface (Easiest)**
+1. In your new repository, click "uploading an existing file"
+2. Drag all your website files into the upload area
+3. Add commit message: "Initial website upload"
+4. Click "Commit changes"
+
+**Option B: Git Command Line**
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/REPO-NAME.git
+git push -u origin main
+```
+
+### Step 4: Enable GitHub Pages
+1. Go to repository Settings > Pages
+2. Under "Source", select "main" branch
+3. Click Save
+4. Your site will be live at: `https://YOUR-USERNAME.github.io/REPO-NAME/`
+
+### Step 5: Connect Custom Domain
+1. In Settings > Pages, enter your custom domain: `azeezhamzat.com`
+2. Create a CNAME file in your repository containing: `azeezhamzat.com`
+3. In your domain registrar (where you bought the domain):
+   - Add an A record pointing to:
+     - 185.199.108.153
+     - 185.199.109.153
+     - 185.199.110.153
+     - 185.199.111.153
+   - Add a CNAME record: `www` pointing to `YOUR-USERNAME.github.io`
+4. Wait 24-48 hours for DNS propagation
+5. Enable "Enforce HTTPS" in GitHub Pages settings
+
+---
+
+## Option 2: Netlify (Recommended for Best Performance)
+
+### Step 1: Create Account
+1. Go to https://netlify.com
+2. Sign up (can use GitHub account)
+
+### Step 2: Deploy Site
+
+**Option A: Drag and Drop (Easiest)**
+1. Log into Netlify
+2. Drag your entire website folder onto the deployment area
+3. Site is live immediately at: `random-name.netlify.app`
+
+**Option B: Connect to GitHub**
+1. Push code to GitHub (see GitHub Pages steps above)
+2. In Netlify, click "New site from Git"
+3. Connect to GitHub
+4. Select your repository
+5. Click "Deploy site"
+
+### Step 3: Connect Custom Domain
+1. In Netlify site settings, go to "Domain settings"
+2. Click "Add custom domain"
+3. Enter: `azeezhamzat.com`
+4. Netlify will provide DNS records
+5. Add these records in your domain registrar:
+   - Type: A, Name: @, Value: (provided by Netlify)
+   - Type: CNAME, Name: www, Value: (provided by Netlify)
+6. Wait for DNS propagation (usually 1-24 hours)
+7. SSL certificate will be automatically provisioned
+
+### Netlify Advantages
+- Automatic HTTPS
+- Continuous deployment (updates automatically when you push to GitHub)
+- Form handling built-in (alternative to Formspree)
+- Better performance with global CDN
+
+---
+
+## Option 3: Vercel
+
+### Step 1: Create Account
+1. Go to https://vercel.com
+2. Sign up (can use GitHub account)
+
+### Step 2: Deploy
+
+**Option A: Vercel CLI**
+```bash
+npm install -g vercel
+cd your-website-folder
+vercel
+```
+
+**Option B: Connect to GitHub**
+1. Push code to GitHub
+2. In Vercel, click "New Project"
+3. Import your GitHub repository
+4. Click "Deploy"
+
+### Step 3: Custom Domain
+1. In Project Settings > Domains
+2. Add: `azeezhamzat.com` and `www.azeezhamzat.com`
+3. Configure DNS at your registrar as instructed by Vercel
+4. Wait for propagation
+
+---
+
+## Domain Configuration
+
+Regardless of hosting platform, you'll need to configure DNS. Here's how:
+
+### Where to Configure DNS
+Your domain registrar (where you bought azeezhamzat.com):
+- Namecheap
+- GoDaddy
+- Google Domains
+- Cloudflare
+- etc.
+
+### Typical DNS Records
+
+**For GitHub Pages:**
+```
+Type: A      Name: @      Value: 185.199.108.153
+Type: A      Name: @      Value: 185.199.109.153
+Type: A      Name: @      Value: 185.199.110.153
+Type: A      Name: @      Value: 185.199.111.153
+Type: CNAME  Name: www    Value: YOUR-USERNAME.github.io
+```
+
+**For Netlify/Vercel:**
+Follow the specific DNS instructions provided in their dashboards.
+
+### DNS Propagation
+- Usually takes 1-24 hours
+- Sometimes up to 48 hours
+- Check status: https://dnschecker.org
+
+---
+
+## Post-Deployment Checklist
+
+After deploying, verify:
+
+- [ ] Homepage loads correctly
+- [ ] All navigation links work
+- [ ] Images display properly
+- [ ] Blog posts load
+- [ ] Contact form works (test it!)
+- [ ] HTTPS is enabled (https://azeezhamzat.com)
+- [ ] www version redirects properly
+- [ ] Mobile view looks good
+- [ ] All social media links work
+- [ ] CV download works
+
+---
+
+## Updating Your Site
+
+### GitHub Pages
+1. Edit files locally
+2. Upload changed files to GitHub (or use git push)
+3. Changes go live in 1-2 minutes
+
+### Netlify/Vercel (with GitHub integration)
+1. Edit files locally
+2. Commit and push to GitHub
+3. Automatic deployment triggers
+4. Live in 30-60 seconds
+
+### Netlify/Vercel (manual)
+1. Edit files locally
+2. Drag updated folder to Netlify/Vercel
+3. Or use CLI: `netlify deploy --prod` or `vercel --prod`
+
+---
+
+## Contact Form Setup
+
+### Using Formspree (Recommended)
+
+1. Go to https://formspree.io
+2. Sign up for free account
+3. Create a new form
+4. Copy your form endpoint
+5. In `contact.html`, replace:
+   ```html
+   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+   ```
+6. Test the form!
+
+### Using Netlify Forms (if hosting on Netlify)
+
+1. Add `netlify` attribute to form:
+   ```html
+   <form name="contact" method="POST" data-netlify="true">
+   ```
+2. Deploy to Netlify
+3. Form submissions appear in Netlify dashboard
+
+---
+
+## SSL/HTTPS Setup
+
+### GitHub Pages
+- Enable "Enforce HTTPS" in Settings > Pages
+- May take 24 hours after custom domain is configured
+
+### Netlify/Vercel
+- Automatic SSL certificate provisioning
+- Usually ready within minutes of domain configuration
+
+---
+
+## Analytics Setup (Optional)
+
+### Plausible Analytics (Privacy-Friendly)
+1. Sign up at https://plausible.io
+2. Add your domain
+3. Get the script tag
+4. Add before `</head>` in all HTML files:
+   ```html
+   <script defer data-domain="azeezhamzat.com" src="https://plausible.io/js/script.js"></script>
+   ```
+
+### Google Analytics (if preferred)
+1. Create account at https://analytics.google.com
+2. Set up property for your website
+3. Get tracking ID
+4. Add tracking code before `</head>` in all HTML files
+
+---
+
+## Troubleshooting
+
+### Site not loading
+- Check DNS configuration
+- Wait for DNS propagation (24-48 hours)
+- Verify files uploaded correctly
+- Check browser console for errors
+
+### Images not displaying
+- Check file paths (case-sensitive!)
+- Verify images uploaded to correct folder
+- Check image file sizes (compress if > 200KB)
+
+### Form not working
+- Verify Formspree endpoint is correct
+- Check that email address is correct
+- Test form submission
+- Check spam folder for form emails
+
+### Custom domain not working
+- Double-check DNS records
+- Wait for propagation
+- Try in incognito mode (clears cache)
+- Use DNS checker: https://dnschecker.org
+
+---
+
+## Performance Optimization
+
+After deployment, check performance:
+
+### Tools
+- Google PageSpeed Insights: https://pagespeed.web.dev
+- GTmetrix: https://gtmetrix.com
+- WebPageTest: https://www.webpagetest.org
+
+### Optimization Checklist
+- [ ] Compress all images (TinyPNG.com)
+- [ ] Enable HTTPS
+- [ ] Minimize redirects
+- [ ] Enable caching (automatic on Netlify/Vercel)
+- [ ] Use CDN (automatic on Netlify/Vercel)
+
+---
+
+## Backup Strategy
+
+### Regular Backups
+1. Keep local copy of all files
+2. Push to GitHub regularly (serves as backup)
+3. Download database/content periodically
+4. Export blog posts (they're just markdown files!)
+
+### Version Control
+Use Git to track changes:
+```bash
+git add .
+git commit -m "Updated blog post"
+git push
+```
+
+---
+
+## Need Help?
+
+### Resources
+- GitHub Pages Docs: https://docs.github.com/pages
+- Netlify Docs: https://docs.netlify.com
+- Vercel Docs: https://vercel.com/docs
+- DNS Help: https://dnschecker.org
+
+### Common Issues
+Check browser console (F12) for error messages, which usually point to the problem.
+
+---
+
+## Recommended: Netlify
+
+For best results, I recommend **Netlify** because:
+- ✅ Easiest setup
+- ✅ Automatic HTTPS
+- ✅ Global CDN (fast worldwide)
+- ✅ Continuous deployment
+- ✅ Free tier is generous
+- ✅ Built-in form handling
+- ✅ Excellent performance
+
+Good luck with your deployment! 🚀

@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Ethics in Collective Decision Making | Azeez Adewale Hamzat</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Exploring the ethical implications of using AI to facilitate group decisions and the responsibility we have in designing bias-free collective intelligence systems.">
+    <meta name="keywords" content="AI Ethics, Collective Decision Making, Algorithmic Fairness, AI Bias, Responsible AI, Technology Ethics, Group Intelligence, AI Governance">
+    <meta name="author" content="Azeez Adewale Hamzat">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="AI Ethics in Collective Decision Making | Azeez Adewale Hamzat">
+    <meta property="og:description" content="Exploring the ethical implications of using AI to facilitate group decisions and the responsibility we have in designing bias-free collective intelligence systems.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://azeezhamzat.com/ai-ethics-collective-decision-making.html">
+    <meta property="article:author" content="Azeez Adewale Hamzat">
+    <meta property="article:published_time" content="2024-12-20">
+    <meta property="article:section" content="Technology">
+    <meta property="article:tag" content="AI Ethics">
+    <meta property="article:tag" content="Collective Intelligence">
+    <meta property="article:tag" content="Responsible AI">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #667eea;
+            --accent-color: #764ba2;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --error-color: #e74c3c;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --text-muted: #95a5a6;
+            --background-light: #f8f9fa;
+            --background-white: #ffffff;
+            --background-dark: #34495e;
+            --border-color: #e9ecef;
+            --border-light: #f1f3f4;
+            --shadow: 0 10px 30px rgba(44, 62, 80, 0.08);
+            --shadow-hover: 0 20px 40px rgba(44, 62, 80, 0.12);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --section-padding: 6rem 0;
+            --container-padding: 0 2rem;
+            --border-radius-sm: 8px;
+            --border-radius-md: 15px;
+            --border-radius-lg: 25px;
+            --border-radius-xl: 50px;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-secondary: 'Playfair Display', Georgia, serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --max-width: 1400px;
+            --content-width: 800px;
+            --z-header: 1100;
+        }
+
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: var(--z-header);
+            transition: all var(--transition-normal);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            padding: 0.5rem;
+            border-radius: var(--border-radius-sm);
+        }
+
+        .logo-image {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: all var(--transition-normal);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius-xl);
+            position: relative;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            z-index: -1;
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            opacity: 1;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            border-radius: var(--border-radius-sm);
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            transition: all var(--transition-normal);
+            border-radius: 2px;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: var(--background-white);
+            padding: 8rem 0 4rem;
+            margin-top: 0;
+            position: relative;
+        }
+
+        .article-header-content {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: var(--container-padding);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: var(--font-size-sm);
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-color);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .article-category {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-xl);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: var(--font-size-xs);
+        }
+
+        .article-date,
+        .article-read-time,
+        .article-views {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .article-title {
+            font-family: var(--font-secondary);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .author-info h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Article Content */
+        .article-content {
+            background: var(--background-white);
+            padding: 4rem 0;
+        }
+
+        .article-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--container-padding);
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .article-body {
+            max-width: none;
+            padding: 0;
+        }
+
+        .article-body section {
+            margin-bottom: 3rem;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-2xl);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-xl);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: var(--font-size-lg);
+        }
+
+        .article-body a {
+            color: var(--secondary-color);
+            text-decoration: underline;
+            transition: color var(--transition-normal);
+        }
+
+        .article-body a:hover {
+            color: var(--accent-color);
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+
+        .article-body strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .article-body em {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Ethics Framework Box */
+        .ethics-framework {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .ethics-framework::before {
+            content: '⚖️';
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .ethics-framework h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: var(--font-size-lg);
+            font-family: var(--font-secondary);
+        }
+
+        .ethics-framework p {
+            margin-bottom: 1rem;
+        }
+
+        .ethics-framework:last-child p {
+            margin-bottom: 0;
+        }
+
+        /* Dilemma Box */
+        .dilemma-box {
+            background: rgba(243, 156, 18, 0.1);
+            border-left: 4px solid var(--warning-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+            position: relative;
+        }
+
+        .dilemma-box h4 {
+            color: var(--warning-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: var(--font-size-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dilemma-box p {
+            margin-bottom: 1rem;
+        }
+
+        .dilemma-box:last-child p {
+            margin-bottom: 0;
+        }
+
+        /* Principle Box */
+        .principle-box {
+            background: rgba(39, 174, 96, 0.1);
+            border-left: 4px solid var(--success-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+            position: relative;
+        }
+
+        .principle-box h4 {
+            color: var(--success-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: var(--font-size-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .principle-box p {
+            margin-bottom: 1rem;
+        }
+
+        .principle-box:last-child p {
+            margin-bottom: 0;
+        }
+
+        /* Case Study Box */
+        .case-study {
+            background: var(--background-light);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-study h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: var(--font-size-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-study p {
+            margin-bottom: 1rem;
+        }
+
+        .case-study:last-child p {
+            margin-bottom: 0;
+        }
+
+        /* Research Quote */
+        .research-quote {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+            position: relative;
+            font-style: italic;
+        }
+
+        .research-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--secondary-color);
+            font-family: var(--font-secondary);
+            opacity: 0.3;
+        }
+
+        .research-quote p {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-size: var(--font-size-base);
+        }
+
+        .research-quote cite {
+            display: block;
+            text-align: right;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-style: normal;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* Table of Contents */
+        .table-of-contents {
+            background: var(--background-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc-title {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-lg);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-list a {
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            display: block;
+            transition: all var(--transition-normal);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .toc-list a:hover {
+            color: var(--secondary-color);
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateX(5px);
+            padding-left: 1rem;
+        }
+
+        /* Social Share */
+        .social-share {
+            background: var(--background-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        .share-title {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-lg);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-xl);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+            color: white;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+        }
+
+        .share-btn.linkedin {
+            background: #0077b5;
+        }
+
+        .share-btn.facebook {
+            background: #1877f2;
+        }
+
+        .share-btn.email {
+            background: var(--text-muted);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Related Posts */
+        .related-posts {
+            background: var(--background-white);
+            padding: 3rem 0;
+        }
+
+        .related-posts-content {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: var(--container-padding);
+        }
+
+        .related-title {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-2xl);
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-post {
+            background: var(--background-light);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-color);
+        }
+
+        .related-post:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .related-post h4 {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-lg);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .related-post h4 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+
+        .related-post h4 a:hover {
+            color: var(--secondary-color);
+        }
+
+        .related-post p {
+            color: var(--text-light);
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .related-meta {
+            font-size: var(--font-size-xs);
+            color: var(--text-muted);
+        }
+
+        /* Comments Section */
+        .comments-section {
+            background: var(--background-light);
+            padding: 3rem 0;
+        }
+
+        .comments-content {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: var(--container-padding);
+        }
+
+        .comments-title {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-2xl);
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .comment-form {
+            background: var(--background-white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-family: inherit;
+            font-size: var(--font-size-base);
+            transition: border-color var(--transition-normal);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius-xl);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            font-size: var(--font-size-base);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--container-padding);
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Progress Bar */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(102, 126, 234, 0.2);
+            z-index: calc(var(--z-header) + 1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .article-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .table-of-contents {
+                position: static;
+                order: -1;
+                margin: 0 0 2rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow);
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+
+            .article-header {
+                padding: 6rem 0 3rem;
+            }
+
+            .article-title {
+                font-size: clamp(2rem, 5vw, 2.5rem);
+            }
+
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .ethics-framework,
+            .dilemma-box,
+            .principle-box,
+            .case-study,
+            .research-quote {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .research-quote::before {
+                font-size: 3rem;
+                top: -5px;
+            }
+
+            .ethics-framework::before {
+                font-size: 1.5rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .share-btn {
+                width: 100%;
+                max-width: 200px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header {
+                padding: 5rem 0 2rem;
+            }
+
+            .article-container {
+                padding: 0 1rem;
+            }
+
+            .ethics-framework,
+            .dilemma-box,
+            .principle-box,
+            .case-study,
+            .research-quote {
+                padding: 1rem;
+            }
+
+            .social-share,
+            .comment-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Reading Progress -->
+    <div class="reading-progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Azeez Adewale Hamzat Homepage">
+                    <div class="logo-image">A</div>
+                    <span class="logo-text">Azeez Adewale Hamzat</span>
+                </a>
+            </div>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#research">Research</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="article-header-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="blog.html">Blog</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>AI Ethics in Collective Decision Making</span>
+            </nav>
+
+            <div class="article-meta">
+                <span class="article-category">Technology</span>
+                <div class="article-date">
+                    <i class="fas fa-calendar"></i>
+                    <span>December 20, 2024</span>
+                </div>
+                <div class="article-read-time">
+                    <i class="fas fa-clock"></i>
+                    <span>5 min read</span>
+                </div>
+                <div class="article-views">
+                    <i class="fas fa-eye"></i>
+                    <span>92 views</span>
+                </div>
+            </div>
+
+            <h1 class="article-title">AI Ethics in Collective Decision Making</h1>
+            <p class="article-subtitle">Exploring the ethical implications of using AI to facilitate group decisions and the responsibility we have in designing bias-free collective intelligence systems.</p>
+
+            <div class="article-author">
+                <img src="images/AzeezHamzat.png" alt="Azeez Adewale Hamzat" class="author-avatar">
+                <div class="author-info">
+                    <h4>Azeez Adewale Hamzat</h4>
+                    <p>PhD Researcher in AI-facilitated Collective Intelligence</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <main class="article-content">
+        <div class="article-container">
+            <!-- Table of Contents Sidebar -->
+            <aside class="table-of-contents fade-in">
+                <h3 class="toc-title">Table of Contents</h3>
+                <ul class="toc-list">
+                    <li><a href="#ethical-foundations">Ethical Foundations</a></li>
+                    <li><a href="#bias-fairness">Bias and Fairness</a></li>
+                    <li><a href="#transparency-paradox">The Transparency Paradox</a></li>
+                    <li><a href="#accountability-challenge">Accountability Challenge</a></li>
+                    <li><a href="#cultural-context">Cultural Context Matters</a></li>
+                    <li><a href="#responsible-design">Responsible Design Principles</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Article Content -->
+            <article class="article-body">
+                <section>
+                    <p>When we delegate aspects of collective decision-making to AI systems, we're not just introducing new technology – we're reshaping the fundamental dynamics of how humans collaborate, deliberate, and reach consensus. This transformation brings profound ethical responsibilities that extend far beyond traditional AI ethics frameworks.</p>
+             
+                    <p>As someone researching AI-facilitated collective intelligence, I'm constantly grappling with questions that have no easy answers: How do we ensure AI enhances rather than manipulates group decisions? What happens when efficiency conflicts with fairness? Who bears responsibility when AI-mediated groups make harmful decisions?</p>
+
+                    <p>These aren't abstract philosophical questions. They're urgent practical challenges that will shape the future of democratic participation, organizational governance, and scientific collaboration.</p>
+                </section>
+         
+                <section>
+                    <h2 id="ethical-foundations">Ethical Foundations</h2>
+         
+                    <p>Traditional AI ethics focuses primarily on individual interactions – bias in hiring algorithms, privacy in recommendation systems, fairness in loan approvals. But collective decision-making introduces new dimensions that existing frameworks struggle to address:</p>
+         
+                    <h3>Individual vs. Collective Autonomy</h3>
+                    <p>When AI influences group processes, whose autonomy are we protecting? Individual participants may lose autonomy to algorithmic mediation, but the collective might gain autonomy from dominant personalities or structural biases.</p>
+         
+                    <h3>Democratic vs. Epistemic Values</h3>
+                    <p>Should AI optimize for democratic participation (everyone gets equal voice) or epistemic accuracy (decisions based on best available evidence)? These goals often conflict.</p>
+         
+                    <h3>Process vs. Outcome Ethics</h3>
+                    <p>Is it more important that the decision-making process is fair, or that the outcomes are beneficial? AI might improve outcomes while compromising procedural justice.</p>
+         
+                    <div class="ethics-framework">
+                        <h4>Core Ethical Principles for AI-Mediated Collective Decisions</h4>
+                        <p><strong>Informed Consent:</strong> Participants must understand how AI influences the group process and consent to this mediation.</p>
+                        <p><strong>Equitable Participation:</strong> AI should enhance rather than suppress meaningful participation from all group members.</p>
+                        <p><strong>Transparency:</strong> The role of AI in shaping decisions should be visible and understandable to participants.</p>
+                        <p><strong>Human Override:</strong> Groups must retain the ability to reject or modify AI recommendations.</p>
+                        <p><strong>Continuous Evaluation:</strong> AI systems should be regularly assessed for unintended consequences and bias.</p>
+                    </div>
+                </section>
+         
+                <section>
+                    <h2 id="bias-fairness">Bias and Fairness</h2>
+         
+                    <p>Bias in collective decision-making is particularly insidious because it can compound across multiple levels:</p>
+         
+                    <h3>Training Data Bias</h3>
+                    <p>AI systems learn from historical data that often reflects past discrimination and exclusion. When these systems facilitate group decisions, they can perpetuate systemic inequalities.</p>
+         
+                    <h3>Representation Bias</h3>
+                    <p>If certain groups are underrepresented in the data used to train collective intelligence systems, their perspectives and needs may be systematically ignored in AI-mediated decisions.</p>
+         
+                    <h3>Interaction Bias</h3>
+                    <p>AI systems may favor certain communication styles or cultural norms, creating subtle barriers for participants from different backgrounds.</p>
+         
+                    <div class="case-study">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Case Study: Hiring Committee AI</h4>
+                        <p>Imagine an AI system designed to help hiring committees reach better decisions by synthesizing candidate information and structuring discussions. If the AI was trained on historical hiring data, it might subtly steer conversations away from candidates who don't fit traditional profiles, even if committee members individually support diversity. The bias operates at the collective level, shaping group dynamics in ways that individual participants might not notice.</p>
+                    </div>
+         
+                    <p>Addressing these biases requires more than technical fixes. It demands ongoing attention to power dynamics, representation, and the social context in which AI-mediated decisions occur.</p>
+                </section>
+         
+                <section>
+                    <h2 id="transparency-paradox">The Transparency Paradox</h2>
+         
+                    <p>One of the most challenging ethical dilemmas in AI-facilitated collective intelligence is the tension between transparency and effectiveness:</p>
+         
+                    <div class="dilemma-box">
+                        <h4><i class="fas fa-balance-scale"></i> The Core Dilemma</h4>
+                        <p>Many AI interventions that improve group decision-making work best when participants aren't fully aware of them. For example, randomly varying speaking order reduces bias, but announcing this intervention might make people self-conscious and reduce its effectiveness.</p>
+                    </div>
+         
+                    <h3>Levels of Transparency</h3>
+                    <p>Rather than treating transparency as binary, we might consider different levels:</p>
+         
+                    <ul>
+                        <li><strong>Full Transparency:</strong> Complete disclosure of AI involvement and methods</li>
+                        <li><strong>Process Transparency:</strong> Disclosure that AI is involved without revealing specific mechanisms</li>
+                        <li><strong>Outcome Transparency:</strong> Clear indication when decisions are influenced by AI</li>
+                        <li><strong>Retrospective Transparency:</strong> Full disclosure after decisions are made</li>
+                    </ul>
+         
+                    <h3>Informed Consent Challenges</h3>
+                    <p>Traditional informed consent assumes people can understand and evaluate what they're consenting to. But the complexity of AI systems and their subtle influence on group dynamics makes truly informed consent extremely difficult to achieve.</p>
+         
+                    <div class="research-quote">
+                        <p>Perhaps the goal shouldn't be perfect transparency, but rather appropriate transparency – disclosure that enables meaningful consent without undermining the beneficial effects of AI mediation.</p>
+                        <cite>— Emerging Framework for AI Ethics</cite>
+                    </div>
+                </section>
+         
+                <section>
+                    <h2 id="accountability-challenge">Accountability Challenge</h2>
+         
+                    <p>When AI systems influence collective decisions, traditional notions of responsibility become murky:</p>
+         
+                    <h3>Distributed Responsibility</h3>
+                    <p>Who is accountable when an AI-mediated group makes a harmful decision? The AI developers? The group facilitator? The participants? The organization that deployed the system?</p>
+         
+                    <h3>Algorithmic Mediation vs. Human Agency</h3>
+                    <p>If AI shapes how groups process information and reach conclusions, to what extent are the human participants truly responsible for the outcomes?</p>
+         
+                    <h3>Long-term vs. Immediate Accountability</h3>
+                    <p>The effects of AI-mediated decisions may only become apparent over time, making it difficult to trace accountability back to specific choices or systems.</p>
+         
+                    <div class="principle-box">
+                        <h4><i class="fas fa-gavel"></i> Accountability Framework</h4>
+                        <p><strong>Clear Documentation:</strong> Maintain detailed records of how AI influences decisions and what alternatives were considered.</p>
+                        <p><strong>Human Oversight:</strong> Ensure qualified humans can understand, evaluate, and override AI recommendations.</p>
+                        <p><strong>Feedback Loops:</strong> Create mechanisms for detecting and correcting problematic outcomes.</p>
+                        <p><strong>Shared Responsibility:</strong> Distribute accountability appropriately among all stakeholders involved in system design and deployment.</p>
+                    </div>
+                </section>
+         
+                <section>
+                    <h2 id="cultural-context">Cultural Context Matters</h2>
+         
+                    <p>My experience working across different cultural contexts – from Nigeria to Morocco to Ireland – has taught me that ethical frameworks for AI must account for cultural variation in decision-making norms and values.</p>
+         
+                    <h3>Different Models of Good Decisions</h3>
+                    <p>What constitutes ethical decision-making varies significantly across cultures. Some prioritize consensus and harmony, others emphasize efficiency and outcomes. AI systems designed in one context may violate ethical norms in another.</p>
+         
+                    <h3>Power Distance and Hierarchy</h3>
+                    <p>Cultures differ in their comfort with hierarchy and power differentials. AI systems that flatten decision-making structures might be welcomed in egalitarian contexts but violate expectations in hierarchical ones.</p>
+         
+                    <h3>Collective vs. Individual Orientation</h3>
+                    <p>Some cultures prioritize collective welfare while others emphasize individual rights. These differences should inform how we design AI systems for collective decision-making.</p>
+         
+                    <div class="case-study">
+                        <h4><i class="fas fa-globe"></i> Cultural Sensitivity in Practice</h4>
+                        <p>In my research comparing group decision-making across different cultural contexts, I've observed how AI systems that work well in individualistic cultures can feel manipulative or disrespectful in collectivistic ones. For example, systems that highlight individual contributions might be valued in competitive cultures but seen as divisive in consensus-oriented ones.</p>
+                    </div>
+                </section>
+         
+                <section>
+                    <h2 id="responsible-design">Responsible Design Principles</h2>
+         
+                    <p>Based on my research and cross-cultural experience, I propose several principles for ethically designing AI systems for collective decision-making:</p>
+         
+                    <h3>Value-Explicit Design</h3>
+                    <p>Rather than pretending neutrality, AI systems should explicitly acknowledge the values they embed and allow groups to choose or modify these values based on their context and preferences.</p>
+         
+                    <h3>Participatory Development</h3>
+                    <p>The communities that will use these systems should be involved in their design, ensuring that diverse perspectives and needs are considered from the beginning.</p>
+         
+                    <h3>Adaptive Ethics</h3>
+                    <p>AI systems should be designed to adapt their ethical frameworks based on cultural context and group preferences, rather than imposing universal standards.</p>
+         
+                    <h3>Continuous Monitoring</h3>
+                    <p>Ethical assessment shouldn't end at deployment. Systems need ongoing monitoring for unintended consequences and evolving ethical challenges.</p>
+         
+                    <div class="ethics-framework">
+                        <h4>Practical Implementation Guidelines</h4>
+                        <p><strong>Pre-deployment:</strong> Conduct ethical impact assessments with diverse stakeholders and pilot testing in varied contexts.</p>
+                        <p><strong>During use:</strong> Provide real-time feedback about AI influence and maintain human oversight capabilities.</p>
+                        <p><strong>Post-deployment:</strong> Regular audits, participant feedback collection, and system updates based on observed outcomes.</p>
+                        <p><strong>Governance:</strong> Establish clear policies for system modification, appeal processes, and accountability measures.</p>
+                    </div>
+         
+                    <h3>The Future of Ethical AI in Collective Intelligence</h3>
+                    <p>As AI becomes more sophisticated and ubiquitous in group decision-making, our ethical frameworks must evolve as well. This isn't just about preventing harm – it's about actively promoting human flourishing through better collective intelligence.</p>
+         
+                    <p>The goal isn't to eliminate all ethical tensions, but to navigate them thoughtfully. We need AI systems that enhance human agency rather than replacing it, that promote fairness while acknowledging complexity, and that respect cultural diversity while maintaining universal human dignity.</p>
+                </section>
+         
+                <section>
+                    <p>The ethical challenges of AI in collective decision-making don't have simple solutions. They require ongoing dialogue between technologists, ethicists, social scientists, and the communities affected by these systems.</p>
+         
+                    <p>As I continue my research into AI-facilitated collective intelligence, I'm convinced that addressing these ethical challenges isn't just the right thing to do – it's essential for building AI systems that truly enhance human collaboration rather than undermining it.</p>
+         
+                    <p>The future of collective intelligence depends not just on technical innovation, but on our commitment to ensuring that AI serves human values and promotes the kind of collaboration our complex world desperately needs.</p>
+         
+                    <div class="research-quote">
+                        <p>The question isn't whether AI will reshape collective decision-making – it already is. The question is whether we'll shape this transformation thoughtfully, with attention to ethics, justice, and human flourishing.</p>
+                        <cite>— Reflections on Responsible AI Development</cite>
+                    </div>
+                </section>
+            </article>
+
+            <!-- Social Share -->
+            <div class="social-share fade-in">
+                <h3 class="share-title">Share This Article</h3>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn twitter" onclick="shareOnTwitter()">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="#" class="share-btn linkedin" onclick="shareOnLinkedIn()">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="#" class="share-btn facebook" onclick="shareOnFacebook()">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <a href="#" class="share-btn email" onclick="shareViaEmail()">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+            
+        </div> <!-- Close article-container -->
+    </main>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <div class="related-posts-content">
+            <h2 class="related-title">Related Posts</h2>
+            <div class="related-grid">
+                <article class="related-post fade-in">
+                    <h4><a href="invisible-hand.html">The Invisible Hand</a></h4>
+                    <p>Examining how invisible forces shape collective decision-making and the role of AI in revealing these hidden dynamics.</p>
+                    <div class="related-meta">February 1, 2025 • Research</div>
+                </article>
+
+                <article class="related-post fade-in">
+                    <h4><a href="forget_the_lone_genius.html">Forget the Lone Genius</a></h4>
+                    <p>Why the myth of the lone genius is counterproductive to scientific progress and how collective intelligence approaches are revolutionizing research.</p>
+                    <div class="related-meta">January 5, 2025 • Academic</div>
+                </article>
+
+                <article class="related-post fade-in">
+                    <h4><a href="the-mirror-effect.html">The Mirror Effect</a></h4>
+                    <p>Reflecting on how our interactions with AI systems mirror our own cognitive biases and decision-making processes.</p>
+                    <div class="related-meta">February 15, 2025 • Personal</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <div class="comments-content">
+            <h2 class="comments-title">Join the Discussion</h2>
+            <form class="comment-form" onsubmit="submitComment(event)">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment *</label>
+                    <textarea id="comment" name="comment" required placeholder="What are your thoughts on AI ethics in group decision-making? Have you encountered these challenges in your own work?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Post Comment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Azeez Adewale Hamzat | PhD Researcher in Collective Intelligence</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">
+                <i class="fas fa-quote-left"></i> Sprouting ideas for a better world <i class="fas fa-quote-right"></i>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (navMenu && menuBtn) {
+                const isExpanded = navMenu.classList.contains('active');
+                navMenu.classList.toggle('active');
+                menuBtn.setAttribute('aria-expanded', !isExpanded);
+            }
+        }
+
+        // Reading progress bar
+        function updateProgressBar() {
+            const progressBar = document.getElementById('progressBar');
+            const article = document.querySelector('.article-body');
+            
+            if (!article || !progressBar) return;
+            
+            const rect = article.getBoundingClientRect();
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrolled = Math.max(0, -rect.top);
+            const progress = Math.min(100, (scrolled / (articleHeight - windowHeight)) * 100);
+            
+            progressBar.style.width = progress + '%';
+        }
+
+        // Social sharing functions
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Essential reading on AI ethics in collective decision-making and responsible technology design');
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}&via=Azeez_A_Hamzat`, '_blank');
+        }
+
+        function shareOnLinkedIn() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+        }
+
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareViaEmail() {
+            const subject = encodeURIComponent('AI Ethics in Collective Decision Making');
+            const body = encodeURIComponent(`I thought you might find this article on AI ethics and responsible technology design interesting:\n\n${window.location.href}`);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        // Comment submission
+        function submitComment(event) {
+            event.preventDefault();
+            alert('Thank you for your comment! In a real implementation, this would be submitted to a comment system.');
+            event.target.reset();
+        }
+
+        // Smooth scrolling for TOC links
+        function initSmoothScrolling() {
+            document.querySelectorAll('.toc-list a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Fade in animation
+        function initAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            initSmoothScrolling();
+            initAnimations();
+            
+            // Update progress bar on scroll
+            window.addEventListener('scroll', updateProgressBar, { passive: true });
+            updateProgressBar(); // Initial call
+            
+            console.log('⚖️ "AI Ethics in Collective Decision Making" blog post loaded successfully!');
+        });
+    </script>
+</body>
+</html>

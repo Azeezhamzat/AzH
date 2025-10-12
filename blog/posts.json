@@ -13,16 +13,16 @@
       "content": "blog/posts/bridging-human-machine-intelligence.md"
     },
     {
-      "id": "letters-across-time",
-      "title": "Letters Across Time: Correspondence with Past and Future Selves",
-      "date": "2025-03-23",
+      "id": "collective-intelligence-primer",
+      "title": "Why Collective Intelligence Matters: A Primer",
+      "date": "2025-09-01",
       "author": "Azeez Adewale Hamzat",
-      "category": "Personal Development",
-      "tags": ["Personal Growth", "Reflection"],
-      "excerpt": "There's something profoundly intimate about writing a letter to yourself. The concept of having an honest conversation with yourself across time opens doorways to reflection that other forms of introspection rarely achieve.",
-      "image": "images/blog/dear-me.jpeg",
-      "readingTime": "5 min read",
-      "content": "blog/posts/letters-across-time.md"
+      "category": "Insights",
+      "tags": ["Collective Intelligence", "Theory", "Group Decision-Making"],
+      "excerpt": "An introduction to collective intelligence concepts and their importance in addressing complex challenges. Understanding how groups can be smarter than individuals.",
+      "image": "images/blog/collective-intelligence.webp",
+      "readingTime": "6 min read",
+      "content": "blog/posts/collective-intelligence-primer.md"
     },
     {
       "id": "why-smart-teams-make-bad-decisions",
@@ -49,6 +49,18 @@
       "content": "blog/posts/decision-making-under-uncertainty.md"
     },
     {
+      "id": "letters-across-time",
+      "title": "Letters Across Time: Correspondence with Past and Future Selves",
+      "date": "2025-03-23",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Personal Development",
+      "tags": ["Personal Growth", "Reflection"],
+      "excerpt": "There's something profoundly intimate about writing a letter to yourself. The concept of having an honest conversation with yourself across time opens doorways to reflection that other forms of introspection rarely achieve.",
+      "image": "images/blog/dear-me.jpeg",
+      "readingTime": "5 min read",
+      "content": "blog/posts/letters-across-time.md"
+    },
+    {
       "id": "when-map-fails-academic-purpose",
       "title": "When the Map Fails: Navigating Academic Purpose",
       "date": "2025-04-23",
@@ -73,18 +85,6 @@
       "readingTime": "12 min read",
       "content": "blog/posts/africa-health.html",
       "isHTML": true
-    },
-    {
-      "id": "collective-intelligence-primer",
-      "title": "Why Collective Intelligence Matters: A Primer",
-      "date": "2025-09-01",
-      "author": "Azeez Adewale Hamzat",
-      "category": "Insights",
-      "tags": ["Collective Intelligence", "Theory", "Group Decision-Making"],
-      "excerpt": "An introduction to collective intelligence concepts and their importance in addressing complex challenges. Understanding how groups can be smarter than individuals.",
-      "image": "images/blog/collective-intelligence.webp",
-      "readingTime": "6 min read",
-      "content": "blog/posts/collective-intelligence-primer.md"
     },
     {
       "id": "migrant-or-traveller",

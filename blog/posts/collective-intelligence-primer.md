@@ -1,4 +1,3 @@
-# Why Collective Intelligence Matters: A Primer
 
 When I studied crop and environmental protection in Nigeria, I learned about keystone species—organisms whose impact on their ecosystem is disproportionately large relative to their abundance. Remove a single species, and entire ecosystems can collapse or transform. The classic example: when sea otters were hunted nearly to extinction along the Pacific coast, sea urchin populations exploded, devastating kelp forests and transforming the entire marine ecosystem.
 

@@ -115,9 +115,43 @@
             color: var(--color-white);
         }
         
+        /* Mobile Responsive Fixes */
         @media (max-width: 768px) {
+            .publications-page {
+                padding-top: 80px;
+            }
+            
             .publication-item {
                 padding: var(--spacing-md);
+            }
+            
+            .publication-item h3 {
+                font-size: 1.25rem;
+                line-height: 1.4;
+            }
+            
+            .scholar-section {
+                padding: var(--spacing-md);
+            }
+            
+            .scholar-badge {
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: 0.9rem;
+            }
+            
+            .scholar-badge i {
+                font-size: 1.25rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .publications-page {
+                padding-top: 70px;
+            }
+            
+            .scholar-badge {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -180,8 +214,8 @@
             <article class="publication-item">
                 <h3>A Community Knowledge-Based Assessment of Smallholder Farmers' Perception of Cluster Farming and its Potential Role in Sustainable Accessibility to Farmer-Centric Support in Nigeria</h3>
                 <p class="publication-meta">
-                    <span class="author">Adewale, H. A. (2022). A community knowledge-based assessment of smallholder farmers’ perception of cluster farming and its potential role in sustainable accessibility to farmer-centric support in Nigeria. Polytechnic University.</span>. 
-                    <em>Zenodo</em> [Preprint]. 
+                    <span class="author">Hamzat, A.A.</span> (2022). 
+                    <em>Research Square</em> [Preprint]. 
                     DOI: <a href="https://doi.org/10.5281/zenodo.7678799" target="_blank" rel="noopener noreferrer">10.5281/zenodo.7678799</a>
                 </p>
                 <div class="publication-abstract">
@@ -200,7 +234,7 @@
                 </div>
                 <div class="publication-links">
                     <a href="https://doi.org/10.5281/zenodo.7678799" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">
-                        <i class="fas fa-external-link-alt"></i> View on Zenodo
+                        <i class="fas fa-external-link-alt"></i> View on Research Square
                     </a>
                     <button class="btn btn-small btn-outline abstract-toggle">
                         <i class="fas fa-chevron-down"></i> Full Abstract
@@ -251,7 +285,7 @@
             <article class="publication-item">
                 <h3>Master's Thesis: A Community Knowledge-Based Assessment of Smallholder Farmers' Perception of Cluster Farming</h3>
                 <p class="publication-meta">
-                    <span class="author">Adewale, H. A. (2022). A community knowledge-based assessment of smallholder farmers’ perception of cluster farming and its potential role in sustainable accessibility to farmer-centric support in Nigeria. Polytechnic University.</span> 
+                    <span class="author">Hamzat, A.A.</span> (2022). 
                     <em>Mohammed VI Polytechnic University</em>, Morocco.
                 </p>
                 <p>Master's thesis examining the application of collective intelligence principles to agricultural decision-making in smallholder farming communities in Nigeria. The research used participatory methods to assess farmers' perceptions of cluster farming and its potential for sustainable agricultural development.</p>

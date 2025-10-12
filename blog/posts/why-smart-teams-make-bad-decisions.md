@@ -28,7 +28,7 @@ At work, the pattern looks subtler but similar. The rapid “sounds good” emai
 
 During graduate research on cluster farming, I interviewed smallholder farmers about new practices. In group settings, they often aligned publicly with a local leader’s position. In private, many voiced concerns they did not feel comfortable raising in front of others. The gap between public consensus and private reservations was substantial.
 
-Todd Rose calls this phenomenon a collective illusion, where people privately disagree but act as if they agree because they incorrectly believe others support the norm. For a clear treatment, see <a href="https://www.hachettebookgroup.com/titles/todd-rose/collective-illusions/9780306925681/" target="_blank" rel="noopener">Collective Illusions</a>. These illusions sustain bad ideas and suppress honest conversation.
+Todd Rose calls this phenomenon a collective illusion, where people privately disagree but act as if they agree because they incorrectly believe others support the norm. For a clear treatment, see <a href="https://www.hachettebookgroup.com/titles/todd-rose/collective-illusions/9780306925696/" target="_blank" rel="noopener">Collective Illusions</a>. These illusions sustain bad ideas and suppress honest conversation.
 
 This pressure affects everyone, but it falls hardest on those who already feel like outsiders, the only woman in a technical meeting, the sole junior staff member at a leadership table, or the person whose educational or cultural background differs from the group norm.
 

@@ -23,18 +23,6 @@
       "image": "images/blog/dear-me.jpeg",
       "readingTime": "5 min read",
       "content": "blog/posts/letters-across-time.md"
-    },{
-      "id": "rethinking-africa-health-systems",
-      "title": "Rethinking Africa's Health Systems for Sustainable Resilience",
-      "date": "2025-04-15",
-      "author": "Azeez Adewale Hamzat",
-      "category": "Insights",
-      "tags": ["Health Systems", "Africa", "Healthcare", "Resilience"],
-      "excerpt": "Building stronger, more responsive healthcare infrastructure across the continent — addressing systemic gaps, workforce challenges, and local production needs.",
-      "image": "images/blog/rethinking-africa-health-systems.png",
-      "readingTime": "12 min read",
-      "content": "blog/posts/africa-health.html",
-      "isHTML": true
     },
     {
       "id": "why-smart-teams-make-bad-decisions",
@@ -51,7 +39,7 @@
     {
       "id": "decision-making-under-uncertainty",
       "title": "Decision-Making Under Deep Uncertainty: Beyond Prediction",
-      "date": "2025-04-28",
+      "date": "2025-05-28",
       "author": "Azeez Adewale Hamzat",
       "category": "Insights",
       "tags": ["Decision Science", "Uncertainty", "Risk Management", "Philosophy"],
@@ -60,7 +48,6 @@
       "readingTime": "6 min read",
       "content": "blog/posts/decision-making-under-uncertainty.md"
     },
-    
     {
       "id": "when-map-fails-academic-purpose",
       "title": "When the Map Fails: Navigating Academic Purpose",
@@ -72,6 +59,19 @@
       "image": "images/blog/compass.webp",
       "readingTime": "12 min read",
       "content": "blog/posts/when-map-fails-academic-purpose.html",
+      "isHTML": true
+    },    
+    {
+      "id": "rethinking-africa-health-systems",
+      "title": "Rethinking Africa's Health Systems for Sustainable Resilience",
+      "date": "2025-04-15",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Insights",
+      "tags": ["Health Systems", "Africa", "Healthcare", "Resilience"],
+      "excerpt": "Building stronger, more responsive healthcare infrastructure across the continent — addressing systemic gaps, workforce challenges, and local production needs.",
+      "image": "images/blog/rethinking-africa-health-systems.png",
+      "readingTime": "12 min read",
+      "content": "blog/posts/africa-health.html",
       "isHTML": true
     },
     {

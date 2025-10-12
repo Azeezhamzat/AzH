@@ -23,6 +23,18 @@
       "image": "images/blog/dear-me.jpeg",
       "readingTime": "5 min read",
       "content": "blog/posts/letters-across-time.md"
+    },{
+      "id": "rethinking-africa-health-systems",
+      "title": "Rethinking Africa's Health Systems for Sustainable Resilience",
+      "date": "2025-04-15",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Insights",
+      "tags": ["Health Systems", "Africa", "Healthcare", "Resilience"],
+      "excerpt": "Building stronger, more responsive healthcare infrastructure across the continent — addressing systemic gaps, workforce challenges, and local production needs.",
+      "image": "images/blog/rethinking-africa-health-systems.png",
+      "readingTime": "12 min read",
+      "content": "blog/posts/africa-health.html",
+      "isHTML": true
     },
     {
       "id": "bridging-human-machine-intelligence",
@@ -48,29 +60,19 @@
       "readingTime": "6 min read",
       "content": "blog/posts/decision-making-under-uncertainty.md"
     },
+    
     {
-      "id": "rethinking-africa-health-systems",
-      "title": "Rethinking Africa's Health Systems for Sustainable Resilience",
-      "date": "2025-04-15",
-      "author": "Azeez Adewale Hamzat",
-      "category": "Insights",
-      "tags": ["Health Systems", "Africa", "Healthcare", "Resilience"],
-      "excerpt": "Building stronger, more responsive healthcare infrastructure across the continent — addressing systemic gaps, workforce challenges, and local production needs.",
-      "image": "images/blog/rethinking-africa-health-systems.png",
-      "readingTime": "12 min read",
-      "content": "blog/posts/rethinking-africa-health-systems.md"
-    },
-    {
-      "id": "when-the-map-fails-academic-purpose",
+      "id": "when-map-fails-academic-purpose",
       "title": "When the Map Fails: Navigating Academic Purpose",
       "date": "2025-04-23",
       "author": "Azeez Adewale Hamzat",
-      "category": "Reflections",
-      "tags": ["Academic Life", "Purpose", "Reflection", "PhD Journey", "Meaning"],
-      "excerpt": "A reflective exploration of academic disorientation, existential uncertainty in scholarly life, and finding deeper meaning beyond external metrics and achievements.",
+      "category": "Academic Reflections",
+      "tags": ["Academic Purpose", "PhD Journey", "Scholarly Life", "Research Meaning", "Intellectual Growth"],
+      "excerpt": "A reflective exploration of academic disorientation and finding deeper meaning in scholarly life. Originally published in Times of UM6P.",
       "image": "images/blog/compass.webp",
       "readingTime": "12 min read",
-      "content": "blog/posts/when-the-map-fails.md"
+      "content": "blog/posts/when-map-fails-academic-purpose.html",
+      "isHTML": true
     },
     {
       "id": "collective-intelligence-primer",

@@ -36,18 +36,6 @@
       "readingTime": "8 min read",
       "content": "blog/posts/why-smart-teams-make-bad-decisions.md"
     },
-    // {
-    //   "id": "decision-making-under-uncertainty",
-    //   "title": "Decision-Making Under Deep Uncertainty: Beyond Prediction",
-    //   "date": "2025-05-28",
-    //   "author": "Azeez Adewale Hamzat",
-    //   "category": "Insights",
-    //   "tags": ["Decision Science", "Uncertainty", "Risk Management", "Philosophy"],
-    //   "excerpt": "Exploring how to make wise decisions when prediction fails—embracing uncertainty rather than trying to eliminate it through better forecasting.",
-    //   "image": "images/blog/decision-uncertainty.jpeg",
-    //   "readingTime": "6 min read",
-    //   "content": "blog/posts/decision-making-under-uncertainty.md"
-    // },
     {
       "id": "letters-across-time",
       "title": "Letters Across Time: Correspondence with Past and Future Selves",

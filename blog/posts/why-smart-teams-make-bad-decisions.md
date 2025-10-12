@@ -1,3 +1,4 @@
+
 I’ve spent considerable time studying how groups make decisions, both in formal research settings and through collaborative work across multiple institutions. One pattern keeps appearing: teams with genuinely smart, capable people making surprisingly poor decisions. The culprit is social dynamics that systematically favor certain voices while silencing others.
 
 This matters because we face challenges that require genuine collective intelligence, diverse perspectives coming together to generate insights no individual could produce alone. Yet most groups never reach this potential. Understanding why is the first step toward doing better.

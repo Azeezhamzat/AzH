@@ -1,5 +1,3 @@
-# From Nigeria to Morocco to Ireland: My Academic Journey
-
 My academic journey has taken me across three countries and through diverse intellectual traditions—from agricultural science in Nigeria to collective intelligence in Morocco, and now to the sociology of AI in Ireland. Each stage has shaped my thinking in unexpected ways and led me to questions I never anticipated asking.
 
 ## Nigeria: Where It All Began

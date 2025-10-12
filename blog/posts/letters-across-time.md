@@ -1,5 +1,3 @@
-# Letters Across Time: Correspondence with Past and Future Selves
-
 There's something profoundly intimate about writing a letter to yourself. The pen hesitates over paper – or fingers pause over keys – as you consider how to address the person you know best yet sometimes understand least: you.
 
 I recently discovered the book <a href="https://www.amazon.com/%D8%B9%D8%B2%D9%8A%D8%B2%D9%8A-%D8%A3%D9%86%D8%A7-dear-%D8%B9%D9%84%D8%A7-%D8%AF%D9%8A%D9%88%D8%A8/dp/B0CSR63DVG" target="_blank" rel="noopener noreferrer">"Dear Me; عزيزي أنا"</a> and found myself captivated by its premise. The concept of having an honest conversation with yourself across time opens doorways to reflection that other forms of introspection rarely achieve. It inspired me to embark on my own journey of self-correspondence.

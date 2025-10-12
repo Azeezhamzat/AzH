@@ -1,5 +1,3 @@
-# Are you a Migrant or a Traveller?: Navigating Life's Uncertainties
-
 Life unfolds in unexpected chapters. One moment we're confidently navigating familiar terrain; the next, we're standing at crossroads we never anticipated. Career pivots, personal transformations, global disruptions—all reshape our sense of stability and direction. But in these moments of change, have you paused to consider *how* you're moving through the uncertainty?
 
 This isn't about passport stamps or physical relocation. It's about something far more profound: the mindset that guides your journey through life's inevitable transitions.

@@ -58,6 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
     card.className = 'blog-card';
     card.setAttribute('data-category', post.category);
     
+    // Determine the correct link based on post type
+    const postLink = post.isHTML ? post.content : `blog/post.html?id=${post.id}`;
+    
     card.innerHTML = `
       <div class="blog-card-image">
         <img src="${post.image}" alt="${post.title}" loading="lazy">
@@ -68,12 +71,12 @@ document.addEventListener('DOMContentLoaded', function() {
           <span><i class="fas fa-clock"></i> ${post.readingTime}</span>
         </div>
         <h3 class="blog-card-title">
-          <a href="blog/post.html?id=${post.id}">${post.title}</a>
+          <a href="${postLink}">${post.title}</a>
         </h3>
         <p class="blog-card-excerpt">${post.excerpt}</p>
         <div class="blog-card-footer">
           <span class="blog-card-category">${post.category}</span>
-          <a href="blog/post.html?id=${post.id}" class="blog-card-link">
+          <a href="${postLink}" class="blog-card-link">
             Read more <i class="fas fa-arrow-right"></i>
           </a>
         </div>
@@ -191,6 +194,13 @@ async function loadBlogPost() {
       return;
     }
     
+    // Check if this is an HTML post
+    if (post.isHTML) {
+      // Redirect to the HTML file directly
+      window.location.href = `../${post.content}`;
+      return;
+    }
+    
     // Update page title
     document.title = `${post.title} | Azeez Hamzat`;
     
@@ -293,6 +303,8 @@ async function loadRelatedPosts(category, currentPostId) {
     }
     
     relatedPosts.forEach(post => {
+      const postLink = post.isHTML ? `../${post.content}` : `post.html?id=${post.id}`;
+      
       const card = document.createElement('article');
       card.className = 'blog-card';
       card.innerHTML = `
@@ -304,10 +316,10 @@ async function loadRelatedPosts(category, currentPostId) {
             <span><i class="fas fa-calendar"></i> ${formatDate(post.date)}</span>
           </div>
           <h3 class="blog-card-title">
-            <a href="post.html?id=${post.id}">${post.title}</a>
+            <a href="${postLink}">${post.title}</a>
           </h3>
           <p class="blog-card-excerpt">${post.excerpt}</p>
-          <a href="post.html?id=${post.id}" class="blog-card-link">
+          <a href="${postLink}" class="blog-card-link">
             Read more <i class="fas fa-arrow-right"></i>
           </a>
         </div>
@@ -324,5 +336,3 @@ async function loadRelatedPosts(category, currentPostId) {
 if (window.location.pathname.includes('post.html')) {
   document.addEventListener('DOMContentLoaded', loadBlogPost);
 }
-
-

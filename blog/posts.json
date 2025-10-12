@@ -1,16 +1,16 @@
 {
   "posts": [
     {
-      "id": "why-smart-teams-make-bad-decisions",
-      "title": "Why Smart Teams Make Bad Decisions: Understanding Social Dominance in Groups",
-      "date": "2025-10-08",
+      "id": "bridging-human-machine-intelligence",
+      "title": "Bridging Human and Machine Intelligence: The Evolving Partnership",
+      "date": "2025-09-21",
       "author": "Azeez Adewale Hamzat",
-      "category": "Research Updates",
-      "tags": ["Collective Intelligence", "Group Decision-Making", "Bias", "Organizational Behavior"],
-      "excerpt": "Drawing on research and experience facilitating international partnerships, I explore how social dynamics systematically favor certain voices while silencing others—and what we can do about it.",
-      "image": "images/blog/group-dynamics.jpg",
-      "readingTime": "8 min read",
-      "content": "blog/posts/why-smart-teams-make-bad-decisions.md"
+      "category": "Insights",
+      "tags": ["AI Ethics", "Human-AI Collaboration", "Technology", "Research"],
+      "excerpt": "Exploring how humans and AI can work together effectively, combining complementary strengths to address challenges beyond the reach of either alone.",
+      "image": "images/blog/human-ai.jpg",
+      "readingTime": "5 min read",
+      "content": "blog/posts/bridging-human-machine-intelligence.md"
     },
     {
       "id": "letters-across-time",
@@ -37,16 +37,16 @@
       "isHTML": true
     },
     {
-      "id": "bridging-human-machine-intelligence",
-      "title": "Bridging Human and Machine Intelligence: The Evolving Partnership",
-      "date": "2025-05-01",
+      "id": "why-smart-teams-make-bad-decisions",
+      "title": "Why Smart Teams Make Bad Decisions: Understanding Social Dominance in Groups",
+      "date": "2025-08-03",
       "author": "Azeez Adewale Hamzat",
-      "category": "Insights",
-      "tags": ["AI Ethics", "Human-AI Collaboration", "Technology", "Research"],
-      "excerpt": "Exploring how humans and AI can work together effectively, combining complementary strengths to address challenges beyond the reach of either alone.",
-      "image": "images/blog/human-ai.jpg",
-      "readingTime": "5 min read",
-      "content": "blog/posts/bridging-human-machine-intelligence.md"
+      "category": "Research Updates",
+      "tags": ["Collective Intelligence", "Group Decision-Making", "Bias", "Organizational Behavior"],
+      "excerpt": "Drawing on research and experience facilitating international partnerships, I explore how social dynamics systematically favor certain voices while silencing others—and what we can do about it.",
+      "image": "images/blog/group-dynamics.jpg",
+      "readingTime": "8 min read",
+      "content": "blog/posts/why-smart-teams-make-bad-decisions.md"
     },
     {
       "id": "decision-making-under-uncertainty",

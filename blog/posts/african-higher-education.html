@@ -36,79 +36,71 @@
     .findings-list li{padding:1rem 0 1rem 2.5rem;position:relative;line-height:1.7;font-size:1.05rem}
     .findings-list li::before{content:'✓';position:absolute;left:0;font-weight:700;font-size:1.5rem;color:rgba(255,255,255,.9)}
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:2rem 0}
-    .stat-card{background:var(--color-white);padding:2rem 1.5rem;border-radius:var(--border-radius);text-align:center;box-shadow:0 4px 15px rgba(102,126,234,.15);border-top:4px solid var(--primary-purple);transition:all var(--transition-base)}
+    .stat-card{background:var(--color-white);padding:2rem 1.5rem;border-radius:var(--border-radius);text-align:center;box-shadow:0 4px 15px rgba(102,126,234,.15);border-top:4px solid var(--primary-purple);transition:transform .2s ease, box-shadow .2s ease}
     .stat-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(102,126,234,.25)}
-    .stat-number{font-size:2.5rem;font-weight:700;background:linear-gradient(135deg,var(--primary-purple) 0%,var(--accent-purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.75rem}
-    /* Suffix is visual only; DOM text remains numeric */
-    .stat-number[data-suffix]::after{content:attr(data-suffix)}
+
+    /* KPI number: CSS-only rendering via attributes */
+    .kpi-number{
+      display:inline-block;
+      font-size:2.5rem;
+      font-weight:700;
+      background:linear-gradient(135deg,var(--primary-purple) 0%,var(--accent-purple) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      margin-bottom:.75rem;
+      line-height:1;
+    }
+    /* Show value + suffix purely via CSS so JS can't break it */
+    .kpi-number::before{
+      content: attr(data-value) attr(data-suffix);
+    }
+
     .stat-label{color:var(--color-medium-gray);font-size:.9rem;line-height:1.5}
     .highlight-box{background:linear-gradient(135deg,rgba(102,126,234,.08) 0%,rgba(118,75,162,.08) 100%);padding:2rem;border-radius:15px;margin:2rem 0;border-left:4px solid var(--primary-purple)}
     .highlight-box h3{color:var(--primary-purple);margin-bottom:1rem}
+
     .data-table{width:100%;border-collapse:separate;border-spacing:0;margin:2rem 0;border-radius:var(--border-radius);overflow:hidden;box-shadow:0 4px 15px rgba(102,126,234,.15)}
     .data-table thead{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
     .data-table th{color:#fff;padding:1.25rem 1rem;text-align:left;font-weight:600;font-size:1rem}
     .data-table td{padding:1.25rem 1rem;border-bottom:1px solid var(--color-light-gray);background:var(--color-white)}
     .data-table tr:hover td{background:linear-gradient(135deg,rgba(102,126,234,.05) 0%,rgba(118,75,162,.05) 100%)}
     .data-source{font-size:.85rem;color:var(--color-medium-gray);font-style:italic;text-align:right;margin-top:.5rem}
-    .opportunity-item,.challenge-item{background:var(--color-white);padding:1.5rem;margin:1rem 0;border-radius:var(--border-radius);box-shadow:0 4px 15px rgba(0,0,0,.08);transition:all var(--transition-base)}
+
+    .opportunity-item,.challenge-item{background:var(--color-white);padding:1.5rem;margin:1rem 0;border-radius:var(--border-radius);box-shadow:0 4px 15px rgba(0,0,0,.08);transition:transform .2s ease, box-shadow .2s ease}
     .opportunity-item:hover,.challenge-item:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.12)}
     .opportunity-item{border-left:4px solid var(--success-green)}
     .challenge-item{border-left:4px solid var(--warning-orange)}
     .opportunity-item h4{color:var(--success-green);margin-bottom:.75rem;font-size:1.2rem}
     .challenge-item h4{color:var(--warning-orange);margin-bottom:.75rem;font-size:1.2rem}
+
     .references{background:linear-gradient(135deg,rgba(102,126,234,.05) 0%,rgba(118,75,162,.05) 100%);padding:2rem;border-radius:var(--border-radius);margin-top:3rem;border:1px solid rgba(102,126,234,.1)}
     .references h3{color:var(--primary-purple);margin-bottom:1.5rem}
     .reference-item{margin-bottom:.75rem;font-size:.9rem;line-height:1.7}
     .reference-item a{color:var(--primary-purple);text-decoration:none;transition:color var(--transition-fast)}
     .reference-item a:hover{color:var(--accent-purple);text-decoration:underline}
+
     .blog-post-header{text-align:center;margin-bottom:3rem;padding:3rem 2rem;background:linear-gradient(135deg,rgba(102,126,234,.08) 0%,rgba(118,75,162,.08) 100%);border-radius:20px;position:relative;overflow:hidden}
     .blog-post-header::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(135deg,var(--primary-purple) 0%,var(--accent-purple) 100%)}
+
+    /* Mobile */
     @media (max-width:768px){
       .stats-grid{grid-template-columns:1fr}
       .key-findings{padding:2rem 1.5rem}
       .data-table{font-size:.85rem}
       .data-table th,.data-table td{padding:.75rem .5rem}
       .blog-post-header{padding:2rem 1rem}
+
+      /* If your responsive.css stacks table cells, this shows the header label */
+      .data-table td[data-label]::before{
+        content: attr(data-label) ": ";
+        font-weight:600;
+        display:inline-block;
+        margin-right:.25rem;
+        color:var(--primary-purple);
+      }
     }
   </style>
-
-  <!-- PRE-SANITIZER: runs BEFORE external JS so other scripts see numeric text only -->
-  <script>
-    (function() {
-      function toNumberRaw(s){
-        if (!s) return NaN;
-        s = String(s).trim().toUpperCase();
-        const mult = s.endsWith('K') ? 1e3 : s.endsWith('M') ? 1e6 : s.endsWith('B') ? 1e9 : 1;
-        const cleaned = s.replace(/[^\d.]/g, '');
-        const n = cleaned ? parseFloat(cleaned) : NaN;
-        return isNaN(n) ? NaN : n * mult;
-      }
-
-      document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('.stat-number').forEach(el => {
-          // Prefer data-value when present
-          let val = el.getAttribute('data-value');
-          let n = val !== null && val !== '' ? Number(val) : toNumberRaw(el.textContent);
-
-          // Determine/keep suffix
-          let suffix = el.getAttribute('data-suffix');
-          if (!suffix) {
-            const t = (el.textContent || '').trim();
-            if (/%$/.test(t)) suffix = '%';
-            else if (/x$/i.test(t)) suffix = 'x';
-            else suffix = '';
-            if (suffix) el.setAttribute('data-suffix', suffix);
-          }
-
-          if (typeof n === 'number' && isFinite(n)) {
-            // IMPORTANT: set DOM text to pure number so other scripts don't see %/K/M/B
-            el.textContent = String(n);
-            el.setAttribute('data-value', String(n));
-          }
-        });
-      });
-    })();
-  </script>
 </head>
 <body>
   <div class="reading-progress"></div>
@@ -152,7 +144,7 @@
             <li><strong>Private universities expanded from 30 to over 1,000 institutions between 1990-2014</strong>, while public universities grew from 100 to 500</li>
             <li><strong>Nearly 13% of Africans with tertiary education (approximately 2.9 million) live in developed countries</strong>, representing significant brain drain</li>
             <li>Africa contributes merely <strong>1% toward global research endeavors</strong> despite comprising 16.1% of world population</li>
-            <li><strong>Digital enrollment in higher education stands at under 12%</strong> compared to the global average of 85%</li>
+            <li><strong>Digital enrollment in higher education stands at under 12%</strong> compared to the global average of 85%</strong></li>
           </ul>
         </div>
 
@@ -162,19 +154,19 @@
 
           <div class="stats-grid">
             <div class="stat-card">
-              <div class="stat-number" data-value="4.3" data-suffix="%">4.3</div>
+              <span class="kpi-number" data-value="4.3" data-suffix="%" aria-label="4.3 percent"></span>
               <div class="stat-label">World's fastest higher education enrollment growth rate (1970-2013)</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number" data-value="9" data-suffix="%">9</div>
+              <span class="kpi-number" data-value="9" data-suffix="%" aria-label="9 percent"></span>
               <div class="stat-label">Current tertiary enrollment ratio in Africa (2021)</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number" data-value="38" data-suffix="%">38</div>
+              <span class="kpi-number" data-value="38" data-suffix="%" aria-label="38 percent"></span>
               <div class="stat-label">Global average tertiary enrollment ratio</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number" data-value="1274">1274</div>
+              <span class="kpi-number" data-value="1,274" aria-label="one thousand two hundred and seventy four"></span>
               <div class="stat-label">Officially recognized higher education institutions in Africa</div>
             </div>
           </div>
@@ -198,12 +190,34 @@
           <p>Research output varies dramatically across the continent. <a href="https://www.scimagoir.com/rankings.php?country=Africa&sector=Higher+educ." target="_blank" rel="noopener"><strong>South African institutions dominate African research rankings</strong></a>, with the University of Cape Town ranking first globally among African institutions (887th globally), followed by Cairo University (952nd globally).</p>
 
           <table class="data-table">
-            <thead><tr><th>Institution</th><th>Country</th><th>Continental Rank</th><th>Global Rank</th></tr></thead>
+            <thead>
+              <tr><th>Institution</th><th>Country</th><th>Continental Rank</th><th>Global Rank</th></tr>
+            </thead>
             <tbody>
-              <tr><td>University of Cape Town</td><td>South Africa</td><td>1st</td><td>887th</td></tr>
-              <tr><td>Cairo University</td><td>Egypt</td><td>2nd</td><td>952nd</td></tr>
-              <tr><td>University of Johannesburg</td><td>South Africa</td><td>3rd</td><td>#1 in SA research output</td></tr>
-              <tr><td>University of the Witwatersrand</td><td>South Africa</td><td>4th</td><td>Regional leader</td></tr>
+              <tr>
+                <td data-label="Institution">University of Cape Town</td>
+                <td data-label="Country">South Africa</td>
+                <td data-label="Continental Rank">1st</td>
+                <td data-label="Global Rank">887th</td>
+              </tr>
+              <tr>
+                <td data-label="Institution">Cairo University</td>
+                <td data-label="Country">Egypt</td>
+                <td data-label="Continental Rank">2nd</td>
+                <td data-label="Global Rank">952nd</td>
+              </tr>
+              <tr>
+                <td data-label="Institution">University of Johannesburg</td>
+                <td data-label="Country">South Africa</td>
+                <td data-label="Continental Rank">3rd</td>
+                <td data-label="Global Rank">#1 in SA research output</td>
+              </tr>
+              <tr>
+                <td data-label="Institution">University of the Witwatersrand</td>
+                <td data-label="Country">South Africa</td>
+                <td data-label="Continental Rank">4th</td>
+                <td data-label="Global Rank">Regional leader</td>
+              </tr>
             </tbody>
           </table>
           <div class="data-source">Source: SCImago Journal & Country Rank, 2023</div>
@@ -224,19 +238,19 @@
 
           <div class="stats-grid">
             <div class="stat-card">
-              <div class="stat-number" data-value="30" data-suffix="%">30</div>
+              <span class="kpi-number" data-value="30" data-suffix="%" aria-label="30 percent"></span>
               <div class="stat-label">Maximum female graduation rate in engineering fields across most SSA countries</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number" data-value="30" data-suffix="%">30</div>
+              <span class="kpi-number" data-value="30" data-suffix="%" aria-label="30 percent"></span>
               <div class="stat-label">Science professionals in Sub-Saharan Africa who are women</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number" data-value="40" data-suffix="%">40</div>
+              <span class="kpi-number" data-value="40" data-suffix="%" aria-label="40 percent"></span>
               <div class="stat-label">Female representation achieved by RSIF program by 2021</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number" data-value="2" data-suffix="x">2</div>
+              <span class="kpi-number" data-value="2" data-suffix="x" aria-label="two times"></span>
               <div class="stat-label">Increase in women's HE representation since 1976</div>
             </div>
           </div>
@@ -271,21 +285,21 @@
 
           <div class="stats-grid">
             <div class="stat-card">
-              <div class="stat-number" data-value="12" data-suffix="%">12</div>
+              <span class="kpi-number" data-value="12" data-suffix="%" aria-label="12 percent"></span>
               <div class="stat-label">Digital enrollment in African higher education</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number" data-value="85" data-suffix="%">85</div>
+              <span class="kpi-number" data-value="85" data-suffix="%" aria-label="85 percent"></span>
               <div class="stat-label">Global average for digital enrollment</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number" data-value="400">400</div>
+              <span class="kpi-number" data-value="400" aria-label="four hundred"></span>
               <div class="stat-label">Universities served by AAU-eLearnAfrica partnership</div>
             </div>
             <div class="stat-card">
-              <!-- CHANGED: scale million + suffix M to render 20M -->
-              <div class="stat-number" data-value="20000000" data-scale="1000000" data-suffix="M">20000000</div>
-              <div class="stat-label">20M Students reached through digital platforms</div>
+              <!-- JS-free 20M -->
+              <span class="kpi-number" data-value="20" data-suffix="M" aria-label="20 million"></span>
+              <div class="stat-label">Students reached through digital platforms</div>
             </div>
           </div>
 
@@ -396,11 +410,11 @@
   </footer>
 
   <!-- External scripts -->
-  <script src="../../js/main.js"></script>
-  <script src="../../js/blog.js"></script>
-  <script src="../../js/animations.js"></script>
+  <script defer src="../../js/main.js"></script>
+  <script defer src="../../js/blog.js"></script>
+  <script defer src="../../js/animations.js"></script>
 
-  <!-- Share buttons -->
+  <!-- Share buttons (unrelated to numbers; safe to keep) -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const postTitle = "The State of African Higher Education: Trends and Opportunities";
@@ -429,81 +443,6 @@
           });
         });
       }
-    });
-  </script>
-
-  <!-- Final: NaN-safe counter; supports data-scale + CSS suffix -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const els = document.querySelectorAll('.stat-number');
-      if (!els.length) return;
-
-      const toNumber = (raw) => {
-        if (raw == null) return NaN;
-        const s = String(raw).trim().toUpperCase();
-        const mult = s.endsWith('K') ? 1e3 : s.endsWith('M') ? 1e6 : s.endsWith('B') ? 1e9 : 1;
-        const cleaned = s.replace(/[^\d.]/g, '');
-        const n = cleaned === '' ? NaN : parseFloat(cleaned);
-        return isNaN(n) ? NaN : n * mult;
-      };
-
-      const formatWithCommas = (n, decimals = 0) => {
-        const fixed = Number(n).toFixed(decimals);
-        const parts = fixed.split('.');
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        return parts.join('.');
-      };
-
-      const animate = (el, target, { duration = 1000 } = {}) => {
-        if (typeof target !== 'number' || isNaN(target) || !isFinite(target)) return;
-        const start = performance.now();
-        const from = 0;
-
-        // scale for display (e.g., 20,000,000 / 1,000,000 = 20 with suffix "M")
-        const scaleAttr = el.getAttribute('data-scale');
-        const scale = scaleAttr ? Number(scaleAttr) : 1;
-        const displayTarget = scale && isFinite(scale) && scale > 0 ? (target / scale) : target;
-
-        // decimals: auto 1 if fractional after scaling, else 0
-        const autoDecimals = (displayTarget % 1 !== 0) ? 1 : 0;
-        const decimalsAttr = el.getAttribute('data-decimals');
-        const decimals = (decimalsAttr !== null && decimalsAttr !== '') ? Math.max(0, Number(decimalsAttr)) : autoDecimals;
-
-        const step = (now) => {
-          const t = Math.min(1, (now - start) / duration);
-          const val = from + (displayTarget - from) * t;
-          el.textContent = formatWithCommas(val, decimals);
-          if (t < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      };
-
-      els.forEach((el) => {
-        const rawData = el.getAttribute('data-value');
-        const target = rawData != null && rawData !== '' ? Number(rawData) : toNumber(el.textContent);
-
-        if (typeof target !== 'number' || isNaN(target)) return;
-
-        // Ensure suffix attribute if text originally had % or x
-        const t = (el.textContent || '').trim();
-        if (/%$/.test(t)) el.setAttribute('data-suffix','%');
-        if (/x$/i.test(t)) el.setAttribute('data-suffix','x');
-
-        animate(el, target, { duration: 1000 });
-      });
-
-      // Safety net: revert NaN to data-value
-      const mo = new MutationObserver((muts) => {
-        muts.forEach(m => {
-          if (m.target && m.target.classList && m.target.classList.contains('stat-number')) {
-            if (/NaN/i.test(m.target.textContent)) {
-              const v = Number(m.target.getAttribute('data-value'));
-              if (!isNaN(v)) m.target.textContent = String(v);
-            }
-          }
-        });
-      });
-      document.querySelectorAll('.stat-number').forEach(el => mo.observe(el, { characterData:true, childList:true, subtree:true }));
     });
   </script>
 </body>

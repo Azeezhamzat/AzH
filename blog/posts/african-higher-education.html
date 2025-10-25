@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Styles -->
+  <!-- Site styles -->
   <link rel="stylesheet" href="../../css/variables.css">
   <link rel="stylesheet" href="../../css/main.css">
   <link rel="stylesheet" href="../../css/blog.css">
@@ -30,16 +30,18 @@
 
   <style>
     :root{--primary-purple:#667eea;--accent-purple:#764ba2;--secondary-blue:#4facfe;--success-green:#27ae60;--warning-orange:#f39c12;}
+
     .key-findings{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:3rem;border-radius:20px;margin:3rem 0;box-shadow:0 15px 40px rgba(102,126,234,.3)}
     .key-findings h3{color:#fff;margin-bottom:1.5rem;font-size:1.8rem}
     .findings-list{list-style:none;padding:0}
     .findings-list li{padding:1rem 0 1rem 2.5rem;position:relative;line-height:1.7;font-size:1.05rem}
     .findings-list li::before{content:'✓';position:absolute;left:0;font-weight:700;font-size:1.5rem;color:rgba(255,255,255,.9)}
+
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:2rem 0}
     .stat-card{background:var(--color-white);padding:2rem 1.5rem;border-radius:var(--border-radius);text-align:center;box-shadow:0 4px 15px rgba(102,126,234,.15);border-top:4px solid var(--primary-purple);transition:transform .2s ease, box-shadow .2s ease}
     .stat-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(102,126,234,.25)}
 
-    /* KPI number: CSS-only rendering via attributes */
+    /* KPI numbers: CSS-only; no JS required */
     .kpi-number{
       display:inline-block;
       font-size:2.5rem;
@@ -51,12 +53,10 @@
       margin-bottom:.75rem;
       line-height:1;
     }
-    /* Show value + suffix purely via CSS so JS can't break it */
-    .kpi-number::before{
-      content: attr(data-value) attr(data-suffix);
-    }
+    .kpi-number::before{ content: attr(data-value) attr(data-suffix); }
 
     .stat-label{color:var(--color-medium-gray);font-size:.9rem;line-height:1.5}
+
     .highlight-box{background:linear-gradient(135deg,rgba(102,126,234,.08) 0%,rgba(118,75,162,.08) 100%);padding:2rem;border-radius:15px;margin:2rem 0;border-left:4px solid var(--primary-purple)}
     .highlight-box h3{color:var(--primary-purple);margin-bottom:1rem}
 
@@ -83,7 +83,7 @@
     .blog-post-header{text-align:center;margin-bottom:3rem;padding:3rem 2rem;background:linear-gradient(135deg,rgba(102,126,234,.08) 0%,rgba(118,75,162,.08) 100%);border-radius:20px;position:relative;overflow:hidden}
     .blog-post-header::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(135deg,var(--primary-purple) 0%,var(--accent-purple) 100%)}
 
-    /* Mobile */
+    /* Mobile tweaks (do NOT stack the table) */
     @media (max-width:768px){
       .stats-grid{grid-template-columns:1fr}
       .key-findings{padding:2rem 1.5rem}
@@ -91,14 +91,13 @@
       .data-table th,.data-table td{padding:.75rem .5rem}
       .blog-post-header{padding:2rem 1rem}
 
-      /* If your responsive.css stacks table cells, this shows the header label */
-      .data-table td[data-label]::before{
-        content: attr(data-label) ": ";
-        font-weight:600;
-        display:inline-block;
-        margin-right:.25rem;
-        color:var(--primary-purple);
-      }
+      /* Force normal table layout on mobile and remove any pseudo-labels from external CSS */
+      table.data-table{ display: table !important; width: 100% !important; }
+      table.data-table thead{ display: table-header-group !important; }
+      table.data-table tbody{ display: table-row-group !important; }
+      table.data-table tr{ display: table-row !important; }
+      table.data-table th, table.data-table td{ display: table-cell !important; }
+      table.data-table td::before{ content: none !important; display:none !important; }
     }
   </style>
 </head>
@@ -144,7 +143,7 @@
             <li><strong>Private universities expanded from 30 to over 1,000 institutions between 1990-2014</strong>, while public universities grew from 100 to 500</li>
             <li><strong>Nearly 13% of Africans with tertiary education (approximately 2.9 million) live in developed countries</strong>, representing significant brain drain</li>
             <li>Africa contributes merely <strong>1% toward global research endeavors</strong> despite comprising 16.1% of world population</li>
-            <li><strong>Digital enrollment in higher education stands at under 12%</strong> compared to the global average of 85%</strong></li>
+            <li><strong>Digital enrollment in higher education stands at under 12%</strong> compared to the global average of <strong>85%</strong></li>
           </ul>
         </div>
 
@@ -195,28 +194,28 @@
             </thead>
             <tbody>
               <tr>
-                <td data-label="Institution">University of Cape Town</td>
-                <td data-label="Country">South Africa</td>
-                <td data-label="Continental Rank">1st</td>
-                <td data-label="Global Rank">887th</td>
+                <td>University of Cape Town</td>
+                <td>South Africa</td>
+                <td>1st</td>
+                <td>887th</td>
               </tr>
               <tr>
-                <td data-label="Institution">Cairo University</td>
-                <td data-label="Country">Egypt</td>
-                <td data-label="Continental Rank">2nd</td>
-                <td data-label="Global Rank">952nd</td>
+                <td>Cairo University</td>
+                <td>Egypt</td>
+                <td>2nd</td>
+                <td>952nd</td>
               </tr>
               <tr>
-                <td data-label="Institution">University of Johannesburg</td>
-                <td data-label="Country">South Africa</td>
-                <td data-label="Continental Rank">3rd</td>
-                <td data-label="Global Rank">#1 in SA research output</td>
+                <td>University of Johannesburg</td>
+                <td>South Africa</td>
+                <td>3rd</td>
+                <td>#1 in SA research output</td>
               </tr>
               <tr>
-                <td data-label="Institution">University of the Witwatersrand</td>
-                <td data-label="Country">South Africa</td>
-                <td data-label="Continental Rank">4th</td>
-                <td data-label="Global Rank">Regional leader</td>
+                <td>University of the Witwatersrand</td>
+                <td>South Africa</td>
+                <td>4th</td>
+                <td>Regional leader</td>
               </tr>
             </tbody>
           </table>
@@ -409,16 +408,17 @@
     <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
   </footer>
 
-  <!-- External scripts -->
+  <!-- External scripts (do not touch the numbers/table) -->
   <script defer src="../../js/main.js"></script>
   <script defer src="../../js/blog.js"></script>
   <script defer src="../../js/animations.js"></script>
 
-  <!-- Share buttons (unrelated to numbers; safe to keep) -->
+  <!-- Share buttons -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const postTitle = "The State of African Higher Education: Trends and Opportunities";
       const currentUrl = window.location.href;
+
       const twitterBtn = document.getElementById('share-twitter');
       if (twitterBtn) {
         twitterBtn.addEventListener('click', () => {
@@ -426,6 +426,7 @@
           window.open(twitterUrl, '_blank', 'width=550,height=420');
         });
       }
+
       const linkedinBtn = document.getElementById('share-linkedin');
       if (linkedinBtn) {
         linkedinBtn.addEventListener('click', () => {
@@ -433,6 +434,7 @@
           window.open(linkedinUrl, '_blank', 'width=550,height=420');
         });
       }
+
       const copyBtn = document.getElementById('share-copy');
       if (copyBtn) {
         copyBtn.addEventListener('click', () => {

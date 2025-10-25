@@ -85,6 +85,19 @@
       "image": "images/blog/traveller-migrant.jpg",
       "readingTime": "7 min read",
       "content": "blog/posts/migrant-or-traveller.md"
+    },
+    {
+      "id": "african-higher-education",
+      "title": "The State of African Higher Education: Trends and Opportunities",
+      "date": "2024-07-09",
+      "author": "Azeez Adewale Hamzat",
+      "category": "Research Analysis",
+      "tags": ["African Higher Education", "Research", "Data Analysis", "Education Policy", "Africa"],
+      "excerpt": "A comprehensive analysis of Africa's evolving educational landscape based on empirical data from UNESCO, World Bank, and African Union sources. Examining enrollment trends, research capacity, brain drain, and digital transformation.",
+      "image": "images/blog/higher-education.webp",
+      "readingTime": "15 min read",
+      "content": "blog/posts/african-higher-education.html",
+      "isHTML": true
     }
   ]
 }

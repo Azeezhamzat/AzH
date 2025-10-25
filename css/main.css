@@ -160,6 +160,7 @@ section {
   background: var(--color-light-gray);
 }
 
+
 /* Header & Navigation */
 #header {
   position: fixed;
@@ -185,23 +186,49 @@ section {
   align-items: center;
 }
 
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .logo a {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-dark-blue);
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
 
-#header.scrolled .logo a {
-  color: var(--color-primary);
+.logo a:hover {
+  opacity: 0.85;
 }
 
+.logo a::after {
+  display: none; /* Remove underline animation for logo */
+}
+
+/* Logo Image */
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: opacity var(--transition-fast);
+}
+
+#header.scrolled .logo img {
+  height: 45px; /* Slightly smaller when scrolled */
+}
+
+/* Navigation Menu */
 .nav-menu {
   display: flex;
   list-style: none;
   gap: var(--spacing-lg);
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu a {
@@ -210,13 +237,9 @@ section {
   padding: 0.5rem 0;
   position: relative;
   transition: color var(--transition-fast);
+  text-decoration: none;
 }
 
-/* ===================================
-   MAIN STYLESHEET - PART 2
-   =================================== */
-
-/* Navigation continued */
 .nav-menu a::after {
   content: '';
   position: absolute;
@@ -233,11 +256,17 @@ section {
   width: 100%;
 }
 
+.nav-menu a:hover {
+  color: var(--color-primary);
+}
+
+/* CV Link Button */
 .cv-link {
   background: var(--gradient-primary);
   color: var(--color-white) !important;
   padding: 0.5rem 1rem !important;
   border-radius: var(--border-radius-small);
+  margin-left: var(--spacing-sm);
 }
 
 .cv-link::after {
@@ -247,6 +276,7 @@ section {
 .cv-link:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
+  opacity: 0.9;
 }
 
 /* Mobile Menu Toggle */
@@ -258,6 +288,7 @@ section {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  margin-left: var(--spacing-md);
 }
 
 .mobile-menu-toggle span {
@@ -265,6 +296,96 @@ section {
   height: 3px;
   background: var(--color-dark-blue);
   transition: all var(--transition-fast);
+  border-radius: 2px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: var(--spacing-sm) var(--container-padding);
+  }
+  
+  /* Logo adjustments for mobile */
+  .logo img {
+    height: 40px;
+  }
+  
+  #header.scrolled .logo img {
+    height: 38px;
+  }
+  
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  /* Mobile menu */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 2rem 2rem;
+    box-shadow: var(--shadow-large);
+    transition: right var(--transition-base);
+    z-index: 999;
+    gap: 0;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid var(--color-light-gray);
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-menu a {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.125rem;
+  }
+  
+  .cv-link {
+    margin-left: 0 !important;
+    margin-top: var(--spacing-sm);
+    display: inline-block !important;
+    width: auto !important;
+    text-align: center;
+  }
+  
+  /* Menu overlay */
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 35px;
+  }
+  
+  #header.scrolled .logo img {
+    height: 33px;
+  }
 }
 
 /* Hero Section */
@@ -678,9 +799,6 @@ section {
   transform: translateY(-4px);
   box-shadow: var(--shadow-medium);
 }
-/* ===================================
-   FOOTER DESIGN
-   =================================== */
 
 /* Footer */
 #footer {

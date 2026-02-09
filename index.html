@@ -164,7 +164,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 <li><a class="nl-home active" onclick="goHome('#about')">About</a></li>
 <li><a class="nl-home" onclick="goHome('#research')">Research</a></li>
 <li><a class="nl-home" onclick="goHome('#publication')">Work</a></li>
-<li><a class="nl-blog" onclick="showPage('blog')">Blog</a></li>
+<li><a class="nl-blog" onclick="showPage('blog');window.location.hash='blog'">Blog</a></li>
 <li><a class="nl-home" onclick="goHome('#contact')">Contact</a></li>
 </ul>
 <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -244,7 +244,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 <div class="post-header" id="post-header-area"></div>
 <div class="post-hero-img" id="post-img-area"></div>
 <div class="post-body" id="post-body-area"></div>
-<div class="post-footer-nav"><button class="post-footer-back" onclick="showPage('blog')">← Back to all posts</button></div>
+<div class="post-footer-nav"><button class="post-footer-back" onclick="showPage('blog');window.location.hash='blog'">← Back to all posts</button></div>
 </div>
 
 <footer>&copy; 2025 Azeez Adewale Hamzat</footer>
@@ -316,7 +316,7 @@ function openPost(id){
   if(!p.hasContent||!postContent[id]){window.open('https://azeezhamzat.com/blog.html','_blank');return}
 
   document.getElementById('post-header-area').innerHTML=`
-    <button class="post-back" onclick="showPage('blog')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> All posts</button>
+    <button class="post-back" onclick="showPage('blog');window.location.hash='blog'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> All posts</button>
     <div class="post-cat">${p.category}</div>
     <h1>${p.title}</h1>
     <div class="post-meta-row"><span>${fmtDate(p.date)}</span><span>${p.time} read</span><span>Azeez A. Hamzat</span></div>
@@ -324,6 +324,7 @@ function openPost(id){
   document.getElementById('post-img-area').innerHTML=`<img src="${p.image}" alt="${p.title}" onerror="this.parentElement.style.display='none'">`;
   document.getElementById('post-body-area').innerHTML=mdToHtml(postContent[id]);
   showPage('post');
+  window.location.hash='post/'+id;
 }
 
 // Render blog cards
@@ -354,6 +355,7 @@ function debounce(fn,w){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn
 function showPage(p){
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   document.getElementById('page-'+p).classList.add('active');
+  if(p==='home')history.replaceState(null,null,' ');
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
   if(p==='blog'||p==='post')document.querySelector('.nl-blog').classList.add('active');
   else document.querySelector('.nl-home').classList.add('active');
@@ -371,6 +373,20 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 
 (function(){var u='azeezhamzat',d='yahoo.com',e=u+'@'+d;var a=document.getElementById('em-link');var s=document.getElementById('em-text');if(a){a.href='mai'+'lto:'+e;}if(s){s.textContent=e;}})();
+
+// Hash-based routing for shareable post links
+function handleHash(){
+  var h=window.location.hash.slice(1);
+  if(h.startsWith('post/')){
+    var id=h.slice(5);
+    if(posts.find(function(p){return p.id===id})){openPost(id);}
+    else{showPage('blog');}
+  } else if(h==='blog'){
+    showPage('blog');
+  }
+}
+window.addEventListener('hashchange',handleHash);
+if(window.location.hash)handleHash();
 </script>
 </body>
 </html>

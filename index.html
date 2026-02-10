@@ -171,7 +171,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 </div></nav>
 
 <!-- HOME -->
-<div id="page-home" class="page active">
+<div id="page-home" class="page active" aria-hidden="false">
 <section class="hero"><div class="hero-inner">
 <div class="hero-text">
 <div class="hero-eyebrow">PhD Researcher · Dublin</div>
@@ -232,7 +232,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 </div>
 
 <!-- BLOG -->
-<div id="page-blog" class="page">
+<div id="page-blog" class="page" aria-hidden="true" hidden>
 <div class="blog-header"><div class="sec-eyebrow">Blog</div><h1 class="sec-title" style="font-size:clamp(2rem,4vw,2.8rem)">Writings & Reflections</h1><div class="sec-rule"></div><p class="blog-desc">Notes from my academic journey — on collective intelligence, AI, the PhD experience, and questions I haven't figured out yet.</p></div>
 <div class="blog-controls"><div class="search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="text" id="blog-search" placeholder="Search posts…"></div>
 <div class="f-btns"><button class="f-btn active" data-cat="all">All</button><button class="f-btn" data-cat="Research Updates">Research</button><button class="f-btn" data-cat="Academic Reflections">Reflections</button><button class="f-btn" data-cat="Insights">Insights</button><button class="f-btn" data-cat="Systems Thinking">Systems</button><button class="f-btn" data-cat="Research Analysis">Analysis</button></div></div>
@@ -240,7 +240,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 </div>
 
 <!-- POST READER -->
-<div id="page-post" class="page">
+<div id="page-post" class="page" aria-hidden="true" hidden>
 <div class="post-header" id="post-header-area"></div>
 <div class="post-hero-img" id="post-img-area"></div>
 <div class="post-body" id="post-body-area"></div>
@@ -353,8 +353,8 @@ function doFilter(){const q=document.getElementById('blog-search').value.toLower
 function debounce(fn,w){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),w)}}
 
 function showPage(p){
-  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
-  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('.page').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-hidden','true');x.setAttribute('hidden','')});
+  var el=document.getElementById('page-'+p);el.classList.add('active');el.setAttribute('aria-hidden','false');el.removeAttribute('hidden');
   if(p==='home')history.replaceState(null,null,' ');
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
   if(p==='blog'||p==='post')document.querySelector('.nl-blog').classList.add('active');

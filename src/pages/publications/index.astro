@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { publications } from '../../data/site';
+
+const description = 'Selected publications and research outputs by Azeez Hamzat on collective intelligence, community knowledge, agriculture, and anticipatory governance.';
+---
+
+<BaseLayout title="Publications" description={description} canonical="/publications/">
+  <header class="page-hero shell">
+    <p class="eyebrow">Publications and outputs</p>
+    <h1 class="page-title">Research made <span class="accent">shareable</span></h1>
+    <p class="lede">Published and forthcoming work across community knowledge, collective intelligence, agricultural systems, and anticipatory governance.</p>
+  </header>
+
+  <section class="section publication-section">
+    <div class="shell publication-list">
+      {publications.map((publication, index) => (
+        <article>
+          <div class="pub-index">0{index + 1}</div>
+          <div class="pub-copy">
+            <div class="pub-meta"><span>{publication.year}</span><span>{publication.type}</span></div>
+            <h2>{publication.title}</h2>
+            <p class="authors">{publication.authors}</p>
+            <p class="venue">{publication.venue}</p>
+            <p class="description">{publication.description}</p>
+            {publication.href ? <a class="button button-primary" href={publication.href} target="_blank" rel="noreferrer">{publication.action}</a> : <span class="status">Accepted · Publication details forthcoming</span>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section profiles-section">
+    <div class="shell profiles-grid"><div><p class="eyebrow">Research profiles</p><h2 class="section-title">Follow the record</h2></div><div class="profile-links"><a href="https://scholar.google.com/citations?user=6CErkzgAAAAJ" target="_blank" rel="noreferrer"><span>Google Scholar</span><b>Publication profile ↗</b></a><a href="https://orcid.org/0009-0007-8804-0283" target="_blank" rel="noreferrer"><span>ORCID</span><b>0009-0007-8804-0283 ↗</b></a><a href="https://www.researchgate.net/profile/Azeez-Hamzat" target="_blank" rel="noreferrer"><span>ResearchGate</span><b>Research network ↗</b></a></div></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { padding: clamp(6rem, 12vw, 11rem) 0 clamp(5rem, 9vw, 8rem); }
+  .page-hero .lede { margin: 2rem 0 0; }
+  .publication-section { padding-top: 0; border-top: 0; }
+  .publication-list { border-top: 1px solid var(--line); }
+  .publication-list article { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); padding: clamp(2.5rem, 6vw, 5rem) 0; border-bottom: 1px solid var(--line); }
+  .pub-index { color: var(--gold-strong); font-family: var(--serif); font-size: 2.8rem; }
+  .pub-meta { display: flex; gap: .8rem; color: var(--ink-muted); font-family: var(--mono); font-size: .6rem; letter-spacing: .09em; text-transform: uppercase; }
+  .pub-meta span + span::before { content: '·'; margin-right: .8rem; }
+  .pub-copy h2 { max-width: 950px; margin: 1.2rem 0 1rem; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 400; letter-spacing: -.035em; line-height: 1.12; }
+  .authors, .venue { margin: 0; color: var(--ink-soft); }
+  .venue { color: var(--gold-strong); font-style: italic; }
+  .description { max-width: 760px; margin: 1.5rem 0 2rem; color: var(--ink-soft); }
+  .status { display: inline-flex; padding: .4rem .65rem; background: var(--gold-wash); color: var(--gold-strong); border-radius: 2px; font-family: var(--mono); font-size: .55rem; letter-spacing: .08em; text-transform: uppercase; }
+  .profiles-section { background: var(--surface); }
+  .profiles-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 8rem); }
+  .profile-links { border-top: 1px solid var(--line); }
+  .profile-links a { padding: 1.4rem 0; display: flex; justify-content: space-between; gap: 1.5rem; border-bottom: 1px solid var(--line); text-decoration: none; }
+  .profile-links span { font-family: var(--serif); font-size: 1.35rem; }
+  .profile-links b { color: var(--gold-strong); font-size: .7rem; font-weight: 500; }
+  @media (max-width: 720px) { .publication-list article, .profiles-grid { grid-template-columns: 1fr; gap: 1rem; } .pub-index { font-size: 2rem; } .profile-links a { flex-direction: column; gap: .2rem; } }
+</style>

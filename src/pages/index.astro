@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import ConstellationFeature from '../components/ConstellationFeature.astro';
+import WritingCard from '../components/WritingCard.astro';
+import { getCollection } from 'astro:content';
+import { education, publications, researchQuestions } from '../data/site';
+
+const description = 'Azeez Hamzat is a doctoral researcher studying collective intelligence, group decision-making, and how AI changes whose knowledge gets heard.';
+const recentWriting = (await getCollection('writing'))
+  .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout description={description} canonical="/">
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Azeez Adewale Hamzat',
+    givenName: 'Azeez',
+    familyName: 'Hamzat',
+    jobTitle: 'Doctoral Researcher',
+    url: 'https://azeezhamzat.com',
+    image: 'https://azeezhamzat.com/profile.jpg',
+    affiliation: { '@type': 'Organization', name: 'TCD-TUD SOHAM Centre' },
+    sameAs: [
+      'https://www.linkedin.com/in/azeezhamzat',
+      'https://orcid.org/0009-0007-8804-0283',
+      'https://scholar.google.com/citations?user=6CErkzgAAAAJ',
+      'https://www.researchgate.net/profile/Azeez-Hamzat',
+    ],
+  })} />
+
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">PhD researcher · Collective intelligence</p>
+        <h1 class="display-title">How communities make <span class="accent">decisions</span></h1>
+        <p class="lede">I study how groups arrive at decisions: whose knowledge gets heard, how shared understanding forms, and what changes when AI enters that process.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="/research/">Explore my research</a>
+          <a class="button" href="/#contact">Start a conversation</a>
+        </div>
+      </div>
+      <figure class="portrait-frame">
+        <img src="/profile.jpg" alt="Azeez Adewale Hamzat" width="853" height="1056" fetchpriority="high" />
+        <figcaption class="portrait-caption">Dublin · Ireland</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="shell intro-grid">
+      <div>
+        <p class="eyebrow">The short version</p>
+        <p class="intro-statement">I study how people think together, and how the systems around them decide which knowledge counts.</p>
+      </div>
+      <div class="intro-copy">
+        <div>
+          <p>I grew up in Nigeria and studied agricultural science at LAUTECH, then earned a master’s degree in Collective Intelligence from Mohammed VI Polytechnic University in Morocco.</p>
+          <p>I am now a doctoral researcher at the TCD-TUD SOHAM Centre in Dublin, examining how AI changes the way groups make decisions together.</p>
+        </div>
+        <div>
+          <p>I combine qualitative and computational approaches: participatory research, fieldwork, Python, R, data science, and agent-based modelling.</p>
+          <p>The disciplines have changed, but the question underneath them has not: how can groups make better decisions without losing the knowledge that makes them diverse?</p>
+          <a class="text-link" href="/research/">See the questions shaping my work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="research">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="eyebrow">Research</p>
+        <h2 class="section-title">Questions I’m sitting with</h2>
+        <p>These are the threads shaping my work. They cross collective intelligence, agricultural knowledge, human-AI interaction, and institutional decision-making.</p>
+      </div>
+      <div class="research-grid">
+        {researchQuestions.map((question, index) => <ResearchCard {...question} index={index + 1} />)}
+      </div>
+      <div class="section-action"><a class="text-link" href="/research/">Read about methods, projects, and current work</a></div>
+    </div>
+  </section>
+
+  <section class="section project-section" id="building">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="eyebrow">Research in practice</p>
+        <h2 class="section-title">What I am building</h2>
+        <p>Some research questions need more than a paper. They need a working environment where ideas can be tested, inhabited, and improved with real people.</p>
+      </div>
+      <ConstellationFeature />
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="shell">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow">Selected work</p><h2 class="section-title">Publications</h2></div>
+        <p>Research and writing that connect local knowledge, collective intelligence, and the institutions that shape shared futures.</p>
+      </div>
+      <div class="publication-list">
+        {publications.map((publication) => (
+          <article class="publication-row">
+            <div class="publication-year">{publication.year}</div>
+            <div>
+              <p class="publication-type">{publication.type}</p>
+              <h3>{publication.title}</h3>
+              <p class="publication-byline">{publication.authors} · {publication.venue}</p>
+              <p class="publication-description">{publication.description}</p>
+            </div>
+            <div class="publication-action">
+              {publication.href ? <a href={publication.href} target="_blank" rel="noreferrer">{publication.action}<span aria-hidden="true">↗</span></a> : <span>Accepted</span>}
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="section-action"><a class="text-link" href="/publications/">View publications and research outputs</a></div>
+    </div>
+  </section>
+
+  <section class="section writing-preview">
+    <div class="shell">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow">Field notes</p><h2 class="section-title">Recent writing</h2></div>
+        <p>Essays on collective intelligence, knowledge systems, technology, agriculture, and the unfinished questions around them.</p>
+      </div>
+      <div class="writing-grid">
+        {recentWriting.map((entry) => <WritingCard id={entry.id} {...entry.data} />)}
+      </div>
+      <div class="section-action"><a class="text-link" href="/writing/">Browse all writing</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading"><p class="eyebrow">Education</p><h2 class="section-title">Where I have studied</h2></div>
+      <div class="education-list">
+        {education.map((item, index) => (
+          <article class="education-row">
+            <span class="education-index">0{index + 1}</span>
+            <p class="education-period">{item.period}</p>
+            <div><h3>{item.degree}</h3><p class="education-school">{item.institution}</p><p class="education-note">{item.note}</p></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact">
+    <div class="shell contact-grid">
+      <div><p class="eyebrow">Contact</p><h2 class="section-title">Let’s think together</h2></div>
+      <div>
+        <p class="contact-lede">I’m interested in thoughtful conversations about collective intelligence, AI and society, agricultural knowledge systems, and cross-cultural research collaboration.</p>
+        <a class="contact-email" href="mailto:azeezhamzat@yahoo.com">azeezhamzat@yahoo.com</a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/azeezhamzat" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://orcid.org/0009-0007-8804-0283" target="_blank" rel="noreferrer">ORCID</a>
+          <a href="https://scholar.google.com/citations?user=6CErkzgAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a href="https://www.researchgate.net/profile/Azeez-Hamzat" target="_blank" rel="noreferrer">ResearchGate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .section-action { margin-top: 2.2rem; }
+  .project-section, .writing-preview { background: linear-gradient(180deg, var(--bg), var(--surface)); }
+  .split-heading { max-width: none; grid-template-columns: 1fr .7fr; align-items: end; }
+  .publication-list { border-top: 1px solid var(--line); }
+  .publication-row { display: grid; grid-template-columns: 110px minmax(0, 1fr) 150px; gap: 2rem; padding: 2.2rem 0; border-bottom: 1px solid var(--line); }
+  .publication-year, .publication-type { color: var(--ink-muted); font-family: var(--mono); font-size: .59rem; letter-spacing: .1em; text-transform: uppercase; }
+  .publication-type { margin: 0 0 .75rem; color: var(--gold-strong); }
+  .publication-row h3 { max-width: 810px; margin: 0; font-family: var(--serif); font-size: clamp(1.5rem, 2.6vw, 2.2rem); font-weight: 400; letter-spacing: -.025em; line-height: 1.2; }
+  .publication-byline { margin: .75rem 0 0; color: var(--ink-soft); font-size: .8rem; }
+  .publication-description { max-width: 780px; margin: 1rem 0 0; color: var(--ink-soft); font-size: .9rem; }
+  .publication-action { display: flex; justify-content: flex-end; align-items: center; color: var(--gold-strong); font-size: .74rem; }
+  .publication-action a span { margin-left: .35rem; }
+  .publication-action > span { padding: .35rem .6rem; background: var(--gold-wash); border-radius: 2px; font-family: var(--mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; }
+  .writing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .education-list { border-top: 1px solid var(--line); }
+  .education-row { display: grid; grid-template-columns: 60px 170px 1fr; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid var(--line); }
+  .education-index, .education-period { color: var(--ink-muted); font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
+  .education-period { margin: 0; }
+  .education-row h3 { margin: 0; font-family: var(--serif); font-size: 1.55rem; font-weight: 400; }
+  .education-school { margin: .35rem 0 0; color: var(--gold-strong); font-size: .8rem; }
+  .education-note { max-width: 650px; margin: .7rem 0 0; color: var(--ink-soft); font-size: .87rem; }
+  .contact-section { background: var(--surface); }
+  .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(3rem, 8vw, 8rem); }
+  .contact-lede { max-width: 650px; margin: .2rem 0 2rem; color: var(--ink-soft); font-size: 1.05rem; }
+  .contact-email { font-family: var(--serif); font-size: clamp(1.6rem, 3.5vw, 3rem); color: var(--gold-strong); }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; margin-top: 2rem; color: var(--ink-soft); font-size: .8rem; }
+  .contact-links a:hover { color: var(--gold-strong); }
+  @media (max-width: 900px) { .writing-grid { grid-template-columns: 1fr 1fr; } .split-heading, .contact-grid { grid-template-columns: 1fr; } .publication-row { grid-template-columns: 80px minmax(0,1fr); } .publication-action { grid-column: 2; justify-content: flex-start; } }
+  @media (max-width: 680px) { .research-grid, .writing-grid { grid-template-columns: 1fr; } .publication-row { grid-template-columns: 1fr; gap: .8rem; } .publication-action { grid-column: auto; } .education-row { grid-template-columns: 40px 1fr; } .education-period { grid-column: 2; } .education-row > div { grid-column: 2; } }
+</style>

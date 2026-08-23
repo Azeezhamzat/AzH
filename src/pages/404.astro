@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found" description="The page you were looking for could not be found." canonical="/404.html">
+  <section class="not-found shell"><p class="eyebrow">404 · Page not found</p><h1 class="page-title">This path has gone <span class="accent">quiet</span></h1><p class="lede">The page may have moved as the site evolved. You can return home, explore the research, or continue with the latest writing.</p><div class="button-row"><a class="button button-primary" href="/">Return home</a><a class="button" href="/writing/">Browse writing</a></div></section>
+</BaseLayout>
+
+<style>.not-found{min-height:70vh;padding:clamp(7rem,14vw,12rem) 0}.not-found .lede{margin:2rem 0 0}</style>

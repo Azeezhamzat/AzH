@@ -1,0 +1,41 @@
+---
+import ArticleCover from './ArticleCover.astro';
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  published: Date;
+  readingTime: string;
+  coverTone: 'ochre' | 'sage' | 'blue' | 'clay' | 'plum';
+  tags: string[];
+}
+const { id, title, description, category, published, readingTime, coverTone, tags } = Astro.props;
+const date = published.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<article class="writing-card" data-writing-card data-category={category.toLowerCase()} data-search={`${title} ${description} ${tags.join(' ')}`.toLowerCase()}>
+  <a href={`/writing/${id}/`} aria-label={`Read ${title}`}>
+    <ArticleCover title={title} category={category} tone={coverTone} compact />
+  </a>
+  <div class="writing-copy">
+    <div class="writing-meta"><span>{date}</span><span>{readingTime}</span></div>
+    <h2><a href={`/writing/${id}/`}>{title}</a></h2>
+    <p>{description}</p>
+    <a class="read-link" href={`/writing/${id}/`}>Read the essay <span aria-hidden="true">→</span></a>
+  </div>
+</article>
+
+<style>
+  .writing-card { display: grid; grid-template-rows: auto 1fr; overflow: hidden; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); }
+  .writing-card > a { text-decoration: none; }
+  .writing-copy { padding: 1.5rem; display: flex; flex-direction: column; }
+  .writing-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--ink-muted); font-family: var(--mono); font-size: .57rem; letter-spacing: .08em; text-transform: uppercase; }
+  h2 { margin: 1.15rem 0 .8rem; font-family: var(--serif); font-size: 1.65rem; font-weight: 400; letter-spacing: -.025em; line-height: 1.16; }
+  h2 a { text-decoration: none; }
+  h2 a:hover { color: var(--gold-strong); }
+  p { margin: 0 0 1.5rem; color: var(--ink-soft); display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; font-size: .87rem; }
+  .read-link { margin-top: auto; color: var(--gold-strong); font-size: .75rem; font-weight: 500; }
+  .read-link span { margin-left: .3rem; }
+</style>

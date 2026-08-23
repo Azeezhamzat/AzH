@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  tone: 'ochre' | 'sage' | 'blue' | 'clay' | 'plum';
+  compact?: boolean;
+}
+const { title, category, tone, compact = false } = Astro.props;
+---
+
+<div class:list={['article-cover', `tone-${tone}`, { compact }]} aria-hidden="true">
+  <span class="cover-label">Field notes · {category}</span>
+  <span class="cover-title">{title}</span>
+  <span class="cover-orbit orbit-one"></span>
+  <span class="cover-orbit orbit-two"></span>
+  <span class="cover-node node-one"></span>
+  <span class="cover-node node-two"></span>
+  <span class="cover-node node-three"></span>
+</div>
+
+<style>
+  .article-cover { --cover-a:#aa7d2c; --cover-b:#34291b; position: relative; min-height: 440px; padding: clamp(1.5rem, 5vw, 4rem); display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; border-radius: 9px; background: linear-gradient(135deg, var(--cover-b), #14171c 75%); color: #f3eee2; isolation: isolate; }
+  .article-cover::before { content: ''; position: absolute; inset: 0; z-index: -2; background: radial-gradient(circle at 76% 30%, color-mix(in srgb, var(--cover-a) 48%, transparent), transparent 44%); }
+  .article-cover::after { content: ''; position: absolute; inset: 0; z-index: -1; opacity: .22; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 36px 36px; mask-image: linear-gradient(115deg, transparent 18%, black); }
+  .tone-sage { --cover-a:#8ba38a; --cover-b:#1c312a; }
+  .tone-blue { --cover-a:#7897aa; --cover-b:#1c2934; }
+  .tone-clay { --cover-a:#c27c58; --cover-b:#3a241e; }
+  .tone-plum { --cover-a:#9d7895; --cover-b:#342231; }
+  .cover-label { position: relative; z-index: 2; font-family: var(--mono); font-size: .6rem; letter-spacing: .13em; text-transform: uppercase; opacity: .74; }
+  .cover-title { position: relative; z-index: 2; max-width: 720px; font-family: var(--serif); font-size: clamp(2.6rem, 6vw, 5.7rem); font-style: italic; line-height: .98; letter-spacing: -.045em; }
+  .cover-orbit { position: absolute; z-index: 0; border: 1px solid color-mix(in srgb, var(--cover-a) 44%, transparent); border-radius: 50%; }
+  .orbit-one { width: 350px; height: 350px; right: -80px; top: -100px; }
+  .orbit-two { width: 520px; height: 520px; right: -150px; top: -185px; opacity: .5; }
+  .cover-node { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--cover-a); box-shadow: 0 0 0 6px color-mix(in srgb, var(--cover-a) 15%, transparent), 0 0 20px var(--cover-a); }
+  .node-one { right: 22%; top: 17%; }
+  .node-two { right: 8%; top: 43%; }
+  .node-three { right: 37%; top: 8%; }
+  .compact { min-height: 240px; padding: 1.5rem; }
+  .compact .cover-title { max-width: 90%; font-size: clamp(1.65rem, 3vw, 2.45rem); }
+  .compact .orbit-one { width: 220px; height: 220px; }
+  .compact .orbit-two { width: 320px; height: 320px; }
+  @media (max-width: 680px) { .article-cover { min-height: 360px; } .compact { min-height: 220px; } }
+</style>

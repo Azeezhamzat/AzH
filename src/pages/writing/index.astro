@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WritingCard from '../../components/WritingCard.astro';
+import { getCollection } from 'astro:content';
+
+const description = 'Essays and field notes by Azeez Hamzat on collective intelligence, AI, knowledge systems, agriculture, and academic life.';
+const entries = (await getCollection('writing')).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+const categories = [...new Set(entries.map((entry) => entry.data.category))];
+---
+
+<BaseLayout title="Writing" description={description} canonical="/writing/">
+  <header class="page-hero shell">
+    <p class="eyebrow">Writing and field notes</p>
+    <h1 class="page-title">Ideas in <span class="accent">motion</span></h1>
+    <p class="lede">Essays on collective intelligence, knowledge systems, technology, agriculture, and the questions that remain unfinished.</p>
+  </header>
+
+  <section class="writing-section shell">
+    <div class="writing-tools" aria-label="Filter writing">
+      <label class="search-field"><span class="sr-only">Search essays</span><span aria-hidden="true">⌕</span><input type="search" placeholder="Search essays" data-writing-search /></label>
+      <div class="filters" role="group" aria-label="Filter by category">
+        <button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All</button>
+        {categories.map((category) => <button type="button" class="filter-button" data-filter={category.toLowerCase()} aria-pressed="false">{category}</button>)}
+      </div>
+    </div>
+    <p class="result-count" data-result-count aria-live="polite">{entries.length} essays</p>
+    <div class="writing-grid" data-writing-grid>
+      {entries.map((entry) => <WritingCard id={entry.id} {...entry.data} />)}
+    </div>
+    <div class="empty-state" data-empty-state hidden><p>No essays match that search yet.</p><button type="button" class="button" data-clear-search>Clear filters</button></div>
+  </section>
+
+  <script>
+    const search = document.querySelector<HTMLInputElement>('[data-writing-search]');
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-writing-card]')];
+    const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+    const count = document.querySelector<HTMLElement>('[data-result-count]');
+    const empty = document.querySelector<HTMLElement>('[data-empty-state]');
+    const clear = document.querySelector<HTMLButtonElement>('[data-clear-search]');
+    let selected = 'all';
+
+    const applyFilters = () => {
+      const query = search?.value.trim().toLowerCase() || '';
+      let visible = 0;
+      cards.forEach((card) => {
+        const categoryMatch = selected === 'all' || card.dataset.category === selected;
+        const searchMatch = !query || card.dataset.search?.includes(query);
+        const show = Boolean(categoryMatch && searchMatch);
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'essay' : 'essays'}`;
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    search?.addEventListener('input', applyFilters);
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      selected = button.dataset.filter || 'all';
+      buttons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      applyFilters();
+    }));
+    clear?.addEventListener('click', () => {
+      selected = 'all';
+      if (search) search.value = '';
+      buttons.forEach((button, index) => {
+        button.classList.toggle('active', index === 0);
+        button.setAttribute('aria-pressed', String(index === 0));
+      });
+      applyFilters();
+      search?.focus();
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .page-hero { padding: clamp(6rem, 12vw, 11rem) 0 clamp(4rem, 8vw, 7rem); }
+  .page-hero .lede { margin: 2rem 0 0; }
+  .writing-section { padding-bottom: clamp(6rem, 12vw, 10rem); }
+  .writing-tools { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; padding: 1.2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .search-field { min-width: min(100%, 280px); display: flex; align-items: center; gap: .6rem; padding: .55rem .75rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink-muted); }
+  .search-field input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); }
+  .search-field input::placeholder { color: var(--ink-muted); }
+  .filters { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .filter-button { padding: .43rem .7rem; border: 1px solid var(--line); border-radius: 99px; background: transparent; color: var(--ink-soft); cursor: pointer; font-size: .68rem; }
+  .filter-button:hover, .filter-button:focus-visible, .filter-button.active { border-color: var(--gold); color: var(--gold-strong); }
+  .filter-button.active { background: var(--gold-wash); }
+  .result-count { margin: 1.4rem 0; color: var(--ink-muted); font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
+  .writing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .empty-state { padding: 5rem 1rem; text-align: center; border: 1px solid var(--line); border-radius: 8px; }
+  .empty-state p { color: var(--ink-soft); }
+  @media (max-width: 960px) { .writing-grid { grid-template-columns: 1fr 1fr; } .writing-tools { align-items: stretch; flex-direction: column; } }
+  @media (max-width: 620px) { .writing-grid { grid-template-columns: 1fr; } .search-field { width: 100%; } }
+</style>

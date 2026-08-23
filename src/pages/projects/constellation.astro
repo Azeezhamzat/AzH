@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ConstellationFeature from '../../components/ConstellationFeature.astro';
+
+const description = 'Constellation is a private collective-intelligence environment created by Azeez Hamzat for trusted groups to coordinate support, decisions, and shared learning.';
+---
+
+<BaseLayout title="Constellation" description={description} canonical="/projects/constellation/">
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Constellation',
+    applicationCategory: 'CollaborationApplication',
+    operatingSystem: 'Web',
+    url: 'https://constellation-crowdsmarter-12bd645412e2.herokuapp.com/about',
+    description,
+    author: { '@type': 'Person', name: 'Azeez Adewale Hamzat', url: 'https://azeezhamzat.com' },
+  })} />
+
+  <header class="project-hero shell">
+    <p class="eyebrow">Independent project · Collective intelligence</p>
+    <h1 class="page-title">A private sky for <span class="accent">thinking together</span></h1>
+    <p class="lede">Constellation helps trusted groups see what they can offer, where support is needed, what has been decided, and what the group is learning over time.</p>
+  </header>
+
+  <section class="project-showcase shell"><ConstellationFeature /></section>
+
+  <section class="section">
+    <div class="shell principle-grid">
+      <div><p class="eyebrow">The premise</p><h2 class="section-title">Coordination should not flatten relationships</h2></div>
+      <div class="principle-copy">
+        <p>Most collaboration systems are designed around tasks, output, and performance. That works for many organisations, but it can be a poor fit for communities and trusted groups whose real resources include care, knowledge, time, access, credibility, and mutual support.</p>
+        <p>Constellation begins elsewhere. It treats a group as a living network with changing capacity, different needs, incomplete knowledge, and a memory worth preserving.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section signal-section">
+    <div class="shell">
+      <div class="section-heading"><p class="eyebrow">The shared signals</p><h2 class="section-title">What becomes visible</h2><p>Each signal answers a practical question without reducing members to a score.</p></div>
+      <div class="signal-grid">
+        <article><span>01</span><h3>Capacity</h3><p>What can members realistically carry right now?</p></article>
+        <article><span>02</span><h3>Needs and offers</h3><p>Where is support needed, and what can others contribute?</p></article>
+        <article><span>03</span><h3>Movement</h3><p>What is changing across the group, even when progress is not linear?</p></article>
+        <article><span>04</span><h3>Decisions</h3><p>What was agreed, why, and what remains unresolved?</p></article>
+        <article><span>05</span><h3>Failures</h3><p>What did not work, and what can be learned without turning failure into blame?</p></article>
+        <article><span>06</span><h3>Shared memory</h3><p>What knowledge should remain available when people, plans, or circumstances change?</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section design-section">
+    <div class="shell design-grid">
+      <div><p class="eyebrow">Design commitments</p><h2 class="section-title">Built for trust</h2></div>
+      <ol>
+        <li><span>Private by default</span><p>Membership and access are deliberate. Signing up does not grant entry into existing rooms or conversations.</p></li>
+        <li><span>Human judgment remains central</span><p>The platform supports interpretation and coordination. It does not pretend that complex relationships can be automated into a definitive answer.</p></li>
+        <li><span>Context before metrics</span><p>Signals remain connected to explanation, time, and circumstance rather than becoming public rankings.</p></li>
+        <li><span>Memory without surveillance</span><p>Groups can preserve learning while keeping control over who sees it and why.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section project-cta">
+    <div class="shell cta-grid"><div><p class="eyebrow">Explore it</p><h2 class="section-title">Constellation is live</h2></div><div><p>The project is being developed as a practical environment for real groups. Visit the platform to understand the experience, request access, or follow its development.</p><div class="button-row"><a class="button button-primary" href="https://constellation-crowdsmarter-12bd645412e2.herokuapp.com/about" target="_blank" rel="noreferrer">Visit Constellation</a></div></div></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .project-hero { padding: clamp(6rem, 12vw, 11rem) 0 4rem; }
+  .project-hero .lede { margin: 2rem 0 0; }
+  .project-showcase { padding-bottom: clamp(5rem, 10vw, 9rem); }
+  .principle-grid, .design-grid, .cta-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(3rem, 8vw, 8rem); }
+  .principle-copy { color: var(--ink-soft); font-size: 1.05rem; }
+  .principle-copy p:first-child { margin-top: 0; }
+  .signal-section { background: var(--surface); }
+  .signal-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .signal-grid article { min-height: 260px; padding: 2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .signal-grid span { color: var(--gold-strong); font-family: var(--mono); font-size: .6rem; }
+  .signal-grid h3 { margin: 2.2rem 0 .7rem; font-family: var(--serif); font-size: 1.7rem; font-weight: 400; }
+  .signal-grid p { margin: 0; color: var(--ink-soft); font-size: .88rem; }
+  .design-section { background: linear-gradient(180deg, var(--bg), var(--surface)); }
+  .design-grid ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .design-grid li { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+  .design-grid li span { font-family: var(--serif); font-size: 1.45rem; }
+  .design-grid li p { margin: .5rem 0 0; color: var(--ink-soft); }
+  .project-cta p { max-width: 620px; margin-top: 0; color: var(--ink-soft); }
+  @media (max-width: 840px) { .principle-grid, .design-grid, .cta-grid { grid-template-columns: 1fr; } .signal-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .signal-grid { grid-template-columns: 1fr; } .signal-grid article { min-height: 220px; } }
+</style>

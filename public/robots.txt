@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azeezhamzat.com/sitemap-index.xml

@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResearchCard from '../../components/ResearchCard.astro';
+import { researchQuestions } from '../../data/site';
+
+const description = 'Research by Azeez Hamzat on collective intelligence, human-AI interaction, agricultural knowledge systems, and anticipatory governance.';
+---
+
+<BaseLayout title="Research" description={description} canonical="/research/">
+  <header class="page-hero shell">
+    <p class="eyebrow">Research</p>
+    <h1 class="page-title">The conditions that let groups <span class="accent">think well</span></h1>
+    <p class="lede">My work asks how knowledge moves through groups, how voice and authority shape what becomes actionable, and how AI changes those dynamics.</p>
+  </header>
+
+  <section class="section research-map">
+    <div class="shell research-grid">
+      {researchQuestions.map((question, index) => <ResearchCard {...question} index={index + 1} />)}
+    </div>
+  </section>
+
+  <section class="section" id="ai-and-groups">
+    <div class="shell study-grid">
+      <div class="study-index"><span>01</span><p>Doctoral research</p></div>
+      <div class="study-main">
+        <p class="eyebrow">Current focus</p>
+        <h2>AI-facilitated collective decision-making</h2>
+        <p class="study-lede">Does introducing AI help a group combine more knowledge, or does it quietly make members converge on the same framing?</p>
+        <div class="study-columns">
+          <div><h3>The question</h3><p>I study how AI affects information diversity, confidence, influence, dissent, and collective accuracy in group settings. The central issue is not simply whether AI produces a good answer, but what it changes about the group’s own reasoning.</p></div>
+          <div><h3>The approach</h3><p>The work combines sociological analysis with computational methods, experimental thinking, and agent-based modelling. I am interested in the mechanisms behind outcomes, especially who gains influence and which forms of knowledge remain visible.</p></div>
+        </div>
+        <div class="method-row"><span>Human-AI interaction</span><span>Group decision-making</span><span>Agent-based modelling</span><span>Information diversity</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section" id="community-knowledge">
+    <div class="shell study-grid">
+      <div class="study-index"><span>02</span><p>Master’s research</p></div>
+      <div class="study-main">
+        <p class="eyebrow">Completed study</p>
+        <h2>Community knowledge and cluster farming</h2>
+        <p class="study-lede">What do smallholder farmers understand about collective farming arrangements that formal adoption models fail to see?</p>
+        <div class="study-columns">
+          <div><h3>The work</h3><p>I designed and conducted a community knowledge-based assessment of smallholder farmers’ perceptions of cluster farming in southwestern Nigeria, combining qualitative and quantitative evidence.</p></div>
+          <div><h3>Why it matters</h3><p>Institutional assessments often treat farmer reluctance as an information deficit. Community knowledge reveals a more complex picture shaped by trust, risk, memory, local conditions, and previous collective arrangements.</p></div>
+        </div>
+        <div class="button-row"><a class="button button-primary" href="https://doi.org/10.5281/zenodo.7678799" target="_blank" rel="noreferrer">Read the research paper</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="digital-agriculture">
+    <div class="shell study-grid">
+      <div class="study-index"><span>03</span><p>Knowledge systems</p></div>
+      <div class="study-main">
+        <p class="eyebrow">Ongoing inquiry</p>
+        <h2>Digital agriculture and local variation</h2>
+        <p class="study-lede">Digital tools can reach farmers that extension services never could, while making advice more centralised and less responsive to local observation.</p>
+        <div class="study-columns">
+          <div><h3>The tension</h3><p>Uniform recommendations can scale quickly, but agricultural knowledge is shaped by soil, weather, labour, markets, history, and highly local risk. A system can broaden access while narrowing what counts as relevant knowledge.</p></div>
+          <div><h3>The design question</h3><p>What would an advisory system look like if it treated farmers not only as recipients of guidance, but as observers whose distributed knowledge should flow back into the system?</p></div>
+        </div>
+        <div class="button-row"><a class="button" href="/writing/what-extension-got-right/">Read the related essay</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section" id="anticipatory-governance">
+    <div class="shell study-grid">
+      <div class="study-index"><span>04</span><p>Forthcoming chapter</p></div>
+      <div class="study-main">
+        <p class="eyebrow">Anticipatory governance</p>
+        <h2>Innovation systems and African futures</h2>
+        <p class="study-lede">When institutions prepare for the future, who gets to define the future they are preparing for?</p>
+        <div class="study-columns">
+          <div><h3>The contribution</h3><p>A co-authored chapter with Geci Karuri-Sebina and Olugbenga Adesida examines anticipatory innovation systems across African contexts and how institutions can move from reaction toward foresight.</p></div>
+          <div><h3>The collective question</h3><p>Future-making depends on knowledge that is often distributed, informal, and excluded from institutional planning. Better anticipation requires more than forecasting; it requires better ways of including what different communities already know.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section methods-section">
+    <div class="shell methods-grid">
+      <div><p class="eyebrow">How I work</p><h2 class="section-title">Methods in conversation</h2></div>
+      <div class="methods-list">
+        <div><span>01</span><h3>Participatory research</h3><p>Working with communities to surface experience, interpretation, and knowledge that formal measures can overlook.</p></div>
+        <div><span>02</span><h3>Computational inquiry</h3><p>Using Python, R, data analysis, NLP, and agent-based models to explore patterns and mechanisms.</p></div>
+        <div><span>03</span><h3>Systems thinking</h3><p>Studying outcomes as products of relationships, structures, feedback, and context rather than isolated variables.</p></div>
+        <div><span>04</span><h3>Fieldwork</h3><p>Keeping research grounded in the realities, histories, constraints, and practical judgments of people involved.</p></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { padding: clamp(6rem, 12vw, 11rem) 0 clamp(5rem, 9vw, 8rem); }
+  .page-hero .lede { margin: 2rem 0 0; }
+  .research-map { padding-top: 0; border-top: 0; }
+  .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+  .study-grid { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: clamp(2rem, 8vw, 7rem); }
+  .study-index span { display: block; color: var(--gold-strong); font-family: var(--serif); font-size: 3rem; }
+  .study-index p { color: var(--ink-muted); font-family: var(--mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; }
+  .study-main h2 { max-width: 900px; margin: 0; font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.6rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.05; }
+  .study-lede { max-width: 850px; margin: 1.7rem 0 3rem; color: var(--gold-strong); font-family: var(--serif); font-size: clamp(1.3rem, 2.3vw, 1.9rem); line-height: 1.4; }
+  .study-columns { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+  .study-columns h3 { margin: 0 0 .7rem; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+  .study-columns p { margin: 0; color: var(--ink-soft); }
+  .method-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+  .method-row span { padding: .3rem .58rem; border: 1px solid var(--line); border-radius: 99px; color: var(--ink-soft); font-family: var(--mono); font-size: .54rem; letter-spacing: .05em; text-transform: uppercase; }
+  .alt-section { background: var(--surface); }
+  .methods-section { background: linear-gradient(180deg, var(--bg), var(--surface)); }
+  .methods-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(3rem, 8vw, 8rem); }
+  .methods-list { border-top: 1px solid var(--line); }
+  .methods-list > div { display: grid; grid-template-columns: 50px 190px 1fr; gap: 1.5rem; padding: 1.6rem 0; border-bottom: 1px solid var(--line); }
+  .methods-list span { color: var(--gold-strong); font-family: var(--mono); font-size: .6rem; }
+  .methods-list h3, .methods-list p { margin: 0; }
+  .methods-list h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; }
+  .methods-list p { color: var(--ink-soft); font-size: .87rem; }
+  @media (max-width: 800px) { .research-grid, .study-columns, .methods-grid { grid-template-columns: 1fr; } .study-grid { grid-template-columns: 1fr; gap: 1.2rem; } .study-index { display: flex; align-items: baseline; gap: 1rem; } .study-index span { font-size: 2rem; } }
+  @media (max-width: 560px) { .methods-list > div { grid-template-columns: 35px 1fr; } .methods-list p { grid-column: 2; } }
+</style>

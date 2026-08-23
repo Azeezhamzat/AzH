@@ -31,6 +31,19 @@ export const researchQuestions = [
 
 export const publications = [
   {
+    year: '2026',
+    type: 'Independent manuscript',
+    title: 'Africa’s Greenhouse Gas Emissions, 1970–2024: Structural Trends, Subregional Divergence, and Climate Equity',
+    authors: 'Hamzat, A. A.',
+    venue: 'Independent research project',
+    description: 'A self-directed analysis of Africa’s emissions structure, subregional divergence, weakening land carbon sink, and climate-equity position using the EDGAR 2025 dataset. Conducted independently outside my doctoral research and supervision.',
+    href: null,
+    action: null,
+    status: 'Submitted manuscript',
+    shortStatus: 'Submitted',
+    independent: true,
+  },
+  {
     year: '2022',
     type: 'Research paper',
     title: 'A Community Knowledge-Based Assessment of Smallholder Farmers’ Perception of Cluster Farming',
@@ -39,6 +52,9 @@ export const publications = [
     description: 'A community-centred assessment of how smallholder farmers in Nigeria understand cluster farming, and where local perception diverges from institutional assumptions.',
     href: 'https://doi.org/10.5281/zenodo.7678799',
     action: 'Read the paper',
+    status: null,
+    shortStatus: null,
+    independent: false,
   },
   {
     year: 'Forthcoming',
@@ -49,6 +65,9 @@ export const publications = [
     description: 'A chapter on anticipatory governance in African innovation systems and the distributed knowledge institutions include, or leave out, when planning for the future.',
     href: null,
     action: null,
+    status: 'Accepted · Publication details forthcoming',
+    shortStatus: 'Accepted',
+    independent: false,
   },
 ];
 

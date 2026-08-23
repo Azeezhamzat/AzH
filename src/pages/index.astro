@@ -111,7 +111,7 @@ const recentWriting = (await getCollection('writing'))
     <div class="shell">
       <div class="section-heading split-heading">
         <div><p class="eyebrow">Selected work</p><h2 class="section-title">Publications</h2></div>
-        <p>Research and writing that connect local knowledge, collective intelligence, and the institutions that shape shared futures.</p>
+        <p>Research and writing connecting local knowledge, collective intelligence, climate equity, and the institutions that shape shared futures.</p>
       </div>
       <div class="publication-list">
         {publications.map((publication) => (
@@ -124,7 +124,9 @@ const recentWriting = (await getCollection('writing'))
               <p class="publication-description">{publication.description}</p>
             </div>
             <div class="publication-action">
-              {publication.href ? <a href={publication.href} target="_blank" rel="noreferrer">{publication.action}<span aria-hidden="true">↗</span></a> : <span>Accepted</span>}
+              {publication.href && publication.action
+                ? <a href={publication.href} target="_blank" rel="noreferrer">{publication.action}<span aria-hidden="true">↗</span></a>
+                : publication.shortStatus && <span>{publication.shortStatus}</span>}
             </div>
           </article>
         ))}

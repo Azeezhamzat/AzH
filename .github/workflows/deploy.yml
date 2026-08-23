@@ -26,9 +26,9 @@ jobs:
           node-version: 22
           cache: npm
       - name: Install dependencies
-        # Include Sharp's platform-specific optional package for the Linux runner
-        # while preserving the exact dependency graph in package-lock.json.
-        run: npm ci --include=optional
+        # Sharp's optional native packages differ between macOS and Linux.
+        # Let npm resolve the Linux package while retaining pinned versions.
+        run: npm install --include=optional
       - name: Build website
         run: npm run build
       - name: Configure GitHub Pages

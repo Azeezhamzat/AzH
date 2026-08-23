@@ -15,6 +15,7 @@ const description = 'Research by Azeez Hamzat on collective intelligence, distri
 
   <section class="section research-map">
     <div class="shell research-grid">
+      <h2 class="sr-only">Research questions</h2>
       {researchQuestions.map((question, index) => <ResearchCard {...question} index={index + 1} />)}
     </div>
   </section>
@@ -103,20 +104,20 @@ const description = 'Research by Azeez Hamzat on collective intelligence, distri
   .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
   .study-grid { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); }
   .study-index span { display: block; color: var(--gold-strong); font-family: var(--serif); font-size: 3rem; }
-  .study-index p { color: var(--ink-muted); font-family: var(--mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; }
+  .study-index p { color: var(--ink-muted); font-family: var(--mono); font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; }
   .study-main h2 { max-width: 850px; margin: 0; font-family: var(--serif); font-size: clamp(2.4rem, 4.5vw, 4rem); font-weight: 400; letter-spacing: -.035em; line-height: 1.08; }
   .study-lede { max-width: 850px; margin: 1.7rem 0 3rem; color: var(--gold-strong); font-family: var(--serif); font-size: clamp(1.3rem, 2.3vw, 1.9rem); line-height: 1.4; }
   .study-columns { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 4vw, 3.75rem); }
   .study-columns h3 { margin: 0 0 .7rem; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
   .study-columns p { margin: 0; color: var(--ink-soft); }
   .method-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
-  .method-row span { padding: .32rem .62rem; border: 1px solid var(--line); border-radius: 99px; color: var(--ink-soft); font-family: var(--mono); font-size: .7rem; letter-spacing: .04em; text-transform: uppercase; }
+  .method-row span { padding: .32rem .62rem; border: 1px solid var(--line); border-radius: 99px; color: var(--ink-soft); font-family: var(--mono); font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; }
   .alt-section { background: var(--surface); }
   .methods-section { background: linear-gradient(180deg, var(--bg), var(--surface)); }
   .methods-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 6vw, 5.5rem); }
   .methods-list { border-top: 1px solid var(--line); }
   .methods-list > div { display: grid; grid-template-columns: 50px 190px 1fr; gap: 1.5rem; padding: 1.6rem 0; border-bottom: 1px solid var(--line); }
-  .methods-list span { color: var(--gold-strong); font-family: var(--mono); font-size: .7rem; }
+  .methods-list span { color: var(--gold-strong); font-family: var(--mono); font-size: .75rem; }
   .methods-list h3, .methods-list p { margin: 0; }
   .methods-list h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; }
   .methods-list p { color: var(--ink-soft); font-size: .95rem; line-height: 1.62; }

@@ -1,6 +1,7 @@
 ---
 title: "The Myth of the Neutral Tool"
 description: "Every tool comes with a story about itself: I'm just a tool, I don't have opinions. But tools frame problems, foreground certain information, and make some questions easy to ask while making others invisible. The neutrality claim doesn't survive contact with context."
+seoDescription: "Tools frame problems, privilege certain information, and make some questions easier to ask than others. Neutrality does not survive context."
 published: 2026-04-20
 category: "Insights"
 tags: ["AI Ethics","Systems Thinking","Knowledge Systems","Collective Intelligence"]

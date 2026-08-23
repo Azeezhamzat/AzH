@@ -5,7 +5,7 @@ The source for [azeezhamzat.com](https://azeezhamzat.com), a research and writin
 ## Local development
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
@@ -16,3 +16,7 @@ npm run build
 ```
 
 Articles live in `src/content/writing` as Markdown files. The site is built with Astro and published through GitHub Pages.
+
+## Content and licence
+
+The website code, writing, images, and other original material are copyright Azeez Adewale Hamzat. No reuse licence is granted. Third-party packages and font files retain their own licences.

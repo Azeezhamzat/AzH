@@ -4,7 +4,7 @@ const navItems = [
   { href: '/#about', label: 'About', active: pathname === '/' },
   { href: '/research/', label: 'Research', active: pathname.startsWith('/research') },
   { href: '/projects/constellation/', label: 'Building', active: pathname.startsWith('/projects') },
-  { href: '/publications/', label: 'Work', active: pathname.startsWith('/publications') },
+  { href: '/publications/', label: 'Publications', active: pathname.startsWith('/publications') },
   { href: '/writing/', label: 'Writing', active: pathname.startsWith('/writing') },
   { href: '/#contact', label: 'Contact', active: false },
 ];
@@ -17,7 +17,7 @@ const navItems = [
       {navItems.map((item) => (
         <a href={item.href} aria-current={item.active ? 'page' : undefined}>{item.label}</a>
       ))}
-      <a class="nav-cv" href="/Azeez_Adewale_Hamzat_CV.pdf" target="_blank" rel="noreferrer">CV</a>
+      <a class="nav-cv" href="/Azeez_Adewale_Hamzat_CV.pdf" target="_blank" rel="noreferrer" type="application/pdf">CV <span>(PDF)</span></a>
     </nav>
     <div class="nav-actions">
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
@@ -25,7 +25,7 @@ const navItems = [
         <span class="theme-label" data-theme-label>Theme</span>
       </button>
       <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-navigation">
-        <span class="sr-only">Open navigation</span>
+        <span class="sr-only" data-menu-label>Open navigation</span>
         <i></i><i></i>
       </button>
     </div>

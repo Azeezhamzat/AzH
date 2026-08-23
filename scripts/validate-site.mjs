@@ -49,15 +49,27 @@ for (const file of htmlFiles) {
       if (!expression.test(html)) failures.push(`${route}: missing ${label}`);
     });
 
+    const title = html.match(/<title>([^<]+)<\/title>/)?.[1] || '';
+    const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1] || '';
+    if (title.length > 70) failures.push(`${route}: title exceeds 70 characters (${title.length})`);
+    if (description.length > 160) failures.push(`${route}: description exceeds 160 characters (${description.length})`);
+
     const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
     if (h1Count !== 1) failures.push(`${route}: expected one h1, found ${h1Count}`);
+
+    const headings = [...html.matchAll(/<h([1-6])(?:\s|>)/g)].map((match) => Number(match[1]));
+    headings.forEach((level, index) => {
+      if (index > 0 && level > headings[index - 1] + 1) {
+        failures.push(`${route}: heading level skips from h${headings[index - 1]} to h${level}`);
+      }
+    });
   }
 
   if (route.startsWith('/writing/') && route !== '/writing/' && /<meta property="og:image"/.test(html)) {
     failures.push(`${route}: article unexpectedly inherited the site-wide social image`);
   }
 
-  if (!route.startsWith('/writing/') && !noindex && route !== '/404.html' && !html.includes('https://azeezhamzat.com/og.png')) {
+  if (!route.startsWith('/writing/') && !noindex && route !== '/404.html' && !html.includes('https://azeezhamzat.com/og.jpg')) {
     failures.push(`${route}: missing the site-wide social image`);
   }
 
@@ -65,6 +77,12 @@ for (const file of htmlFiles) {
   if (/<img(?![^>]*\salt=)[^>]*>/.test(html)) failures.push(`${route}: contains an image without alt text`);
   if (/<button(?![^>]*\stype=)[^>]*>/.test(html)) failures.push(`${route}: contains a button without an explicit type`);
   if (html.includes('—')) failures.push(`${route}: contains an em dash`);
+  if (html.includes('fonts.googleapis.com') || html.includes('fonts.gstatic.com')) failures.push(`${route}: contains an external font dependency`);
+
+  if (!noindex && route !== '/404.html') {
+    if (!html.includes('<link rel="icon"')) failures.push(`${route}: missing favicon metadata`);
+    if (!html.includes('<link rel="manifest"')) failures.push(`${route}: missing web manifest metadata`);
+  }
 
   const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
   for (const href of hrefs) {
@@ -75,7 +93,7 @@ for (const file of htmlFiles) {
   }
 }
 
-['robots.txt', 'rss.xml', 'sitemap-index.xml', 'og.png', 'Azeez_Adewale_Hamzat_CV.pdf'].forEach((asset) => {
+['robots.txt', 'rss.xml', 'sitemap-index.xml', 'og.jpg', 'favicon-32.png', 'site.webmanifest', 'Azeez_Adewale_Hamzat_CV.pdf'].forEach((asset) => {
   if (!fs.existsSync(path.join(dist, asset))) failures.push(`Missing generated asset: ${asset}`);
 });
 

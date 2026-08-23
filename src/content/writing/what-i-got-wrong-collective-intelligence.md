@@ -1,6 +1,7 @@
 ---
 title: "What I Got Wrong About Collective Intelligence"
 description: "I started out believing groups aggregate wisdom, that diversity was a reliable good, and that collective intelligence was about intelligence. Study and fieldwork corrected most of this. Here is what I got wrong, and what replaced it."
+seoDescription: "How study and fieldwork changed my assumptions about group wisdom, diversity, intelligence, and the conditions that make collaboration work."
 published: 2026-05-01
 category: "Insights"
 tags: ["Collective Intelligence","Research Reflections","Group Decision-Making"]

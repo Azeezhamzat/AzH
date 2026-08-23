@@ -1,5 +1,6 @@
 ---
 title: "Rethinking Africa's Health Systems for Sustainable Resilience"
+seoTitle: "Rethinking Africa's Health Systems"
 description: "Addressing systemic gaps, workforce challenges, and the need for local production in building stronger healthcare infrastructure across the continent."
 published: 2025-04-15
 category: "Insights"

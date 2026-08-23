@@ -1,6 +1,7 @@
 ---
 title: "Letters Across Time"
 description: "An honest conversation with myself across time, inspired by a book called Dear Me. Writing to the version of me who landed in Morocco in 2020, uncertain and far from home, and to the future self who would move beyond the crossroads where I then stood."
+seoDescription: "A personal conversation across time, from arriving in Morocco in 2020 to imagining the self who would eventually move beyond that crossroads."
 published: 2024-12-10
 category: "Academic Reflections"
 tags: ["Reflections","Futures Literacy","PhD Journey"]

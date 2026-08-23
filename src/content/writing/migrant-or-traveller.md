@@ -1,6 +1,7 @@
 ---
 title: "Are You a Migrant or a Traveller?"
 description: "In life's inevitable transitions, two approaches emerge: moving reactively as a migrant, or moving intentionally as a traveller. Which mindset guides yours?"
+seoDescription: "A reflection on reactive and intentional movement, and the conditions that let people shift from surviving a journey to shaping it."
 published: 2024-11-09
 category: "Systems Thinking"
 tags: ["Futures Literacy","Mindset"]
@@ -12,7 +13,7 @@ In December 2020, I stood in Istanbul's airport on a layover, somewhere between 
 
 Was I a migrant or a traveller?
 
-I've been turning that question over for years. as something I've lived, well beyond any abstract thought experiment. Sometimes in the same week, sometimes in the same hour.
+I've been turning that question over for years as something I've lived, well beyond any abstract thought experiment. Sometimes in the same week, sometimes in the same hour.
 
 ## The easy version of this distinction
 
@@ -60,7 +61,7 @@ The more honest question moves past "are you a migrant or a traveller?" toward s
 
 I'm writing this from Morocco, where I'm working at UM6P's Africa Initiative after completing my master's. I'm applying for doctoral programmes, hoping to take this work further. By the clean framework, that should feel like a traveller's move. And in many ways it is. I'm choosing this. I want it.
 
-But I also know that the next time circumstances tighten (visa uncertainty, family separation, the disorientation of starting over again) the migrant mode will return. as a natural human response to precarity, rather than a failure of mindset.
+But I also know that the next time circumstances tighten (visa uncertainty, family separation, the disorientation of starting over again), the migrant mode will return as a natural human response to precarity rather than a failure of mindset.
 
 What I've learned from the oscillation is this: the traveller mindset is never a permanent achievement. You reconstruct it, again and again, from whatever materials the migrant's journey leaves you. The agricultural background that felt like a dead end became the foundation for my research. The packaging factory that crushed my spirit gave me three years of understanding how systems grind people down, knowledge that now informs how I think about collective intelligence and power dynamics.
 

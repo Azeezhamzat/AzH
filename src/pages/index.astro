@@ -28,7 +28,9 @@ const recentWriting = (await getCollection('writing'))
       'https://orcid.org/0009-0007-8804-0283',
       'https://scholar.google.com/citations?user=6CErkzgAAAAJ',
       'https://www.researchgate.net/profile/Azeez-Hamzat',
+      'https://www.tudublin.ie/explore/faculties-and-schools/arts-humanities/research/postgraduate-researchers/azeez-adewale-hamzat-.php',
     ],
+    identifier: { '@type': 'PropertyValue', propertyID: 'ORCID', value: '0009-0007-8804-0283' },
   })} />
 
   <section class="hero">
@@ -142,7 +144,7 @@ const recentWriting = (await getCollection('writing'))
         <p>Essays on collective intelligence, knowledge systems, technology, agriculture, and the unfinished questions around them.</p>
       </div>
       <div class="writing-grid">
-        {recentWriting.map((entry) => <WritingCard id={entry.id} {...entry.data} />)}
+        {recentWriting.map((entry) => <WritingCard id={entry.id} {...entry.data} headingLevel="h3" />)}
       </div>
       <div class="section-action"><a class="text-link" href="/writing/">Browse all writing</a></div>
     </div>
@@ -168,7 +170,7 @@ const recentWriting = (await getCollection('writing'))
       <div><p class="eyebrow">Contact</p><h2 class="section-title">Let’s think together</h2></div>
       <div>
         <p class="contact-lede">I’m interested in thoughtful conversations about collective intelligence, agricultural knowledge systems, responsible technology, and cross-cultural research collaboration.</p>
-        <a class="contact-email" href="mailto:azeezhamzat@yahoo.com">azeezhamzat@yahoo.com</a>
+        <a class="contact-email" href="mailto:azeezhamzat@yahoo.com">Email Azeez</a>
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/azeezhamzat" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://orcid.org/0009-0007-8804-0283" target="_blank" rel="noreferrer">ORCID</a>
@@ -188,18 +190,18 @@ const recentWriting = (await getCollection('writing'))
   .split-heading { max-width: none; grid-template-columns: 1fr .7fr; align-items: end; }
   .publication-list { border-top: 1px solid var(--line); }
   .publication-row { display: grid; grid-template-columns: 110px minmax(0, 1fr) 150px; gap: 2rem; padding: 2.2rem 0; border-bottom: 1px solid var(--line); }
-  .publication-year, .publication-type { color: var(--ink-muted); font-family: var(--mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; }
+  .publication-year, .publication-type { color: var(--ink-muted); font-family: var(--mono); font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; }
   .publication-type { margin: 0 0 .75rem; color: var(--gold-strong); }
   .publication-row h3 { max-width: 810px; margin: 0; font-family: var(--serif); font-size: clamp(1.5rem, 2.6vw, 2.2rem); font-weight: 400; letter-spacing: -.025em; line-height: 1.2; }
   .publication-byline { margin: .75rem 0 0; color: var(--ink-soft); font-size: .9rem; }
   .publication-description { max-width: 740px; margin: .9rem 0 0; color: var(--ink-soft); font-size: .96rem; line-height: 1.65; }
   .publication-action { display: flex; justify-content: flex-end; align-items: center; color: var(--gold-strong); font-size: .86rem; }
   .publication-action a span { margin-left: .35rem; }
-  .publication-action > span { padding: .35rem .6rem; background: var(--gold-wash); border-radius: 2px; font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+  .publication-action > span { padding: .35rem .6rem; background: var(--gold-wash); border-radius: 2px; font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
   .writing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
   .education-list { border-top: 1px solid var(--line); }
   .education-row { display: grid; grid-template-columns: 60px 170px 1fr; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid var(--line); }
-  .education-index, .education-period { color: var(--ink-muted); font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+  .education-index, .education-period { color: var(--ink-muted); font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
   .education-period { margin: 0; }
   .education-row h3 { margin: 0; font-family: var(--serif); font-size: 1.55rem; font-weight: 400; }
   .education-school { margin: .35rem 0 0; color: var(--gold-strong); font-size: .9rem; }

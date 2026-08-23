@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { publications } from '../../data/site';
 
-const description = 'Selected publications and independent research outputs by Azeez Hamzat on collective intelligence, community knowledge, agriculture, climate equity, and anticipatory governance.';
+const description = 'Publications and research outputs by Azeez Hamzat across collective intelligence, community knowledge, agriculture, climate equity, and governance.';
 const publicationGroups = [
   {
     eyebrow: 'Independent work',
@@ -74,13 +74,13 @@ const publicationGroups = [
   .publication-list { border-top: 1px solid var(--line); }
   .publication-list article { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: clamp(2rem, 4vw, 4.5rem); padding: clamp(2.25rem, 4vw, 3.5rem) 0; border-bottom: 1px solid var(--line); }
   .pub-index { color: var(--gold-strong); font-family: var(--serif); font-size: 2.8rem; }
-  .pub-meta { display: flex; gap: .8rem; color: var(--ink-muted); font-family: var(--mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; }
+  .pub-meta { display: flex; gap: .8rem; color: var(--ink-muted); font-family: var(--mono); font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; }
   .pub-meta span + span::before { content: '·'; margin-right: .8rem; }
   .pub-copy h3 { max-width: 900px; margin: 1.1rem 0 .9rem; font-family: var(--serif); font-size: clamp(1.95rem, 3.6vw, 3.2rem); font-weight: 400; letter-spacing: -.03em; line-height: 1.15; }
   .authors, .venue { margin: 0; color: var(--ink-soft); }
   .venue { color: var(--gold-strong); font-style: italic; }
   .description { max-width: 760px; margin: 1.5rem 0 2rem; color: var(--ink-soft); }
-  .status { display: inline-flex; padding: .4rem .65rem; background: var(--gold-wash); color: var(--gold-strong); border-radius: 2px; font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+  .status { display: inline-flex; padding: .4rem .65rem; background: var(--gold-wash); color: var(--gold-strong); border-radius: 2px; font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
   .profiles-section { background: var(--surface); }
   .profiles-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 6vw, 5.5rem); }
   .profile-links { border-top: 1px solid var(--line); }

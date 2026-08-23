@@ -1,6 +1,7 @@
 ---
 title: "When Participation Becomes Performance"
 description: "A community is gathered, invited to share views, carefully documented, thanked. Then the project proceeds exactly as it would have without them. The consultation happened. The participation did not. On the gap between having a voice and having influence."
+seoDescription: "Why consultation can create the appearance of participation without giving communities meaningful influence over decisions."
 published: 2026-05-10
 category: "Systems Thinking"
 tags: ["Governance","Knowledge Systems","Africa"]

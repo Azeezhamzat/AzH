@@ -10,9 +10,11 @@ interface Props {
   readingTime: string;
   coverTone: 'ochre' | 'sage' | 'blue' | 'clay' | 'plum';
   tags: string[];
+  headingLevel?: 'h2' | 'h3';
 }
-const { id, title, description, category, published, readingTime, coverTone, tags } = Astro.props;
+const { id, title, description, category, published, readingTime, coverTone, tags, headingLevel = 'h2' } = Astro.props;
 const date = published.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const Heading = headingLevel;
 ---
 
 <article class="writing-card" data-writing-card data-category={category.toLowerCase()} data-search={`${title} ${description} ${tags.join(' ')}`.toLowerCase()}>
@@ -21,7 +23,7 @@ const date = published.toLocaleDateString('en-GB', { day: 'numeric', month: 'lon
   </a>
   <div class="writing-copy">
     <div class="writing-meta"><span>{date}</span><span>{readingTime}</span></div>
-    <h2><a href={`/writing/${id}/`}>{title}</a></h2>
+    <Heading><a href={`/writing/${id}/`}>{title}</a></Heading>
     <p>{description}</p>
     <a class="read-link" href={`/writing/${id}/`}>Read the essay <span aria-hidden="true">→</span></a>
   </div>
@@ -31,10 +33,10 @@ const date = published.toLocaleDateString('en-GB', { day: 'numeric', month: 'lon
   .writing-card { display: grid; grid-template-rows: auto 1fr; overflow: hidden; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); }
   .writing-card > a { text-decoration: none; }
   .writing-copy { padding: 1.5rem; display: flex; flex-direction: column; }
-  .writing-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--ink-muted); font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
-  h2 { margin: 1.05rem 0 .75rem; font-family: var(--serif); font-size: 1.6rem; font-weight: 400; letter-spacing: -.025em; line-height: 1.2; }
-  h2 a { text-decoration: none; }
-  h2 a:hover { color: var(--gold-strong); }
+  .writing-meta { display: flex; justify-content: space-between; gap: 1rem; color: var(--ink-muted); font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+  :global(.writing-copy h2), :global(.writing-copy h3) { margin: 1.05rem 0 .75rem; font-family: var(--serif); font-size: 1.6rem; font-weight: 400; letter-spacing: -.025em; line-height: 1.2; }
+  :global(.writing-copy h2 a), :global(.writing-copy h3 a) { text-decoration: none; }
+  :global(.writing-copy h2 a:hover), :global(.writing-copy h3 a:hover) { color: var(--gold-strong); }
   p { margin: 0 0 1.4rem; color: var(--ink-soft); display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; font-size: .95rem; line-height: 1.62; }
   .read-link { margin-top: auto; color: var(--gold-strong); font-size: .86rem; font-weight: 500; }
   .read-link span { margin-left: .3rem; }

@@ -1,6 +1,8 @@
 ---
 title: "Why Collective Intelligence Matters: A Primer"
-description: "An introduction to collective intelligence and why it matters , understanding how groups can be smarter than individuals, and when they aren't."
+seoTitle: "Why Collective Intelligence Matters"
+description: "An introduction to collective intelligence: how groups can become more capable than individuals, and why they sometimes fail."
+seoDescription: "An introduction to collective intelligence, how groups can become more capable than individuals, and why they sometimes fail."
 published: 2025-09-20
 category: "Insights"
 tags: ["Collective Intelligence","Group Decision-Making"]

@@ -1,6 +1,8 @@
 ---
 title: "What Agricultural Extension Got Right That AI Hasn't Learned Yet"
+seoTitle: "What Agricultural Extension Got Right"
 description: "Agricultural extension was slow, inefficient, and underfunded. It also distributed knowledge through human networks in ways that preserved local variation. AI advisory platforms are faster and wider-reaching, but the architecture is different in ways that matter."
+seoDescription: "What agricultural extension preserved through human networks, and what digital advisory systems can lose when they scale uniform recommendations."
 published: 2026-03-01
 category: "Insights"
 tags: ["Agriculture","AI Ethics","Collective Intelligence","Knowledge Systems"]

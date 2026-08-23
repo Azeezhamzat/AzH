@@ -1,6 +1,7 @@
 ---
 title: "Someone in the Room Usually Knows"
 description: "In almost every group I have watched make a bad decision, someone in the room knew better. The failure was rarely one of knowledge. The knowledge was present, and it never made it into the room. On the social cost of disagreeing, and why welcoming dissent is not the same as making it cheap."
+seoDescription: "Why groups fail even when someone knows better, and why welcoming dissent is not the same as making disagreement safe or influential."
 published: 2026-06-05
 category: "Insights"
 tags: ["Collective Intelligence","Group Decision-Making","Knowledge Systems"]

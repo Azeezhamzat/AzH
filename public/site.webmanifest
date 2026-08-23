@@ -1,0 +1,22 @@
+{
+  "name": "Azeez Hamzat",
+  "short_name": "Azeez Hamzat",
+  "description": "Research and writing on collective intelligence, distributed knowledge, and group decision-making.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1b201e",
+  "theme_color": "#1b201e",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

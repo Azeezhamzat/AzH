@@ -206,7 +206,7 @@ button, input { font: inherit; }
 .text-link { display: inline-flex; align-items: center; gap: .5rem; color: var(--gold-strong); font-size: .82rem; font-weight: 500; }
 .text-link::after { content: '↗'; }
 
-.hero { display: grid; padding: clamp(3.25rem, 4.5vw, 4.5rem) 0 clamp(3.5rem, 5vw, 4.75rem); overflow: hidden; }
+.hero { min-height: calc(100vh - 72px); min-height: calc(100svh - 72px); padding: clamp(3.25rem, 4.5vw, 4.5rem) 0 clamp(3.5rem, 5vw, 4.75rem); display: grid; align-items: center; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr); align-items: start; gap: clamp(3rem, 6vw, 6rem); }
 .hero-copy { display: grid; align-content: center; }
 .hero-copy .lede { max-width: 650px; margin: 1.5rem 0 0; font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.75; }
@@ -238,6 +238,7 @@ button, input { font: inherit; }
 
 @media (max-width: 960px) {
   .nav-shell { height: 64px; }
+  .hero { min-height: calc(100vh - 64px); min-height: calc(100svh - 64px); }
   .nav-actions { order: 2; }
   .menu-toggle { display: grid; align-content: center; gap: 5px; }
   .site-nav {

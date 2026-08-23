@@ -64,7 +64,7 @@ const recentWriting = (await getCollection('writing'))
     <div class="shell intro-grid">
       <div>
         <p class="eyebrow">The path into the question</p>
-        <p class="intro-statement">My route into collective intelligence began in agriculture, where good decisions depend on knowledge that is distributed, local, and easy to overlook.</p>
+        <p class="intro-statement">My route into collective intelligence began in agriculture, where good decisions depend on local knowledge that institutions can easily overlook.</p>
       </div>
       <div class="intro-copy">
         <div>
@@ -177,6 +177,7 @@ const recentWriting = (await getCollection('writing'))
 </BaseLayout>
 
 <style>
+  #about { padding-top: clamp(4.5rem, 7vw, 6.5rem); }
   .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .section-action { margin-top: 2.2rem; }
   .project-section, .writing-preview { background: linear-gradient(180deg, var(--bg), var(--surface)); }

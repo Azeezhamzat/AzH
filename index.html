@@ -79,6 +79,32 @@ section{padding:6rem 2rem}.sec-inner{max-width:var(--max-w);margin:0 auto}
 .q-card .tags{display:flex;flex-wrap:wrap;gap:0.35rem}
 .q-tag{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.04em;text-transform:uppercase;padding:0.2rem 0.55rem;background:var(--accent-soft);color:var(--accent);border-radius:3px}
 
+.project-section{border-top:1px solid var(--border);background:linear-gradient(180deg,var(--bg),var(--surface))}
+.project-intro{max-width:650px;margin-bottom:2.5rem;color:var(--text-dim);font-size:0.95rem;line-height:1.8}
+.project-featured{position:relative;display:grid;grid-template-columns:1.05fr .95fr;min-height:470px;overflow:hidden;border:1px solid var(--border);border-radius:12px;background:var(--surface);box-shadow:0 24px 80px rgba(0,0,0,.18)}
+.project-featured::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 82% 28%,rgba(201,162,83,.1),transparent 38%);pointer-events:none}
+.project-copy{position:relative;z-index:2;padding:3.2rem;display:flex;flex-direction:column;justify-content:center}
+.project-kicker{display:flex;align-items:center;gap:.7rem;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+.project-kicker::before{content:'';width:22px;height:1px;background:var(--accent)}
+.project-copy h3{font-family:var(--font-serif);font-size:clamp(2.5rem,5vw,4.2rem);font-weight:400;line-height:1;color:var(--white);letter-spacing:-.025em;margin-bottom:1.25rem}
+.project-copy h3 em{font-weight:400;color:var(--accent)}
+.project-lede{max-width:560px;color:var(--text-dim);font-size:1rem;line-height:1.8;margin-bottom:1.5rem}
+.project-note{max-width:540px;color:var(--text-muted);font-size:.82rem;line-height:1.7;margin-bottom:1.7rem}
+.project-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.project-tag{font-family:var(--font-mono);font-size:.61rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);border:1px solid var(--border);border-radius:99px;padding:.32rem .7rem;background:rgba(255,255,255,.018)}
+.project-actions{display:flex;flex-wrap:wrap;gap:.75rem}.project-actions .btn svg{width:14px;height:14px}
+.project-visual{position:relative;min-height:470px;overflow:hidden;border-left:1px solid var(--border);background:radial-gradient(circle at center,rgba(201,162,83,.08),transparent 36%),linear-gradient(135deg,rgba(255,255,255,.015),transparent)}
+.project-visual::before,.project-visual::after{content:'';position:absolute;left:50%;top:50%;border:1px solid rgba(201,162,83,.11);border-radius:50%;transform:translate(-50%,-50%)}
+.project-visual::before{width:290px;height:290px}.project-visual::after{width:410px;height:410px;border-color:rgba(201,162,83,.055)}
+.project-core{position:absolute;left:50%;top:50%;z-index:3;width:148px;height:148px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(201,162,83,.34);border-radius:50%;background:rgba(19,21,26,.9);box-shadow:0 0 60px rgba(201,162,83,.08);transform:translate(-50%,-50%);text-align:center}
+.project-core strong{font-family:var(--font-serif);font-size:1.15rem;font-weight:400;color:var(--accent)}
+.project-core span{margin-top:.3rem;font-family:var(--font-mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.project-node{position:absolute;z-index:4;display:flex;align-items:center;gap:.48rem;color:var(--text-dim);font-family:var(--font-mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.project-node::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(201,162,83,.08),0 0 18px rgba(201,162,83,.32)}
+.project-node.n1{left:16%;top:22%}.project-node.n2{right:13%;top:29%}.project-node.n3{left:10%;bottom:27%}.project-node.n4{right:14%;bottom:19%}.project-node.n5{left:48%;top:8%}
+.project-line{position:absolute;z-index:1;left:50%;top:50%;height:1px;background:linear-gradient(90deg,rgba(201,162,83,.28),rgba(201,162,83,.04));transform-origin:left center}
+.project-line.l1{width:180px;transform:rotate(209deg)}.project-line.l2{width:172px;transform:rotate(325deg)}.project-line.l3{width:190px;transform:rotate(150deg)}.project-line.l4{width:184px;transform:rotate(38deg)}.project-line.l5{width:195px;transform:rotate(269deg)}
+
 .pub-section{border-top:1px solid var(--border)}
 .pub-card{border:1px solid var(--border);border-radius:8px;padding:2.2rem;max-width:720px;background:var(--surface)}
 .pub-card h3{font-family:var(--font-serif);font-size:1.2rem;font-weight:400;font-style:italic;color:var(--white);margin-bottom:0.5rem;line-height:1.4}
@@ -198,10 +224,11 @@ section{padding:6rem 2rem}.sec-inner{max-width:var(--max-w);margin:0 auto}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s var(--ease),transform 0.65s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
 .hero-text{animation:fadeUp 0.7s var(--ease) both}.hero-photo{animation:fadeUp 0.7s 0.12s var(--ease) both}
 
-@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:3rem}.hero-photo{max-width:300px;margin:0 auto}.about-grid,.q-grid,.blog-grid{grid-template-columns:1fr}.nav-links{display:none}.hamburger{display:flex}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--nav-bg-open);backdrop-filter:blur(20px);padding:1.5rem 2rem;border-bottom:1px solid var(--border);gap:1rem}.search-wrap{flex:1 1 100%}}
-@media(max-width:520px){section{padding:4rem 1.2rem}.hero{padding:80px 1.2rem 40px}.nav-inner{padding:0 1.2rem}.blog-header{padding:100px 1.2rem 2rem}.blog-controls,.blog-wrap{padding-left:1.2rem;padding-right:1.2rem}.post-header,.post-hero-img,.post-body,.post-footer-nav{padding-left:1.2rem;padding-right:1.2rem}}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:3rem}.hero-photo{max-width:300px;margin:0 auto}.about-grid,.q-grid,.blog-grid,.project-featured{grid-template-columns:1fr}.project-visual{min-height:390px;border-left:0;border-top:1px solid var(--border)}.nav-links{display:none}.hamburger{display:flex}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--nav-bg-open);backdrop-filter:blur(20px);padding:1.5rem 2rem;border-bottom:1px solid var(--border);gap:1rem}.search-wrap{flex:1 1 100%}}
+@media(max-width:520px){section{padding:4rem 1.2rem}.hero{padding:80px 1.2rem 40px}.nav-inner{padding:0 1.2rem}.project-copy{padding:2rem 1.4rem}.project-visual{min-height:350px}.project-visual::before{width:230px;height:230px}.project-visual::after{width:330px;height:330px}.project-core{width:124px;height:124px}.project-node{font-size:.5rem}.project-node.n1{left:8%}.project-node.n2{right:5%}.project-node.n3{left:5%}.project-node.n4{right:6%}.project-line{opacity:.65}.blog-header{padding:100px 1.2rem 2rem}.blog-controls,.blog-wrap{padding-left:1.2rem;padding-right:1.2rem}.post-header,.post-hero-img,.post-body,.post-footer-nav{padding-left:1.2rem;padding-right:1.2rem}}
 @media print{nav,.theme-toggle,.hamburger,.footer-quote,.hero-photo,.skip-link{display:none!important}body{background:#fff;color:#000;font-size:11pt}a{color:#000;text-decoration:underline}.page{padding-top:0}*{box-shadow:none!important}}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Azeez Adewale Hamzat", "givenName": "Azeez", "familyName": "Hamzat", "jobTitle": "Doctoral Researcher", "description": "Doctoral researcher in collective intelligence, studying how communities and groups make decisions and how AI shapes that process.", "url": "https://azeezhamzat.com", "image": "https://azeezhamzat.com/images/profile.jpg", "affiliation": {"@type": "Organization", "name": "TCD-TUD SOHAM Centre (Trinity College Dublin & TU Dublin)"}, "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Mohammed VI Polytechnic University"}, {"@type": "CollegeOrUniversity", "name": "Ladoke Akintola University of Technology"}], "knowsAbout": ["Collective Intelligence", "Group Decision-Making", "Computational Social Science", "Human-AI Interaction", "Agricultural Knowledge Systems", "Participatory Research"], "sameAs": ["https://linkedin.com/in/azeezhamzat", "https://orcid.org/0009-0007-8804-0283", "https://scholar.google.com/citations?user=6CErkzgAAAAJ", "https://www.researchgate.net/profile/Azeez-Hamzat"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Constellation","applicationCategory":"CollaborationApplication","operatingSystem":"Web","url":"https://constellation-crowdsmarter-12bd645412e2.herokuapp.com/about","codeRepository":"https://github.com/Azeezhamzat/constellation","description":"A private collective-intelligence environment for trusted groups to make capacity, support, decisions, and shared learning visible.","author":{"@type":"Person","name":"Azeez Adewale Hamzat","url":"https://azeezhamzat.com"}}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
@@ -211,6 +238,7 @@ section{padding:6rem 2rem}.sec-inner{max-width:var(--max-w);margin:0 auto}
 <ul class="nav-links" id="navLinks">
 <li><a class="nl-home active" onclick="goHome('#about')">About</a></li>
 <li><a class="nl-home" onclick="goHome('#research')">Research</a></li>
+<li><a class="nl-home" onclick="goHome('#projects')">Building</a></li>
 <li><a class="nl-home" onclick="goHome('#publication')">Work</a></li>
 <li><a class="nl-blog" onclick="showPage('blog');window.location.hash='blog'">Blog</a></li>
 <li><a class="nl-home" onclick="goHome('#contact')">Contact</a></li>
@@ -253,6 +281,29 @@ section{padding:6rem 2rem}.sec-inner{max-width:var(--max-w);margin:0 auto}
 
 <div class="q-card"><h3>Who gets to imagine a country's future?</h3><p>A co-authored chapter, accepted for <em>The New Handbook for National Innovation Systems and Developing Countries</em>, on anticipatory governance and innovation systems across African contexts. My interest is the collective-intelligence question underneath it: how distributed and often informal knowledge gets included, or left out, when institutions try to plan for the future.</p><div class="tags"><span class="q-tag">Anticipatory Governance</span><span class="q-tag">Collective Intelligence</span><span class="q-tag">Accepted</span></div></div>
 </div></div></section>
+
+<section class="project-section" id="projects"><div class="sec-inner reveal">
+<div class="sec-eyebrow">Research in practice</div><h2 class="sec-title">What I am building</h2><div class="sec-rule"></div>
+<p class="project-intro">Some research questions need more than a paper. They need a working environment where the ideas can be tested, inhabited, and improved with real people.</p>
+<article class="project-featured">
+<div class="project-copy">
+<div class="project-kicker">Independent project · Live</div>
+<h3><em>Constellation</em></h3>
+<p class="project-lede">A private collective-intelligence environment for small, trusted groups who want to understand one another clearly, coordinate meaningful support, and keep what they learn together.</p>
+<p class="project-note">Constellation turns capacity, movement, needs, offers, decisions, failures, and shared memory into useful signals without turning relationships into productivity metrics or public performance.</p>
+<div class="project-tags"><span class="project-tag">Collective intelligence</span><span class="project-tag">Human-centred systems</span><span class="project-tag">Private collaboration</span><span class="project-tag">Full-stack product</span></div>
+<div class="project-actions">
+<a href="https://constellation-crowdsmarter-12bd645412e2.herokuapp.com/about" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Explore Constellation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="https://github.com/Azeezhamzat/constellation" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View source <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+</div>
+</div>
+<div class="project-visual" aria-hidden="true">
+<span class="project-line l1"></span><span class="project-line l2"></span><span class="project-line l3"></span><span class="project-line l4"></span><span class="project-line l5"></span>
+<div class="project-core"><strong>Constellation</strong><span>A private sky</span></div>
+<span class="project-node n1">Capacity</span><span class="project-node n2">Support</span><span class="project-node n3">Movement</span><span class="project-node n4">Memory</span><span class="project-node n5">Decisions</span>
+</div>
+</article>
+</div></section>
 
 <section class="pub-section" id="publication"><div class="sec-inner reveal">
 <div class="sec-eyebrow">Published Work</div><h2 class="sec-title">Selected publications</h2><div class="sec-rule"></div>

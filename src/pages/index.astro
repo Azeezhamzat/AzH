@@ -41,11 +41,13 @@ const recentWriting = (await getCollection('writing'))
           <a class="button button-primary" href="/research/">Explore my research</a>
           <a class="button" href="/writing/">Read my field notes</a>
         </div>
-        <dl class="hero-facts" aria-label="Research profile">
-          <div><dt>Research home</dt><dd>TCD-TUD SOHAM Centre</dd></div>
-          <div><dt>Methods</dt><dd>Participatory and computational</dd></div>
-          <div><dt>Perspective</dt><dd>Agriculture, communities, institutions</dd></div>
-        </dl>
+        <p class="hero-context">
+          <span>TCD-TUD SOHAM Centre</span>
+          <span aria-hidden="true">·</span>
+          Participatory and computational research
+          <span aria-hidden="true">·</span>
+          Dublin, Ireland
+        </p>
       </div>
       <div class="hero-visual">
         <figure class="portrait-frame">
@@ -54,7 +56,7 @@ const recentWriting = (await getCollection('writing'))
         </figure>
         <aside class="hero-question" aria-label="Current research question">
           <span>Current enquiry</span>
-          <p>What helps diverse knowledge become a shared decision?</p>
+          <p>How does diverse knowledge become a shared decision?</p>
         </aside>
       </div>
     </div>
@@ -177,7 +179,7 @@ const recentWriting = (await getCollection('writing'))
 </BaseLayout>
 
 <style>
-  #about { padding-top: clamp(4.5rem, 7vw, 6.5rem); }
+  #about { padding-top: clamp(4rem, 6vw, 5.75rem); }
   .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .section-action { margin-top: 2.2rem; }
   .project-section, .writing-preview { background: linear-gradient(180deg, var(--bg), var(--surface)); }

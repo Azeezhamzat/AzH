@@ -31,8 +31,7 @@ const imageUrl = resolvedImage ? new URL(resolvedImage, Astro.site) : null;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#13151a" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b201e" data-theme-color />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
@@ -59,6 +58,7 @@ const imageUrl = resolvedImage ? new URL(resolvedImage, Astro.site) : null;
           const saved = localStorage.getItem('site-theme');
           const theme = saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
           document.documentElement.dataset.theme = theme;
+          document.querySelector('[data-theme-color]')?.setAttribute('content', theme === 'light' ? '#f6f5f0' : '#1b201e');
         } catch {
           document.documentElement.dataset.theme = 'dark';
         }
@@ -75,14 +75,18 @@ const imageUrl = resolvedImage ? new URL(resolvedImage, Astro.site) : null;
     <SiteFooter />
     <script>
       const themeButton = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+      const themeLabel = document.querySelector<HTMLElement>('[data-theme-label]');
+      const themeColor = document.querySelector<HTMLMetaElement>('[data-theme-color]');
       const menuButton = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
       const nav = document.querySelector<HTMLElement>('[data-site-nav]');
 
       const updateThemeLabel = () => {
         if (!themeButton) return;
         const isLight = document.documentElement.dataset.theme === 'light';
-        themeButton.setAttribute('aria-label', isLight ? 'Switch to night theme' : 'Switch to day theme');
-        themeButton.title = isLight ? 'Switch to night theme' : 'Switch to day theme';
+        themeButton.setAttribute('aria-label', isLight ? 'Switch to evening theme' : 'Switch to day theme');
+        themeButton.title = isLight ? 'Switch to evening theme' : 'Switch to day theme';
+        if (themeLabel) themeLabel.textContent = isLight ? 'Evening' : 'Day';
+        themeColor?.setAttribute('content', isLight ? '#f6f5f0' : '#1b201e');
       };
 
       themeButton?.addEventListener('click', () => {

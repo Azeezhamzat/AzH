@@ -16,22 +16,22 @@
 
 <style>
   .constellation-feature { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 480px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); box-shadow: 0 24px 68px var(--shadow); }
-  .constellation-copy { padding: clamp(2rem, 5vw, 4.5rem); display: flex; flex-direction: column; justify-content: center; }
-  h3 { margin: .3rem 0 1.5rem; color: var(--gold-strong); font-family: var(--serif); font-size: clamp(3.3rem, 6vw, 5.5rem); font-style: italic; font-weight: 400; letter-spacing: -.045em; line-height: 1; }
-  .project-lede { margin: 0; color: var(--ink); font-size: 1.02rem; line-height: 1.8; }
-  .project-detail { margin: 1.25rem 0 0; color: var(--ink-soft); font-size: .87rem; line-height: 1.75; }
+  .constellation-copy { padding: clamp(2rem, 4vw, 3.5rem); display: flex; flex-direction: column; justify-content: center; }
+  h3 { margin: .3rem 0 1.3rem; color: var(--gold-strong); font-family: var(--serif); font-size: clamp(3rem, 5vw, 4.8rem); font-style: italic; font-weight: 400; letter-spacing: -.045em; line-height: 1; }
+  .project-lede { margin: 0; color: var(--ink); font-size: 1.04rem; line-height: 1.72; }
+  .project-detail { margin: 1.15rem 0 0; color: var(--ink-soft); font-size: .95rem; line-height: 1.68; }
   .project-tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.5rem; }
-  .project-tags span { padding: .28rem .55rem; border: 1px solid var(--line); border-radius: 99px; color: var(--ink-soft); font-family: var(--mono); font-size: .52rem; letter-spacing: .07em; text-transform: uppercase; }
+  .project-tags span { padding: .3rem .58rem; border: 1px solid var(--line); border-radius: 99px; color: var(--ink-soft); font-family: var(--mono); font-size: .7rem; letter-spacing: .04em; text-transform: uppercase; }
   .constellation-map { position: relative; min-height: 480px; overflow: hidden; border-left: 1px solid var(--line); background: radial-gradient(circle at 50% 50%, var(--gold-wash), transparent 35%), linear-gradient(135deg, color-mix(in srgb, var(--gold) 5%, transparent), transparent); }
   .map-core { position: absolute; z-index: 3; left: 50%; top: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent); border-radius: 50%; background: var(--bg); transform: translate(-50%, -50%); box-shadow: 0 0 70px var(--gold-wash); }
   .map-core strong { color: var(--gold-strong); font-family: var(--serif); font-size: 1.2rem; font-weight: 400; }
-  .map-core span { margin-top: .3rem; color: var(--ink-muted); font-family: var(--mono); font-size: .5rem; letter-spacing: .1em; text-transform: uppercase; }
+  .map-core span { margin-top: .3rem; color: var(--ink-muted); font-family: var(--mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; }
   .orbit { position: absolute; left: 50%; top: 50%; border: 1px solid color-mix(in srgb, var(--gold) 18%, transparent); border-radius: 50%; transform: translate(-50%, -50%); }
   .orbit-a { width: 320px; height: 320px; }
   .orbit-b { width: 470px; height: 470px; opacity: .55; }
-  .map-node { position: absolute; z-index: 4; display: flex; align-items: center; gap: .45rem; color: var(--ink-soft); font-family: var(--mono); font-size: .55rem; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
+  .map-node { position: absolute; z-index: 4; display: flex; align-items: center; gap: .45rem; color: var(--ink-soft); font-family: var(--mono); font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
   .map-node::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 6px var(--gold-wash), 0 0 18px color-mix(in srgb, var(--gold) 40%, transparent); }
   .n1 { left: 13%; top: 26%; }.n2 { right: 11%; top: 32%; flex-direction: row-reverse; }.n3 { left: 9%; bottom: 25%; }.n4 { right: 11%; bottom: 20%; flex-direction: row-reverse; }.n5 { left: 50%; top: 9%; transform: translateX(-50%); }
   @media (max-width: 900px) { .constellation-feature { grid-template-columns: 1fr; } .constellation-map { min-height: 430px; border-left: 0; border-top: 1px solid var(--line); } }
-  @media (max-width: 520px) { .constellation-map { min-height: 360px; } .orbit-a { width: 250px; height: 250px; } .orbit-b { width: 350px; height: 350px; } .map-core { width: 130px; height: 130px; } .map-node { font-size: .48rem; } .n1 { left: 6%; }.n2 { right: 4%; }.n3 { left: 4%; }.n4 { right: 5%; } }
+  @media (max-width: 520px) { .constellation-map { min-height: 360px; } .orbit-a { width: 250px; height: 250px; } .orbit-b { width: 350px; height: 350px; } .map-core { width: 130px; height: 130px; } .map-node { font-size: .7rem; } .n1 { left: 6%; }.n2 { right: 4%; }.n3 { left: 4%; }.n4 { right: 5%; } }
 </style>

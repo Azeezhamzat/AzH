@@ -36,24 +36,24 @@ const description = 'Selected publications and research outputs by Azeez Hamzat 
 </BaseLayout>
 
 <style>
-  .page-hero { padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(3.5rem, 6vw, 5.5rem); }
+  .page-hero { padding: clamp(4rem, 7vw, 6.25rem) 0 clamp(3.25rem, 5vw, 4.75rem); }
   .page-hero .lede { margin: 2rem 0 0; }
   .publication-section { padding-top: 0; border-top: 0; }
   .publication-list { border-top: 1px solid var(--line); }
-  .publication-list article { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); padding: clamp(2.25rem, 4.5vw, 4rem) 0; border-bottom: 1px solid var(--line); }
+  .publication-list article { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: clamp(2rem, 4vw, 4.5rem); padding: clamp(2.25rem, 4vw, 3.5rem) 0; border-bottom: 1px solid var(--line); }
   .pub-index { color: var(--gold-strong); font-family: var(--serif); font-size: 2.8rem; }
-  .pub-meta { display: flex; gap: .8rem; color: var(--ink-muted); font-family: var(--mono); font-size: .6rem; letter-spacing: .09em; text-transform: uppercase; }
+  .pub-meta { display: flex; gap: .8rem; color: var(--ink-muted); font-family: var(--mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; }
   .pub-meta span + span::before { content: '·'; margin-right: .8rem; }
-  .pub-copy h2 { max-width: 950px; margin: 1.2rem 0 1rem; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 400; letter-spacing: -.035em; line-height: 1.12; }
+  .pub-copy h2 { max-width: 900px; margin: 1.1rem 0 .9rem; font-family: var(--serif); font-size: clamp(1.95rem, 3.6vw, 3.2rem); font-weight: 400; letter-spacing: -.03em; line-height: 1.15; }
   .authors, .venue { margin: 0; color: var(--ink-soft); }
   .venue { color: var(--gold-strong); font-style: italic; }
   .description { max-width: 760px; margin: 1.5rem 0 2rem; color: var(--ink-soft); }
-  .status { display: inline-flex; padding: .4rem .65rem; background: var(--gold-wash); color: var(--gold-strong); border-radius: 2px; font-family: var(--mono); font-size: .55rem; letter-spacing: .08em; text-transform: uppercase; }
+  .status { display: inline-flex; padding: .4rem .65rem; background: var(--gold-wash); color: var(--gold-strong); border-radius: 2px; font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
   .profiles-section { background: var(--surface); }
-  .profiles-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 8rem); }
+  .profiles-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 6vw, 5.5rem); }
   .profile-links { border-top: 1px solid var(--line); }
   .profile-links a { padding: 1.4rem 0; display: flex; justify-content: space-between; gap: 1.5rem; border-bottom: 1px solid var(--line); text-decoration: none; }
   .profile-links span { font-family: var(--serif); font-size: 1.35rem; }
-  .profile-links b { color: var(--gold-strong); font-size: .7rem; font-weight: 500; }
+  .profile-links b { color: var(--gold-strong); font-size: .84rem; font-weight: 500; }
   @media (max-width: 720px) { .publication-list article, .profiles-grid { grid-template-columns: 1fr; gap: 1rem; } .pub-index { font-size: 2rem; } .profile-links a { flex-direction: column; gap: .2rem; } }
 </style>

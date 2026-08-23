@@ -77,7 +77,7 @@ const categories = [...new Set(entries.map((entry) => entry.data.category))];
 </BaseLayout>
 
 <style>
-  .page-hero { padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(3.5rem, 6vw, 5.5rem); }
+  .page-hero { padding: clamp(4rem, 7vw, 6.25rem) 0 clamp(3.25rem, 5vw, 4.75rem); }
   .page-hero .lede { margin: 2rem 0 0; }
   .writing-section { padding-bottom: clamp(4.5rem, 8vw, 7rem); }
   .writing-tools { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; padding: 1.2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -85,10 +85,10 @@ const categories = [...new Set(entries.map((entry) => entry.data.category))];
   .search-field input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); }
   .search-field input::placeholder { color: var(--ink-muted); }
   .filters { display: flex; flex-wrap: wrap; gap: .45rem; }
-  .filter-button { padding: .43rem .7rem; border: 1px solid var(--line); border-radius: 99px; background: transparent; color: var(--ink-soft); cursor: pointer; font-size: .68rem; }
+  .filter-button { padding: .48rem .75rem; border: 1px solid var(--line); border-radius: 99px; background: transparent; color: var(--ink-soft); cursor: pointer; font-size: .82rem; }
   .filter-button:hover, .filter-button:focus-visible, .filter-button.active { border-color: var(--gold); color: var(--gold-strong); }
   .filter-button.active { background: var(--gold-wash); }
-  .result-count { margin: 1.4rem 0; color: var(--ink-muted); font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
+  .result-count { margin: 1.4rem 0; color: var(--ink-muted); font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
   .writing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
   .empty-state { padding: 5rem 1rem; text-align: center; border: 1px solid var(--line); border-radius: 8px; }
   .empty-state p { color: var(--ink-soft); }

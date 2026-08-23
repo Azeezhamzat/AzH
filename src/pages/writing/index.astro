@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import WritingCard from '../../components/WritingCard.astro';
 import { getCollection } from 'astro:content';
 
-const description = 'Essays and field notes by Azeez Hamzat on collective intelligence, AI, knowledge systems, agriculture, and academic life.';
+const description = 'Essays and field notes by Azeez Hamzat on collective intelligence, knowledge systems, agriculture, technology, and academic life.';
 const entries = (await getCollection('writing')).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 const categories = [...new Set(entries.map((entry) => entry.data.category))];
 ---

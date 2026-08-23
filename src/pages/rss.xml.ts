@@ -5,7 +5,7 @@ export async function GET(context: { site: URL }) {
   const entries = (await getCollection('writing')).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
   return rss({
     title: 'Azeez Hamzat: Writing',
-    description: 'Essays and field notes on collective intelligence, AI, knowledge systems, agriculture, and academic life.',
+    description: 'Essays and field notes on collective intelligence, knowledge systems, agriculture, technology, and academic life.',
     site: context.site,
     items: entries.map((entry) => ({
       title: entry.data.title,

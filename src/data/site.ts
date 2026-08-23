@@ -1,9 +1,9 @@
 export const researchQuestions = [
   {
-    title: 'Does AI make groups smarter, or just more alike?',
-    summary: 'I examine what happens to information diversity, collective accuracy, and voice when AI becomes part of group decision-making.',
+    title: 'How do groups preserve difference while deciding together?',
+    summary: 'My doctoral research examines information diversity, independent judgement, influence, and collective accuracy, including when groups use AI systems.',
     status: 'Doctoral research',
-    tags: ['Collective intelligence', 'Human-AI interaction'],
+    tags: ['Collective intelligence', 'Group decision-making'],
     href: '/research/#ai-and-groups',
   },
   {
@@ -17,7 +17,7 @@ export const researchQuestions = [
     title: 'Whose knowledge survives when farming goes digital?',
     summary: 'Digital advisory systems can extend access while quietly replacing local observation with uniform recommendations.',
     status: 'Ongoing inquiry',
-    tags: ['Knowledge systems', 'AI and society'],
+    tags: ['Knowledge systems', 'Digital systems'],
     href: '/research/#digital-agriculture',
   },
   {

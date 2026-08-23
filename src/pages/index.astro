@@ -6,7 +6,7 @@ import WritingCard from '../components/WritingCard.astro';
 import { getCollection } from 'astro:content';
 import { education, publications, researchQuestions } from '../data/site';
 
-const description = 'Azeez Hamzat is a doctoral researcher studying collective intelligence, group decision-making, and how AI changes whose knowledge gets heard.';
+const description = 'Azeez Hamzat is a doctoral researcher studying collective intelligence, distributed knowledge, and how groups make decisions together.';
 const recentWriting = (await getCollection('writing'))
   .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf())
   .slice(0, 3);
@@ -36,7 +36,7 @@ const recentWriting = (await getCollection('writing'))
       <div class="hero-copy">
         <p class="eyebrow">Azeez Adewale Hamzat · Doctoral researcher</p>
         <h1 class="display-title">I study how people <span class="accent">think together.</span></h1>
-        <p class="lede">Across communities, institutions, and human-AI systems, I investigate how knowledge becomes a decision, who shapes it, and what helps groups act intelligently together.</p>
+        <p class="lede">Across communities and institutions, I investigate how knowledge becomes a decision, whose voices shape it, and what helps groups reason and act intelligently together.</p>
         <div class="button-row">
           <a class="button button-primary" href="/research/">Explore my research</a>
           <a class="button" href="/writing/">Read my field notes</a>
@@ -44,7 +44,7 @@ const recentWriting = (await getCollection('writing'))
         <dl class="hero-facts" aria-label="Research profile">
           <div><dt>Research home</dt><dd>TCD-TUD SOHAM Centre</dd></div>
           <div><dt>Methods</dt><dd>Participatory and computational</dd></div>
-          <div><dt>Perspective</dt><dd>From agriculture to AI</dd></div>
+          <div><dt>Perspective</dt><dd>Agriculture, communities, institutions</dd></div>
         </dl>
       </div>
       <div class="hero-visual">
@@ -54,7 +54,7 @@ const recentWriting = (await getCollection('writing'))
         </figure>
         <aside class="hero-question" aria-label="Current research question">
           <span>Current enquiry</span>
-          <p>What changes when AI joins the group?</p>
+          <p>What helps diverse knowledge become a shared decision?</p>
         </aside>
       </div>
     </div>
@@ -69,7 +69,7 @@ const recentWriting = (await getCollection('writing'))
       <div class="intro-copy">
         <div>
           <p>That path began in Nigeria, where I studied agricultural science at LAUTECH, and continued through a master’s degree in Collective Intelligence at Mohammed VI Polytechnic University in Morocco.</p>
-          <p>I am now a doctoral researcher at the TCD-TUD SOHAM Centre in Dublin, examining how AI changes the way groups make decisions together.</p>
+          <p>I am now a doctoral researcher at the TCD-TUD SOHAM Centre in Dublin, examining information diversity, influence, and collective accuracy in group decision-making, including when AI becomes part of the process.</p>
         </div>
         <div>
           <p>I combine qualitative and computational approaches: participatory research, fieldwork, Python, R, data science, and agent-based modelling.</p>
@@ -85,7 +85,7 @@ const recentWriting = (await getCollection('writing'))
       <div class="section-heading">
         <p class="eyebrow">Research</p>
         <h2 class="section-title">Questions shaping my work</h2>
-        <p>These are the threads shaping my work. They cross collective intelligence, agricultural knowledge, human-AI interaction, and institutional decision-making.</p>
+        <p>These are the threads shaping my work. They cross collective intelligence, agricultural knowledge, technology, and institutional decision-making.</p>
       </div>
       <div class="research-grid">
         {researchQuestions.map((question, index) => <ResearchCard {...question} index={index + 1} />)}
@@ -163,7 +163,7 @@ const recentWriting = (await getCollection('writing'))
     <div class="shell contact-grid">
       <div><p class="eyebrow">Contact</p><h2 class="section-title">Let’s think together</h2></div>
       <div>
-        <p class="contact-lede">I’m interested in thoughtful conversations about collective intelligence, AI and society, agricultural knowledge systems, and cross-cultural research collaboration.</p>
+        <p class="contact-lede">I’m interested in thoughtful conversations about collective intelligence, agricultural knowledge systems, responsible technology, and cross-cultural research collaboration.</p>
         <a class="contact-email" href="mailto:azeezhamzat@yahoo.com">azeezhamzat@yahoo.com</a>
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/azeezhamzat" target="_blank" rel="noreferrer">LinkedIn</a>

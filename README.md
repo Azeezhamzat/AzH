@@ -1,6 +1,6 @@
 # Azeez Hamzat
 
-The source for [azeezhamzat.com](https://azeezhamzat.com), a research and writing website focused on collective intelligence, group decision-making, agricultural knowledge systems, and human-AI interaction.
+The source for [azeezhamzat.com](https://azeezhamzat.com), a research and writing website focused on collective intelligence, group decision-making, agricultural knowledge systems, and responsible technology.
 
 ## Local development
 

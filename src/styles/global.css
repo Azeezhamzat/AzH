@@ -170,7 +170,7 @@ button, input { font: inherit; }
 .nav-actions { display: flex; align-items: center; gap: .4rem; }
 .theme-toggle, .menu-toggle {
   height: 40px;
-  padding: 0 .7rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,19 +181,17 @@ button, input { font: inherit; }
   color: var(--ink-soft);
   cursor: pointer;
 }
-.menu-toggle { width: 40px; padding: 0; border-radius: 50%; }
+.theme-toggle, .menu-toggle { width: 40px; border-radius: 50%; }
 .theme-toggle:hover, .theme-toggle:focus-visible, .menu-toggle:hover, .menu-toggle:focus-visible { border-color: var(--line); background: var(--surface); }
-.theme-icon {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 auto;
-  border: 1.5px solid currentColor;
-  border-radius: 50%;
-  box-shadow: -5px 0 0 1px var(--bg) inset;
-  transform: rotate(-25deg);
+.theme-glyph {
+  color: var(--gold-strong);
+  font-family: 'Apple Symbols', 'Segoe UI Symbol', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
 }
-:root[data-theme='light'] .theme-icon { box-shadow: none; background: var(--gold-wash); }
-.theme-label { font-family: var(--mono); font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; }
+.theme-glyph-moon { display: none; font-size: 1.35rem; transform: translateY(-1px); }
+:root[data-theme='light'] .theme-glyph-sun { display: none; }
+:root[data-theme='light'] .theme-glyph-moon { display: block; }
 .menu-toggle { display: none; }
 .menu-toggle i { width: 17px; height: 1px; background: currentColor; }
 
@@ -316,8 +314,6 @@ button, input { font: inherit; }
   .hero { padding: 2.5rem 0 3.25rem; }
   .hero-grid { gap: 2.25rem; }
   .hero-copy .button-row { margin-top: 1.5rem; }
-  .theme-label { display: none; }
-  .theme-toggle { width: 40px; padding: 0; }
   .hero-context { margin-top: 1.6rem; gap: .25rem .55rem; }
   .hero-visual { width: min(70vw, 260px); margin: .5rem 0 0 1rem; padding-left: 0; }
   .hero-question { left: -1rem; }

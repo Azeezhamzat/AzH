@@ -86,18 +86,16 @@ const imageUrl = resolvedImage ? new URL(resolvedImage, Astro.site) : null;
     <SiteFooter />
     <script>
       const themeButton = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
-      const themeLabel = document.querySelector<HTMLElement>('[data-theme-label]');
       const themeColor = document.querySelector<HTMLMetaElement>('[data-theme-color]');
       const menuButton = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
       const menuLabel = document.querySelector<HTMLElement>('[data-menu-label]');
       const nav = document.querySelector<HTMLElement>('[data-site-nav]');
 
-      const updateThemeLabel = () => {
+      const updateThemeControl = () => {
         if (!themeButton) return;
         const isLight = document.documentElement.dataset.theme === 'light';
-        themeButton.setAttribute('aria-label', isLight ? 'Switch to evening theme' : 'Switch to day theme');
-        themeButton.title = isLight ? 'Switch to evening theme' : 'Switch to day theme';
-        if (themeLabel) themeLabel.textContent = isLight ? 'Evening' : 'Day';
+        themeButton.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+        themeButton.title = isLight ? 'Switch to dark theme' : 'Switch to light theme';
         themeColor?.setAttribute('content', isLight ? '#f6f5f0' : '#1b201e');
       };
 
@@ -105,7 +103,7 @@ const imageUrl = resolvedImage ? new URL(resolvedImage, Astro.site) : null;
         const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
         document.documentElement.dataset.theme = next;
         localStorage.setItem('site-theme', next);
-        updateThemeLabel();
+        updateThemeControl();
       });
 
       const setMenuOpen = (isOpen: boolean, restoreFocus = false) => {
@@ -137,7 +135,7 @@ const imageUrl = resolvedImage ? new URL(resolvedImage, Astro.site) : null;
         if (event.matches) setMenuOpen(false);
       });
 
-      updateThemeLabel();
+      updateThemeControl();
     </script>
   </body>
 </html>
